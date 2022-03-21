@@ -1,0 +1,1 @@
+<p>Here's what I worked on last week: <a href = "/Functions/monads">Monads</a> </p>
