@@ -4,11 +4,11 @@
   <nav>
       <ul>
       <li>
-          <a href="/">Home</a>
+          <a href="/Functions">Home</a>
       </li>
   
       <li>
-          <a href="/Functions/monads">Monads</a>
+          <a href="/Functions/monads">monads</a>
       </li>
   <!--
       <li>

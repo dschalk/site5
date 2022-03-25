@@ -40,6 +40,13 @@
     "esbuild" "^0.14.21"
     "tiny-glob" "^0.2.9"
 
+"@sveltejs/adapter-node@^1.0.0-next.73":
+  "integrity" "sha512-eidd7u1dPHIaBKMjRePrxazUt+Mm/JpnaiKLzZJBdamhBiiYIb+epkPLLqfG5Oo346/0HLKwFRAM/FXn3u3BHQ=="
+  "resolved" "https://registry.npmjs.org/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.73.tgz"
+  "version" "1.0.0-next.73"
+  dependencies:
+    "tiny-glob" "^0.2.9"
+
 "@sveltejs/adapter-static@^1.0.0-next.29":
   "integrity" "sha512-0hjGnfT3BRyoHnzJ2w0/xL+xICRpKneDTm45ZzggiRrc0r71WJfF6toGeg8N4QUQnj8EJ3Itm453gsS1kt7VUQ=="
   "resolved" "https://registry.npmjs.org/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.29.tgz"
@@ -55,9 +62,9 @@
     "esbuild" "^0.14.21"
 
 "@sveltejs/kit@next":
-  "integrity" "sha512-F/XP1VEu+fpvgY04JekNxAFupccNMKOyXtbox0LwNJvBulL15/Tzy6tf4g+9t2Jy7mprwI3h0ZC9G/nVujRFnQ=="
-  "resolved" "https://registry.npmjs.org/@sveltejs/kit/-/kit-1.0.0-next.301.tgz"
-  "version" "1.0.0-next.301"
+  "integrity" "sha512-WdxDc8OiF1WEd/bEza7CBdzA+3qIcCi1GKBj/gieKX9I3N8iDJt/Cg2POrLo9wQoJ47nZcAd1eOhfr7XEX1aIQ=="
+  "resolved" "https://registry.npmjs.org/@sveltejs/kit/-/kit-1.0.0-next.303.tgz"
+  "version" "1.0.0-next.303"
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.32"
     "sade" "^1.7.4"
@@ -73,6 +80,11 @@
     "kleur" "^4.1.4"
     "magic-string" "^0.26.1"
     "svelte-hmr" "^0.14.11"
+
+"async@*":
+  "integrity" "sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g=="
+  "resolved" "https://registry.npmjs.org/async/-/async-3.2.3.tgz"
+  "version" "3.2.3"
 
 "debug@^4.3.3":
   "integrity" "sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ=="
@@ -177,6 +189,13 @@
   "integrity" "sha512-n6Vs/3KGyxPQd6uO0eH4Bv0ojGSUvuLlIHtC3Y0kEO23YRge8H9x1GCzLn28YX0H66pMkxuaeESFq4tKISKwdw=="
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.1.tgz"
   "version" "3.3.1"
+
+"node-ttl@^0.2.0":
+  "integrity" "sha512-bZVpmzWt4IuA3DWTZJEElLMQkYPmjUBi3q4XdBZ1dy1QLsDWLU7GMNhr/loLDFhqwlbQftQsb4xrPyCkv8UUyQ=="
+  "resolved" "https://registry.npmjs.org/node-ttl/-/node-ttl-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "async" "*"
 
 "path-parse@^1.0.7":
   "integrity" "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw=="

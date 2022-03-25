@@ -2,10 +2,10 @@
   "name": "site7",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "svelte-kit dev -p 3005",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
+    "preview": "svelte-kit preview -p 3005",
     "prepare": "svelte-kit sync"
   },
   "devDependencies": {
@@ -15,7 +15,9 @@
   },
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-node": "^1.0.0-next.73",
     "@sveltejs/adapter-static": "^1.0.0-next.29",
-    "lru-cache": "^7.7.1"
+    "lru-cache": "^7.7.1",
+    "node-ttl": "^0.2.0"
   }
 }

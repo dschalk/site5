@@ -3,7 +3,7 @@
     <br><br>
   <nav>
       <ul>
-      <li>
+      <li>    
           <a href="/">Home</a>
       </li>
   
@@ -12,11 +12,11 @@
       </li>
  <!-- 
       <li>
-          <a href="/Mahjong">Riichi Mahjong</a>
+          <a href="/Mahjong/">Riichi Mahjong</a>
       </li>
   
       <li>
-          <a href="/Grammar">Grammar</a>
+          <a href="/Grammar ">Grammar</a>
       </li>
   
       <li>
