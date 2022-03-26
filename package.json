@@ -2,10 +2,10 @@
   "name": "site7",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev -p 3005",
+    "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
-    "preview": "svelte-kit preview -p 3005",
+    "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync"
   },
   "devDependencies": {

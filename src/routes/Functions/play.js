@@ -289,8 +289,6 @@ var resetFu = function resetFu (e) {
     };
 };
 
-
-
 var t1 =  [ [7,15], [2,3], ['+'], [], 4  ]; 
 var t2 = fu2(t1)
 console.log(t2);
@@ -311,10 +309,10 @@ console.log(intersection(p7, p8).length)
 var nn = 0;
 
 function fu2 (a) {
-  nn += 1
   var result;
+  var a1;
   if (a[1].length === 2 && a[2].length === 1)   {
-    console.log("In fu. a[0]", clone(a[0]));
+    a1 = a[1];
     result = calc(a[1][0], a[1][1],a[2][0]);
     a[0].push(result);
     a[3].push(result);  
@@ -324,14 +322,8 @@ function fu2 (a) {
   if (a[1].length === 3) {
     a[0].push(a[1].pop());
   }
-  if (nn < 2) {
-  fu2([[7], [5,15], ['+'], [5], 5   ])
-  }
-  console.log(intersection(a[1], a[3]))
-  if (result == 20 && intersection(a[1], a[3]).length > 0) console.log("YES")
-  else console.log("NO");
-  if (result == 20 && intersection(a[1], a[3]).length > 0) {
-      console.log("<><><><><><><><><><><><<>>--> Now in the final block");
+  
+  if (result == 20 && intersection(a1, a[3]).length > 0) {
       if (a[3] = 5) {
           a[3] = 0;
           Z = "You win! "
@@ -349,3 +341,4 @@ function fu2 (a) {
   return a;
 };
 
+    console.log("Cow dung", fu2([[7], [5,15], ['+'], [5], 5 ]))
