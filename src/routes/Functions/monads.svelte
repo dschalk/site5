@@ -17,7 +17,7 @@ var b4 = "none";
 var b5 = "none";
 var b6 = "none";
 var b7 = "none";
-
+var XO = [ [0,0,0,0], [], [], [], [0] ]
 var s = 'stop';
 var AA;
 var BB;
@@ -37,90 +37,12 @@ var Z = "";
 $: Z;
 var fu;
 var x = [ [0,0,0,0], [], [], [], [0] ]
-
-function calc(aa,bb,c) {
-var a = parseInt(aa,10);
-var b = parseInt(bb,10);
-if (c === "+") return (a + b);
-else if (c === "*") return (a * b);
-else if (c === "-") return (a - b);
-else if (c === "/") return (a / b);
-else if (c === "concat") return parseInt("" + a + b, 10);
-else return "fubar";
-}
-
-function g(ar) {
-  var x = (ar.pop())**3;
-  ar.unshift(x);
-  return ar;
-};
-
-function g2 (ar) {return (ar.flatMap(v => (v+1)**3))};
-function g3 (ar) {return (ar.flatMap(v => Math.round(v**(1/3))))};
-
-function clone (x) {return JSON.parse(JSON.stringify(x))};
-
-var clean = a => a.map( ar => ar.filter(x => (x != (undefined && 0))));
-
-var cleanB = a => a.filter(x => x != (undefined && 0));
-
-function M (x) {
-  return function go (func) {
-      if (typeof func === "function") {
-          x = func(x);
-          return go;
-      }
-      else if (func === "stop") return x;
-  }
-};
-
-
-fu = a => {  
-  var result;
-  var SCORE = a[4][0];
-  var a1;
-  if (a[1].length === 2 && a[2].length === 1)   {
-    a1 = a[1];
-    result = calc(a[1][0], a[1][1],a[2][0]);
-
-    a[0].push(result);
-    a[3].push(result);  
-    a[1] = [];
-  }
-
-  if (a[1].length === 3) {
-    a[0].push(a[1].pop());
-  }
-  if (result == 20 && intersection(a1, a[3]).length > 0) {
-      if (a[4][0] === 4) {
-          a[4] = 0;
-          Z = "You win! "
-          SCORE = 0;
-      }
-      else {
-          SCORE = SCORE*1;
-          SCORE += 1;
-          Z = "Good. Your score increased to " + SCORE;
-      }
-      runRoll(SCORE);
-      setTimeout(() => Z = "", 2000);
-  }
-  update();
-  sfunc();
-  return a;
-};
-
-m2 = M(x);
-
-var roll = x => {
-  m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [], [x] ]);
-  b4 = b5 = b6 = b7 = 'none';
-};
-
-function runRoll (x) {
+var runRoll;
+runRoll = x => {
     m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [], [x] ]);
     updateRoll();
     EEE = "yet to be selected";
+    XO = m2('stop');
 }
 const updateRoll = () => {
   AA = m2(s)[0][0];
@@ -164,6 +86,86 @@ var update = () => {
 }
 
 var mon3 = M([1,2,3,4]);
+
+function calc(aa,bb,c) {
+var a = parseInt(aa,10);
+var b = parseInt(bb,10);
+if (c === "+") return (a + b);
+else if (c === "*") return (a * b);
+else if (c === "-") return (a - b);
+else if (c === "/") return (a / b);
+else if (c === "concat") return parseInt("" + a + b, 10);
+else return "fubar";
+}
+
+function g(ar) {
+  var x = (ar.pop())**3;
+  ar.unshift(x);
+  return ar;
+};
+
+function g2 (ar) {return (ar.flatMap(v => (v+1)**3))};
+function g3 (ar) {return (ar.flatMap(v => Math.round(v**(1/3))))};
+
+function clone (x) {return JSON.parse(JSON.stringify(x))};
+
+var clean = a => a.map( ar => ar.filter(x => (x != (undefined && 0))));
+
+var cleanB = a => a.filter(x => x != (undefined && 0));
+
+function M (x) {
+  return function go (func) {
+      if (typeof func === "function") {
+          x = func(x);
+          return go;
+      }
+      else if (func === "stop") return x;
+  }
+};
+
+
+fu = a => {  
+  XO = a;
+  var result;
+  var SCORE = a[4][0];
+  var a1;
+  if (a[1].length === 2 && a[2].length === 1)   {
+    a1 = a[1];
+    result = calc(a[1][0], a[1][1],a[2][0]);
+
+    a[0].push(result);
+    a[3].push(result);  
+    a[1] = [];
+  }
+
+  if (a[1].length === 3) {
+    a[0].push(a[1].pop());
+  }
+  if (result == 20 && intersection(a1, a[3]).length > 0) {
+      if (a[4][0] === 4) {
+          a[4] = 0;
+          Z = "You win! "
+          SCORE = 0;
+      }
+      else {
+          SCORE = SCORE*1;
+          SCORE += 1;
+          Z = "           Your score increased to " + SCORE; // a[4][0] ;
+      }
+      runRoll(SCORE);
+      setTimeout(() => Z = "", 3000);
+  }
+  update();
+  sfunc();
+  return a;
+};
+
+m2 = M(x);
+
+var roll = x => {
+  m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [], [x] ]);
+  b4 = b5 = b6 = b7 = 'none';
+};
 // function fmon3 (f) {mon3 = mon3(f)};
 // function fmon3Reset () {mon3 = M([1,2,3,4])}
 
@@ -555,6 +557,7 @@ m2 = M([[0,0,0,0], [], [], [],  [0]   ]);
 
 <svelte:head>
 	<title>Recursive Closures </title>
+  <link rel="stylesheet" href="../Functions/style.css">
 </svelte:head>
 <br>
 <div>**************************************************************************</div>
@@ -605,7 +608,6 @@ The Recursive Closure "m2" Controls the Action
 <p>Now for the game of score, a game involving four dice and two or three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught it to me a decade ago, when he was in middle school. I was also learning the Haskell programming language, so I developed a multiplayer online version with groups of interacting player, a chat box, and a shared-by-the-group todo list controlled by a Haskell WebSockets server backend. The backend could compute all possible solutions, if any existed, to any throw of the dice. It also identified all of the impossible-to-solve rolls. Users could change the default number of dice sides from 6,6,12,and 20 and the goal from the default value of 20. A version of it is online at <a href = "https://score.schalk.net">https://score.schalk.net</a>.</p>
 
 <p>This demonstration doesn't work in conjunction with a remote server, nor does it feature any Haskell code. It's just a little solitaire game providing an opportunity to consider the interesting possibilities of recursive closures. Instead of being argunents of function or global object methods, these monads are functions that consume functions. When the functions consumed by monads have no side effects outside of the monad's closure -- which should always be the case -- maintenance and bug tracking become more manageable. Minimizing side effects inside of monadic closure can help even more. </p>
-<div style = "color:#bbbbff; font-size:22">{Z}</div>
 <h3>Score: {SCORE}</h3>
 
 <button style = "display: {b0}" on:click = {() => m2(click0(m2))}>{AA}</button> 
@@ -621,11 +623,18 @@ The Recursive Closure "m2" Controls the Action
 <button on:click = {clic3}>divide</button>
 <button on:click = {clic4}>concat</button>
 
-<h2>{m2(s)}</h2>
 
+<span style = "color:#bbbbff; font-size:42px">{Z}</span>
 <br><br>
 <button on:click = {() => runRoll(SCORE)}>ROLL</button>
 <br><br>
+<div>roll: {XO[0]}</div>
+<div>selected: {XO[1]}</div>
+<div>operator: {XO[2]}</div>
+<div>computed: {XO[3]}</div>
+<div>score: {XO[4]}</div>
+<br>
+
 <button style = "display: {b4}">{WW}</button> 
 <button style = "display: {b5}">{XX}</button> 
 <button style = "display: {b6}">{YY}</button> 

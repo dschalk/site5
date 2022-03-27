@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%svelte.head%
-
-</script>
-<style>
   html {
     background-color:#211500;
     width: 100%;
   }
 
   body {
-    margin-left: 7%;
-    margin-right: 7%;
+    width: 84%;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 35px;
     background-color: #361B01;
     color: #d3ead5;
@@ -26,7 +16,7 @@
     -webkit-box-shadow: inset 0px 0px 20px 0px rgb(0,0,0);
     -moz-box-shadow:    inset 0px 0px 20px 0px rgb(0,0,0);
     box-shadow:         inset 0px 0px 20px 0px rgb(0,0,0);
-    padding: 20px, 12%, 20px, 12%;
+    padding: 3px 0px 3px 3px;
   }
 
   input, textarea {
@@ -48,6 +38,19 @@
     -moz-box-shadow:    0px 0px 20px 0px rgb(255, 215, 0);
     box-shadow:         0px 0px 20px 0px rgb(255, 215, 0);
     padding: 3px 0px 3px 3px;
+  }
+
+  input, checkbox: {
+    background-color: #efe1a7;
+    color: #00AADD;
+    border-radius: 5px;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 20px 0px rgb(255, 215, 0);
+    -moz-box-shadow:    0px 0px 20px 0px rgb(255, 215, 0);
+    box-shadow:         0px 0px 20px 0px rgb(255, 215, 0);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 3px solid #DDDDDD;
   }
 
   pre {
@@ -117,36 +120,4 @@
 .tao {
   margin-left: 3%;
 }
-</style>
 
-
-<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
-
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
-
-  <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
-
-
-	</head>
-
-
-
-	<!--
-	<head>
-    <link rel="stylesheet" href="./style.css">
-		<meta charset="utf-8" />
-		<meta name="description" content="" />
-		<link rel="icon" href="%svelte.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%svelte.head%
-	</head> -->
-	<body>
-		<div>%svelte.body%</div>
-	</body>
-</html>

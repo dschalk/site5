@@ -1,21 +1,5 @@
 import { c as create_ssr_component, e as escape } from "../../../chunks/index-2dc61825.js";
 var s = "stop";
-function calc(aa, bb, c) {
-  var a = parseInt(aa, 10);
-  var b = parseInt(bb, 10);
-  if (c === "+")
-    return a + b;
-  else if (c === "*")
-    return a * b;
-  else if (c === "-")
-    return a - b;
-  else if (c === "/")
-    return a / b;
-  else if (c === "concat")
-    return parseInt("" + a + b, 10);
-  else
-    return "fubar";
-}
 function M(x) {
   return function go(func) {
     if (typeof func === "function") {
@@ -24,9 +8,6 @@ function M(x) {
     } else if (func === "stop")
       return x;
   };
-}
-function intersection(a, b) {
-  return a.filter((x) => b.includes(x));
 }
 const Monads = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   var AA, BB, CC, DD, EE;
@@ -38,6 +19,7 @@ const Monads = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   var b5 = "none";
   var b6 = "none";
   var b7 = "none";
+  var XO = [[0, 0, 0, 0], [], [], [], [0]];
   var AA;
   var BB;
   var CC;
@@ -47,109 +29,72 @@ const Monads = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   var YY;
   var ZZ;
   var SCORE = [0];
-  var m2;
   var Z = "";
-  var fu;
-  var x = [[0, 0, 0, 0], [], [], [], [0]];
-  fu = (a) => {
-    var result;
-    var SCORE2 = parseInt(a[4][0], 10);
-    console.log("In fu. SCORE is", SCORE2);
-    var a1;
-    if (a[1].length === 2 && a[2].length === 1) {
-      a1 = a[1];
-      result = calc(a[1][0], a[1][1], a[2][0]);
-      a[0].push(result);
-      a[3].push(result);
-      a[1] = [];
-    }
-    if (a[1].length === 3) {
-      a[0].push(a[1].pop());
-    }
-    if (result == 20 && intersection(a1, a[3])) {
-      if (parseInt(a[4][0], 10) === 4) {
-        a[4] = 0;
-        Z = "You win! ";
-        SCORE2 = 0;
-      } else {
-        SCORE2 += 1;
-        Z = "Congratulations! You did it. Your score is " + SCORE2;
-      }
-      runRoll(SCORE2);
-      setTimeout(() => Z = "", 3e3);
-      console.log("Z is", Z);
-    }
-    update();
-    sfunc();
-    console.log("still in fu. m2(s) and SCORE are", m2(s), SCORE2);
-    return a;
-  };
-  m2 = M(x);
-  function runRoll(x2) {
-    m2 = M([
-      [
-        Math.floor(Math.random() * 6) + 1,
-        Math.floor(Math.random() * 6) + 1,
-        Math.floor(Math.random() * 12) + 1,
-        Math.floor(Math.random() * 20) + 1
-      ],
-      [],
-      [],
-      [],
-      [x2]
-    ]);
-    updateRoll();
-  }
-  const updateRoll = () => {
-    AA = m2(s)[0][0];
-    BB = m2(s)[0][1];
-    CC = m2(s)[0][2];
-    DD = m2(s)[0][3];
-    WW = m2(s)[1][0];
-    XX = m2(s)[1][1];
-    YY = m2(s)[1][2];
-    ZZ = m2(s)[1][3];
-    EE = m2(s)[2];
-    m2(s)[3];
-    SCORE = m2(s)[4];
-    console.log("In updateRoll. SCORE is", SCORE);
-    b0 = b1 = b2 = b3 = "inline";
-    b4 = b5 = b6 = b7 = "none";
-  };
-  function sfunc() {
-    b0 = b1 = b2 = b3 = b4 = b5 = b6 = b7 = "none";
-    if (AA != void 0)
-      b0 = "inline";
-    if (BB != void 0)
-      b1 = "inline";
-    if (CC != void 0)
-      b2 = "inline";
-    if (DD != void 0)
-      b3 = "inline";
-    if (WW != void 0)
-      b4 = "inline";
-    if (XX != void 0)
-      b5 = "inline";
-    if (YY != void 0)
-      b6 = "inline";
-    if (ZZ != void 0)
-      b7 = "inline";
-  }
-  var update = () => {
-    AA = m2(s)[0][0];
-    BB = m2(s)[0][1];
-    CC = m2(s)[0][2];
-    DD = m2(s)[0][3];
-    EE = m2(s)[2];
-    m2(s)[3];
-    SCORE = m2(s)[4];
-    WW = m2(s)[1][0];
-    XX = m2(s)[1][1];
-    YY = m2(s)[1][2];
-    ZZ = m2(s)[1][3];
-  };
   var mon3 = M([1, 2, 3, 4]);
   var m4 = M(3.1415926535);
+  var fuDem = `fu = a => {  m2(fu) caused fu to operate on the closure's current value, a.
+  var result;
+  var SCORE = a[4][0]; 
+  var a1;                                 //  a1 will preserve a[1] for the final test
+  if (a[1].length === 2 && a[2].length === 1)   {
+    a1 = a[1];
+    result = calc(a[1][0], a[1][1],a[2][0]);   // a[1] holds the selected numbers
+    a[0].push(result);
+    a[3].push(result);     // a1 is used in the final test to make sure 20 was 
+                           // achieved by using a previously computed number. 
+    a[1] = [];             // Now a[1] is empty but a1 still holds its prior value
+  }
+
+  if (a[1].length === 3) {     // a[1] can't use 3 numbers so it sends a 3rd selection back.
+    a[0].push(a[1].pop());
+  }
+  
+  if (result == 20 && intersection(a1, a[3])) { // An empty array means no previously computed 
+                            // number was used. An empty array is like 0, false in a logical test. 
+      if (a[4][0] === 4) {
+          a[4] = 0;
+          Z = "You win! "
+          SCORE = 0;
+      }
+      else {
+          SCORE += 1;
+          Z = "Good. Your score increased to " + SCORE;
+      }
+      runRoll(SCORE);
+      setTimeout(() => Z = "", 2000);
+  }
+  update();
+  sfunc();
+  return a;
+};
+
+// Now variables that appear in curly braces in the DOM must be updated.
+
+function sfunc () {
+    b0 = b1 = b2 = b3 = b4 = b5 = b6 = b7 = "none"; // All button displays controlled by b's disappear. 
+    if (AA != (undefined && 0)) b0 = "inline"; // Next, selected buttons are diplayed.
+    if (BB != (undefined && 0)) b1 = "inline";
+    if (CC != (undefined && 0)) b2 = "inline";
+    if (DD != (undefined && 0)) b3 = "inline";
+    if (WW != (undefined && 0)) b4 = "inline";
+    if (XX != (undefined && 0)) b5 = "inline";
+    if (YY != (undefined && 0)) b6 = "inline";
+    if (ZZ != (undefined && 0)) b7 = "inline";
+}
+
+var update = () => { // Now the values of DOM variables are updated.
+  AA = m2(s)[0][0];
+  BB = m2(s)[0][1];
+  CC = m2(s)[0][2];
+  DD = m2(s)[0][3];
+  EE = m2(s)[2];
+  FF = m2(s)[3];
+  SCORE = m2(s)[4];
+  WW = m2(s)[1][0];
+  XX = m2(s)[1][1];
+  YY = m2(s)[1][2];
+  ZZ = m2(s)[1][3];
+}`;
   var monad = `function M (x) {
     return function go (func) {
         if (typeof func === "function") {
@@ -304,7 +249,6 @@ function cubeFu () {m4 = m4(cube)};
 
 function divFraction (x) {
     var y = x.split('/');
-    console.log(y)
     if(y.length > 1){
         return (y[0] / y[1])
     }
@@ -315,7 +259,6 @@ function divFraction (x) {
 
 var powFu = function powFu (e) {
     var p = divFraction(e.target.value);
-    console.log("p is", p);
     if (e.keyCode == 13) {
         m4 = m4(pow(p));
     }
@@ -337,12 +280,10 @@ var resetFu = function resetFu (e) {
         m4 = m4(reset2(divFraction(e.target.value)))
     };
 };`;
-  console.log(fu(m2(s)));
   var example = `var mon = M(2);
 mon(v=>v**4)(v=>v+5)(v=>v*2);
 // The value of x can be obtained later
 mon('stop');  // 42`;
-  m2 = M([[0, 0, 0, 0], [], [], [], [0]]);
   Z = Z;
   return `${$$result.head += `${$$result.title = `<title>Recursive Closures </title>`, ""}`, ""}
 <br>
@@ -392,10 +333,9 @@ The Recursive Closure &quot;m2&quot; Controls the Action
 <br><br><br>
 <p>Now for the game of score, a game involving four dice and two or three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught it to me a decade ago, when he was in middle school. I was also learning the Haskell programming language, so I developed a multiplayer online version with groups of interacting player, a chat box, and a shared-by-the-group todo list controlled by a Haskell WebSockets server backend. The backend could compute all possible solutions, if any existed, to any throw of the dice. It also identified all of the impossible-to-solve rolls. Users could change the default number of dice sides from 6,6,12,and 20 and the goal from the default value of 20. A version of it is online at <a href="${"https://score.schalk.net"}">https://score.schalk.net</a>.</p>
 
-<p>This demonstration doesn&#39;t work in conjunction with a remote server, nor does it feature any Haskell code. It&#39;s just a little solitaire game providing an opportunity to consider the interesting possibilities of recursive closures. Instead of being argunents of function or global object methods, these monads are functions that consume functions. When the functions consumed by monads have no side effects outside of the monad&#39;s closure -- which should always be the case -- maintenance and bug tracking become more manageable. </p>
-<h3 style="${"color:#ffccff"}">${escape(Z)}</h3>
+<p>This demonstration doesn&#39;t work in conjunction with a remote server, nor does it feature any Haskell code. It&#39;s just a little solitaire game providing an opportunity to consider the interesting possibilities of recursive closures. Instead of being argunents of function or global object methods, these monads are functions that consume functions. When the functions consumed by monads have no side effects outside of the monad&#39;s closure -- which should always be the case -- maintenance and bug tracking become more manageable. Minimizing side effects inside of monadic closure can help even more. </p>
 <h3>Score: ${escape(SCORE)}</h3>
-<br>
+
 <button style="${"display: " + escape(b0)}">${escape(AA)}</button> 
 <button style="${"display: " + escape(b1)}">${escape(BB)}</button> 
 <button style="${"display: " + escape(b2)}">${escape(CC)}</button> 
@@ -409,15 +349,28 @@ The Recursive Closure &quot;m2&quot; Controls the Action
 <button>divide</button>
 <button>concat</button>
 
+
+<span style="${"color:#bbbbff; font-size:42px"}">${escape(Z)}</span>
 <br><br>
 <button>ROLL</button>
 <br><br>
+<div>roll: ${escape(XO[0])}</div>
+<div>selected: ${escape(XO[1])}</div>
+<div>operator: ${escape(XO[2])}</div>
+<div>computed: ${escape(XO[3])}</div>
+<div>score: ${escape(XO[4])}</div>
+<br>
+
 <button style="${"display: " + escape(b4)}">${escape(WW)}</button> 
 <button style="${"display: " + escape(b5)}">${escape(XX)}</button> 
 <button style="${"display: " + escape(b6)}">${escape(YY)}</button> 
 <button style="${"display: " + escape(b7)}">${escape(ZZ)}</button>
 <button style="${"display: " + escape(b7)}">${escape(EE)}</button>
 <br><br>
+<p>The function fu() is the brains behing the game of Score. Each time a number is clicked, m2(fu) is called and fu does various things depending on the state of the closures value, x. </p> 
+<p>At the end of fu(), two formatting functions are Called. The first displays or hides variables in the DOM and the second updates their values. Here they are:</p>
+<pre>${escape(fuDem)}</pre>  
+
 <p>Clicking &quot;ROLL&quot; calls runRoll() which, in turn, calls updateRoll() to re-set HTML variables.</p>
 <pre>${escape(runR)}</pre>
 <p>The &quot;x = [ [], [], [], [], [0] ]&quot; format will be maintained throught game play. x[0] simulates the dice roll; x[1] recieves integers that are clicked; x[2] holds the operator; and x[4] contains numbers that are computed. x[4] makes sure at least one computed number is involved in arriving at 20. Here are the first few functions called when a number is clicked:</p>
