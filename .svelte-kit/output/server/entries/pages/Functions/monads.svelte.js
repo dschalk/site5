@@ -285,7 +285,7 @@ mon(v=>v**4)(v=>v+5)(v=>v*2);
 // The value of x can be obtained later
 mon('stop');  // 42`;
   Z = Z;
-  return `${$$result.head += `${$$result.title = `<title>Recursive Closures </title>`, ""}`, ""}
+  return `${$$result.head += `${$$result.title = `<title>Recursive Closures </title>`, ""}<link rel="${"stylesheet"}" href="${"../Functions/style.css"}" data-svelte="svelte-1klfhwr">`, ""}
 <br>
 <div>**************************************************************************</div>
 <div style="${"font-family: Times New Roman; text-align:center; font-size: 32px;"}"><br>
@@ -350,7 +350,7 @@ The Recursive Closure &quot;m2&quot; Controls the Action
 <button>concat</button>
 
 
-<span style="${"color:#bbbbff; font-size:42px"}">${escape(Z)}</span>
+<span style="${"margin-left: 20px; color:#bbbbff; font-size:28px"}">${escape(Z)}</span>
 <br><br>
 <button>ROLL</button>
 <br><br>

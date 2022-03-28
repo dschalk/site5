@@ -624,7 +624,7 @@ The Recursive Closure "m2" Controls the Action
 <button on:click = {clic4}>concat</button>
 
 
-<span style = "color:#bbbbff; font-size:42px">{Z}</span>
+<span style = "margin-left: 20px; color:#bbbbff; font-size:28px">{Z}</span>
 <br><br>
 <button on:click = {() => runRoll(SCORE)}>ROLL</button>
 <br><br>
