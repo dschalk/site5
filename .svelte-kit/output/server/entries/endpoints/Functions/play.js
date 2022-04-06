@@ -1,9 +1,39 @@
-import "../../../chunks/index-2dc61825.js";
 var s = "stop";
 var m2;
-var Z = "not yet";
-var x = [[0, 0, 0, 0], [], [], [], 0];
-var aaa = M([[6, 7], [2, 3], ["add"], [3], 0])("stop");
+var fu;
+var x = [[0, 0, 0, 0], [], [], [], [0]];
+var runRoll;
+runRoll = (x2) => {
+  m2 = M([[Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 20) + 1], [], [], [], [x2]]);
+  updateRoll();
+  m2("stop");
+};
+const updateRoll = () => {
+  m2(s)[0][0];
+  m2(s)[0][1];
+  m2(s)[0][2];
+  m2(s)[0][3];
+  m2(s)[1][0];
+  m2(s)[1][1];
+  m2(s)[1][2];
+  m2(s)[1][3];
+  m2(s)[2];
+  m2(s)[3];
+  m2(s)[4];
+};
+var update = () => {
+  m2(s)[0][0];
+  m2(s)[0][1];
+  m2(s)[0][2];
+  m2(s)[0][3];
+  m2(s)[2];
+  m2(s)[3];
+  m2(s)[4];
+  m2(s)[1][0];
+  m2(s)[1][1];
+  m2(s)[1][2];
+  m2(s)[1][3];
+};
 function calc(aa, bb, c) {
   var a = parseInt(aa, 10);
   var b = parseInt(bb, 10);
@@ -20,66 +50,20 @@ function calc(aa, bb, c) {
   else
     return "fubar";
 }
-console.log("intersection(aaa[1], aaa[3])", intersection(aaa[1], aaa[3]));
-var teddy;
-console.log("teddy is", teddy);
+var AR = [];
 function M(x2) {
-  return function go(func) {
+  return function(func) {
     if (typeof func === "function") {
-      x2 = func(x2);
-      return go;
+      var y = M(func(x2));
+      AR.push(y("stop"));
+      return y;
     } else if (func === "stop")
       return x2;
   };
 }
-m2 = M(x);
-function runRoll() {
-  m2 = M([[Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 20) + 1], [], [], 0]);
-  updateRoll();
-}
-const updateRoll = () => {
-  m2(s)[0][0];
-  m2(s)[0][1];
-  m2(s)[0][2];
-  m2(s)[0][3];
-  m2(s)[1][0];
-  m2(s)[1][1];
-  m2(s)[1][2];
-  m2(s)[1][3];
-  m2(s)[2];
-  m2(s)[3];
-};
-var update = () => {
-  m2(s)[0][0];
-  m2(s)[0][1];
-  m2(s)[0][2];
-  m2(s)[0][3];
-  m2(s)[2];
-  m2(s)[3];
-  m2(s)[1][0];
-  m2(s)[1][1];
-  m2(s)[1][2];
-  m2(s)[1][3];
-};
-Z = Z;
-var t1 = [[7, 15], [2, 3], ["+"], [], 4];
-var t2 = fu2(t1);
-console.log(t2);
-var t3 = [[7], [5, 15], ["+"], [5], 4];
-var t4 = fu2(t3);
-console.log(t4);
-console.log("Z is", Z);
-console.log("Z is", Z);
-console.log("intersection (t1[1], t1[3]", intersection(t1[1], t1[3]));
-console.log("intersection [1,2,3,4], [3,4,5,6]", intersection([1, 2, 3, 4], [3, 4, 5, 6]));
-function intersection(a, b) {
-  return a.filter((x2) => b.includes(x2));
-}
-var p7 = [1, 2, 3, 4];
-var p8 = [3, 4, 5, 6];
-console.log(intersection(p7, p8).length);
-function fu2(a) {
+fu = (a) => {
   var result;
+  var SCORE = a[4][0];
   var a1;
   if (a[1].length === 2 && a[2].length === 1) {
     a1 = a[1];
@@ -92,18 +76,78 @@ function fu2(a) {
     a[0].push(a[1].pop());
   }
   if (result == 20 && intersection(a1, a[3]).length > 0) {
-    if (a[3] = 5) {
-      a[3] = 0;
-      Z = "You win! ";
+    if (a[4][0] === 4) {
+      a[4] = 0;
+      SCORE = 0;
     } else {
-      Z = "Congratulations! You did it. Your score is ar[3]";
-      a[3] += 1;
+      SCORE = SCORE * 1;
+      SCORE += 1;
     }
-    setTimeout(() => Z = "", 3e3);
-    console.log("Z is", Z);
-    runRoll();
+    runRoll(SCORE);
+    setTimeout(() => "", 3e3);
   }
   update();
   return a;
+};
+m2 = M(x);
+var click0 = (ar) => {
+  ar[1].push(ar[0].splice(0, 1)[0]);
+  return ar;
+};
+var click1 = (ar) => {
+  ar[1].push(ar[0].splice(1, 1)[0]);
+  return ar;
+};
+function clic0() {
+  m2((ar) => ar[2] = ["+"]);
+  m2(fu);
+  m2 = m2;
 }
-console.log("Cow dung", fu2([[7], [5, 15], ["+"], [5], 5]));
+function clic2() {
+  m2((ar) => ar[2] = ["*"]);
+  m2(fu);
+  m2 = m2;
+}
+function clic3() {
+  m2((ar) => ar[2] = ["/"]);
+  m2(fu);
+  m2 = m2;
+}
+function clic4() {
+  m2((ar) => ar[2] = ["concat"]);
+  m2(fu);
+  m2 = m2;
+}
+function intersection(a, b) {
+  return a.filter((x2) => b.includes(x2));
+}
+m2 = M([[0, 0, 0, 0], [], [], [], [0]]);
+runRoll();
+console.log("m2(s) is", m2(s));
+m2(click0);
+console.log("m2(s) is", m2(s));
+m2(click1);
+m2(clic2);
+console.log("m2(s) is", m2(s));
+m2(clic0);
+console.log("m2(click1(m2)))", m2(click1));
+m2(clic2);
+console.log("m2(s) is", m2(s));
+m2(clic4);
+console.log("m2(s) is", m2(s));
+m2(click0);
+console.log("m2(s) is", m2(s));
+m2(clic4);
+m2(click0);
+console.log("m2(s) is", m2(s));
+m2(click0);
+m2(click0);
+m2(clic3);
+console.log("m2(s) is", m2(s));
+console.log(M(3)(s));
+console.log(AR);
+m2(clic0);
+console.log("m2(s) is", m2(s));
+m2 = M(AR[7]);
+console.log("m2(s) is", m2(s));
+AR.map((v) => console.log(v("stop")));

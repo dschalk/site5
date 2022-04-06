@@ -93,7 +93,7 @@
     padding: 3px 0px 3px 3px;
   }
 
-  input, checkbox {
+  :global(input, checkbox) {
     background-color: #efe1a7;
     color: #00AADD;
     border-radius: 5px;
@@ -114,11 +114,6 @@
 
   :global(p) {
     text-indent: 3%;
-  }
-
-  #logo {
-    background-color: transparent;
-    padding-left: 2%;
   }
 
   :global(button) {
@@ -142,7 +137,7 @@
     border-radius: 10px;
   }
 
-   #roll {
+   :global(.roll) {
     margin-left: 8%;
   }
 

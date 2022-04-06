@@ -10,6 +10,17 @@
       <li>
           <a href="/Functions/monads">monads</a>
       </li>
+
+      <li>
+          <a href="/Functions/monads2">monads2</a>
+      </li>
+
+      <li>
+          <a href="/Functions/monads3">monads3</a>
+      </li>
+
+
+      
   <!--
       <li>
           <a href="/Mahjong">Riichi Mahjong</a>

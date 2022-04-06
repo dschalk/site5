@@ -13,10 +13,7 @@
   "src/routes/Functions/play.js": {
     "file": "entries/endpoints/Functions/play.js",
     "src": "src/routes/Functions/play.js",
-    "isEntry": true,
-    "imports": [
-      "_index-2dc61825.js"
-    ]
+    "isEntry": true
   },
   "src/routes/__layout.svelte": {
     "file": "entries/pages/__layout.svelte.js",
@@ -26,7 +23,7 @@
       "_index-2dc61825.js"
     ],
     "css": [
-      "assets/entries/pages/__layout.svelte-902de36c.css"
+      "assets/entries/pages/__layout.svelte-19f2586f.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -59,6 +56,14 @@
   "src/routes/Functions/index.svelte": {
     "file": "entries/pages/Functions/index.svelte.js",
     "src": "src/routes/Functions/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-2dc61825.js"
+    ]
+  },
+  "src/routes/Functions/monads2.svelte": {
+    "file": "entries/pages/Functions/monads2.svelte.js",
+    "src": "src/routes/Functions/monads2.svelte",
     "isEntry": true,
     "imports": [
       "_index-2dc61825.js"

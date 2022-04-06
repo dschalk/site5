@@ -10,6 +10,11 @@ const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   <nav><ul class="${"svelte-5x036g"}"><li class="${"svelte-5x036g"}"><a href="${"/Functions"}">Home</a></li>
   
       <li class="${"svelte-5x036g"}"><a href="${"/Functions/monads"}">monads</a></li>
+
+      <li class="${"svelte-5x036g"}"><a href="${"/Functions/monads2"}">monads2</a></li>
+
+
+      
   </ul></nav></div>
   
   
