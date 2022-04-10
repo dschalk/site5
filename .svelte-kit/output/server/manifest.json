@@ -69,6 +69,14 @@
       "_index-2dc61825.js"
     ]
   },
+  "src/routes/Functions/monads3.svelte": {
+    "file": "entries/pages/Functions/monads3.svelte.js",
+    "src": "src/routes/Functions/monads3.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-2dc61825.js"
+    ]
+  },
   "src/routes/Functions/monads.svelte": {
     "file": "entries/pages/Functions/monads.svelte.js",
     "src": "src/routes/Functions/monads.svelte",

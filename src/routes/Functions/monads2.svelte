@@ -1,5 +1,6 @@
 
 
+
 <script>
 
 import { merge_ssr_styles } from "svelte/internal";
@@ -39,21 +40,17 @@ var m2;
 
 var runRoll;
 runRoll = b => {
-    var arr = [ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], ["+"], [], [b], [], [0] ];
+    var arr = [ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], ["+"], [], [b], [], [0], [] ];
     m2 = M(arr);
-    m2 = m2(fuu);
-    console.log("In runRoll. m2(s) is", m2(s));
+    // m2 = m2(fuu);
     
     //[5].push(clone([ a[0], a[1], a[2], a[3], a[4], [], a[6] ]));  
     EEE = "yet to be selected";
-    console.log("In runRoll. m2(s) is", m2(s));
     m2 = M(m2(s));
     updateRoll(m2);
     m2(fu);
     return m2;
 }
-runRoll(0);
-console.log("At line 50. m2", m2);
 var Z = "";
 $: Z;
 var x;
@@ -86,7 +83,7 @@ function sfunc () {
     if (ZZ != (undefined && 0)) b7 = "inline";
 }
 
-m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], ["+"], [], [0], [], [0] ]);
+m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], ["+"], [], [0], [], [0], [] ]);
 
 var update = function update () {
   AA = m2(s)[0][0];
@@ -154,83 +151,67 @@ function M (x) {
 
 var back;
 $: back = a => {
-    if (a[6][0] > 0) {
-        var a5 = clone(a[5]);
-        a = a[5][a[6][0] - 1];
-        a[5] = a5;
-        console.log("In back. a is", a);
-        m2 = M(a);
-        m2(fu);
-        console.log("Still inn back. m2(s) is", m2(s));
-        //console.log("in back. m2(s)[5] and index are", m2(s)[5], "**", dex);
-        return m2;
+    if (a[5].length > 0) {
+        var b = a[5][a[5].length - 1];
+        b[7] = a[7];
+        m2 = M(b);
+        update();
+        sfunc();
     }
     else console.log("In back. Can't compute")
 };
 var forward;
-$: forward = b => {
-    if (b[6][0] < b[5].length) {
-        var b5 = clone(b[5]);
-        b = b[5][b[6][0] + 1]; 
-        b[5] = b5;
+$: forward = a => {
+    var index = a[6][0];
+    if (index < a[7].length - 1) {
+        var b = a[7][index + 1];
+        b[7] = a[7];
         m2 = M(b);
-        //m2(fu);
-        console.log("in forward. m2(s) is", m2(s));
+        update();
+        sfunc();
     }
-    else console.log("In forward. Can't compute")
-}
-
-
+    else console.log("Going out of bounds. The end of b[7] has been reached");
+};
 
 function test () {
-    console.log('m2(s) is', m2(s));
-    console.log(m2(s)[0]);
-    console.log(m2(s)[1]);
-    console.log(m2(s)[2]);
-    console.log(m2(s)[3]);
-    console.log(m2(s)[4]);
-    console.log(m2(s)[5]);
-    console.log(m2(s)[6]);
+    var xx = m2(s);
+    console.log('<><><><><><><><> xx is', xx);
+    console.log(xx[0]);
+    console.log("xx[5].length is ", xx[5].length);
+    console.log("index is", xx[6]);
+    m2 = M(xx); 
+    return m2;
 }
 
 
 function fuu (a) {                                    
-  a[5].push(clone([ a[0], a[1], a[2], a[3], a[4], [], a[6] ]));  
+  a[5].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7] ]));  
   l("In fu. a is", a);
   return a;
 }
 
-    function fu (a) {                                    // fu
-  a[5].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6] ]));  
+function fu (a) {                                    // fu
+  a[5].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7] ]));  
+  a[7].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7] ]));  
   a[6][0] += 1;
-  l("In fu. a is", a);
     // a[1].push(a[0].pop());
   var result;
   SCORE = a[4];
   var a1;
-  console.log( "At the top of fu. a[1].length === 2 && a[2].length === 1", a[1].length === 2 && a[2].length === 1 );
-  console.log( "result == 20 && intersection(a1, a[3]).length > 0", result == 20 && intersection(a1, a[3]).length > 0);
-
   if (a[1].length === 2 && a[2].length === 1)   {
     a1 = a[1];
     result = calc(a[1][0], a[1][1],a[2][0]);
     a[0].push(result);
     a[3].push(result);  
     a[1] = [];
-    l("Still in fu. a is", a);
     m2 = M(a);
-    console.log("******** Line 186 m2(s) is", m2(s));
   }
 
   if (a[1].length === 3) {
     a[0].push(a[1].pop());
   }
  
-  console.log( "At the bottom of fu. a[1].length === 2 && a[2].length === 1", a[1].length === 2 && a[2].length === 1 );
-  console.log( "result == 20 && intersection(a1, a[3]).length > 0", result == 20 && intersection(a1, a[3]).length > 0);
-
   if (result == 20 && intersection(a1, a[3]).length > 0) {
-      console.log("Last part of fu. a[4][0] is", a[4][0])
       if (a[4][0] === 4) {
           ZWIN = "You win! "
           a[4][0] = 0;
@@ -239,11 +220,9 @@ function fuu (a) {
       else {
           var aint = parseInt(a[4][0], 10);
           aint += 1;
-          console.log("<><><<>>--> aint is", aint);
           Z = "           Your score increased to " + aint;
           runRoll(aint); 
       }
-      console.log("At the very end of fu. m2(s) is", m2(s));
       setTimeout(() => Z = ZWIN = "", 3000);
   }
   AA = m2(s)[0][0];
@@ -265,7 +244,6 @@ var fmon = f => x => x(f);
 var reset = x => [1,2,3,4]
 
 var click0 = a => {
-    console.log("In click0. a is", a);
     a[1].push(a[0][0])
     a[0].shift();
     m2 = M(a);
@@ -725,11 +703,6 @@ The Recursive Closure "m2 = M(x)" Controls the Action Without Mutating "x"
 
 <p>This demonstration doesn't work in conjunction with a remote server, nor does it feature any Haskell code. It's just a little solitaire game providing an opportunity to consider the interesting possibilities of recursive closures. Instead of being argunents of function or global object methods, these monads are functions that consume functions. When the functions consumed by monads have no side effects outside of the monad's closure -- which should always be the case -- maintenance and bug tracking become more manageable. Minimizing side effects inside of monadic closure can help even more. </p>
 <h3>Score: {m2(s)[4]}</h3>
-<div>{m2(s)}</div>
-<div>{m2(s)[0]}</div>
-<div>{m2(s)[0][0]}</div>
-<div>{m2(s)[1]}</div>
-<div>{m2(s)[2]}</div>
 
 <button style = "display: {b0}" on:click = {() => m2(click0)}>{AA}</button> 
 <button style = "display: {b1}" on:click = {() => m2(click1)}>{BB}</button> 
@@ -751,14 +724,6 @@ The Recursive Closure "m2 = M(x)" Controls the Action Without Mutating "x"
 <button on:click = {() => m2(runRoll(m2(s)[4]))}>ROLL</button>
 <br><br>
 
-<div> m2(s): {m2(s)}</div>
-<div>selected: {m2(s)[1]}</div>
-<div>operator: {m2(s)[2]}</div>
-<div>computed: {m2(s)[3]}</div>
-<div>score: {m2(s)[4]}</div>
-<div>archive: {m2(s)[5]}</div>
-<div>index: {m2(s)[6]}</div>
-<br>
 <button on:click = {() => test()}>test</button>
 <button style = "display: {b4}">{WW}</button> 
 <button style = "display: {b5}">{XX}</button> 

@@ -3,7 +3,7 @@ export const manifest = {
 	assets: new Set(["favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		entry: {"file":"start-7249bad0.js","js":["start-7249bad0.js","chunks/vendor-4e552e70.js"],"css":[]},
+		entry: {"file":"start-06c331bf.js","js":["start-06c331bf.js","chunks/vendor-4e552e70.js"],"css":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
@@ -11,7 +11,8 @@ export const manifest = {
 			() => import('./nodes/3.js'),
 			() => import('./nodes/4.js'),
 			() => import('./nodes/5.js'),
-			() => import('./nodes/6.js')
+			() => import('./nodes/6.js'),
+			() => import('./nodes/7.js')
 		],
 		routes: [
 			{
@@ -49,13 +50,24 @@ export const manifest = {
 			},
 			{
 				type: 'page',
+				id: "Functions/monads3",
+				pattern: /^\/Functions\/monads3\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/monads3",
+				shadow: null,
+				a: [0,3,6],
+				b: [1]
+			},
+			{
+				type: 'page',
 				id: "Functions/monads",
 				pattern: /^\/Functions\/monads\/?$/,
 				names: [],
 				types: [],
 				path: "/Functions/monads",
 				shadow: null,
-				a: [0,3,6],
+				a: [0,3,7],
 				b: [1]
 			},
 			{

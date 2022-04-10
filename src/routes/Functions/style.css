@@ -1,48 +1,3 @@
-
-<div>
-    <br><br>
-  <nav>
-      <ul>
-      <li>
-          <a href="/Functions">Home</a>
-      </li>
-  
-      <span> &nbsp;&nbsp;&nbsp;   </span>
-      
-      <li>
-          <a href="/Functions/monads">monads</a>
-      </li>
-
-      <span> &nbsp;&nbsp;&nbsp;   </span>
-
-      <li>
-          <a href="/Functions/monads2">monads2</a>
-      </li>
-
-  <!--
-      <li>
-          <a href="/Functions/monads4">monads4</a>
-      </li>
-
-
-      
-      <li>
-          <a href="/Mahjong">Riichi Mahjong</a>
-      </li>
-  
-      <li>
-          <a href="/Grammar">Grammar</a>
-      </li>
-  
-      <li>
-          <a href="/Law">Rule By Law</a>
-      </li>
-    -->
-  </ul>
-  </nav>
-  </div>
- <style>
-/*
   html {
     background-color:#211500;
     width: 100%;
@@ -85,7 +40,7 @@
     padding: 3px 0px 3px 3px;
   }
 
-  input, checkbox {
+  input, checkbox: {
     background-color: #efe1a7;
     color: #00AADD;
     border-radius: 5px;
@@ -164,7 +119,7 @@
 
 .tao {
   margin-left: 3%;
-} */
+}
 
 ul {
   display:flex;
@@ -173,36 +128,4 @@ ul {
   font-size: 11px;
   color: #bbccff
 }
-
 li {margin-right: 10px}
-
- </style> 
-  <!--<style>
-    /* .container {margin-right: 10px} */
-    :global(ul) {
-      display:flex;
-      list-style: none;
-      margin: 0;
-      font-size: 11px;
-      color: #bbccff
-    }
-    :global(li) {margin-right: 10px}
-  
-    :global(body) {
-      margin-right: 12%;
-      margin-left:12%;
-      padding-right:3%;
-      padding-left: 3%;
-      color: ivory;
-      background-color: #361B01; ;
-    }
-    :global(p) {text-indent: 3%;}
-    :global(html) {background-color: rgb(0,0,0);}
-    :global(body) {background-color: #361B01;}
-    :global(p) {font-size: 20px;}
-    :global(a) {font-size: 20px;}
-    :global(pre) {font-size: 16px;}
-  </style> -->
-  <div> </div>
-  <slot />
-  

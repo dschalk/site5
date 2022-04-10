@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-7249bad0.js",
+    "file": "start-06c331bf.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,6 +13,7 @@
       "src/routes/Functions/__layout.svelte",
       "src/routes/Functions/index.svelte",
       "src/routes/Functions/monads2.svelte",
+      "src/routes/Functions/monads3.svelte",
       "src/routes/Functions/monads.svelte"
     ]
   },
@@ -38,7 +39,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-e8436b3e.js",
+    "file": "pages/index.svelte-b9c07914.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -68,8 +69,17 @@
     ]
   },
   "src/routes/Functions/monads2.svelte": {
-    "file": "pages/Functions/monads2.svelte-d2c77014.js",
+    "file": "pages/Functions/monads2.svelte-979318ca.js",
     "src": "src/routes/Functions/monads2.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-4e552e70.js"
+    ]
+  },
+  "src/routes/Functions/monads3.svelte": {
+    "file": "pages/Functions/monads3.svelte-de7e4912.js",
+    "src": "src/routes/Functions/monads3.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
