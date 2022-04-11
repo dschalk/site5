@@ -7,11 +7,11 @@ const css = {
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `<div><br><br>
-  <nav><ul class="${"svelte-5x036g"}"><li class="${"svelte-5x036g"}"><a href="${"/Functions"}">Home</a></li>
+  <nav><ul class="${"svelte-5x036g"}"><li class="${"svelte-5x036g"}"><a href="${"/Functions/"}">Home</a></li>
   
+      <span>\xA0\xA0\xA0   </span>
+      
       <li class="${"svelte-5x036g"}"><a href="${"/Functions/monads"}">monads</a></li>
-
-      <li class="${"svelte-5x036g"}"><a href="${"/Functions/monads2"}">monads2</a></li>
 
   </ul></nav></div>
   

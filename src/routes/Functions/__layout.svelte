@@ -4,7 +4,7 @@
   <nav>
       <ul>
       <li>
-          <a href="/Functions">Home</a>
+          <a href="/Functions/">Home</a>
       </li>
   
       <span> &nbsp;&nbsp;&nbsp;   </span>
@@ -13,13 +13,13 @@
           <a href="/Functions/monads">monads</a>
       </li>
 
+  <!--
       <span> &nbsp;&nbsp;&nbsp;   </span>
 
       <li>
           <a href="/Functions/monads2">monads2</a>
       </li>
 
-  <!--
       <li>
           <a href="/Functions/monads4">monads4</a>
       </li>

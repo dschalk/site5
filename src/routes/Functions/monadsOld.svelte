@@ -1,25 +1,23 @@
 
-
-
 <script>
 
 import { merge_ssr_styles } from "svelte/internal";
 // import { onMount } from "svelte";
 import {fade} from "svelte/transition";
-// import Index from "./index.svelte";
 
 var A,B,C,D,AA,BB,CC,DD,EE,FF,GG,HH = "wait";
 var N = 0;
-var l = console.log;
+
 var b0 = "none";
 var b1 = "none";
 var b2 = "none";
 var b3 = "none";
-var index;
+
 var b4 = "none";
 var b5 = "none";
 var b6 = "none";
 var b7 = "none";
+var XO = [ [0,0,0,0], [], [], [], [0] ]
 var s = 'stop';
 var AA;
 var BB;
@@ -31,43 +29,34 @@ var WW;
 var XX;
 var YY;
 var ZZ;
-var SCORE;
-$: SCORE = [0];
+var SCORE = [0];
 var ZYXW;
 var WXYZ;
-
 var m2;
-
-var runRoll;
-runRoll = b => {
-    var arr = [ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], ["+"], [], [b], [], [0], [] ];
-    m2 = M(arr);
-    // m2 = m2(fuu);
-    
-    //[5].push(clone([ a[0], a[1], a[2], a[3], a[4], [], a[6] ]));  
-    EEE = "yet to be selected";
-    m2 = M(m2(s));
-    updateRoll(m2);
-    m2(fu);
-    return m2;
-}
 var Z = "";
 $: Z;
-var x;
-function updateRoll (m) {
-  console.log("In updateRoll. m(s) is", m(s));
-  AA = m(s)[0][0];
-  BB = m(s)[0][1];
-  CC = m(s)[0][2];
-  DD = m(s)[0][3];
+var fu;
+var x = [ [0,0,0,0], [], [], [], [0] ]
+var runRoll;
+runRoll = x => {
+    m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [], [x] ]);
+    updateRoll();
+    EEE = "yet to be selected";
+    XO = m2('stop');
+}
+const updateRoll = () => {
+  AA = m2(s)[0][0];
+  BB = m2(s)[0][1];
+  CC = m2(s)[0][2];
+  DD = m2(s)[0][3];
   
-  WW = m(s)[1][0];
-  XX = m(s)[1][1];
-  YY = m(s)[1][2];
-  ZZ = m(s)[1][3];
-  EE = m(s)[2];
-  FF = m(s)[3];
-  SCORE = m(s)[4]; 
+  WW = m2(s)[1][0];
+  XX = m2(s)[1][1];
+  YY = m2(s)[1][2];
+  ZZ = m2(s)[1][3];
+  EE = m2(s)[2];
+  FF = m2(s)[3];
+  SCORE = m2(s)[4];
   b0 = b1 = b2 = b3 = "inline";
   b4 = b5 = b6 = b7 = 'none';
 }
@@ -82,10 +71,7 @@ function sfunc () {
     if (YY != (undefined && 0)) b6 = "inline";
     if (ZZ != (undefined && 0)) b7 = "inline";
 }
-
-m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], ["+"], [], [0], [], [0], [] ]);
-
-var update = function update () {
+var update = () => {
   AA = m2(s)[0][0];
   BB = m2(s)[0][1];
   CC = m2(s)[0][2];
@@ -99,19 +85,6 @@ var update = function update () {
   ZZ = m2(s)[1][3];
 }
 
- $: AA = m2(s)[0][0];
- $: BB = m2(s)[0][1];
- $: CC = m2(s)[0][2];
- $: DD = m2(s)[0][3];
- $: EE = m2(s)[2];
- $: FF = m2(s)[3];
- $: SCORE = m2(s)[4];
- $: WW = m2(s)[1][0];
- $: XX = m2(s)[1][1];
- $: YY = m2(s)[1][2];
- $: ZZ = m2(s)[1][3];
-
-var ZWIN = "";
 var mon3 = M([1,2,3,4]);
 
 function calc(aa,bb,c) {
@@ -121,7 +94,7 @@ if (c === "+") return (a + b);
 else if (c === "*") return (a * b);
 else if (c === "-") return (a - b);
 else if (c === "/") return (a / b);
-else if (c === "@") return (" " + a + b);
+else if (c === "concat") return parseInt("" + a + b, 10);
 else return "fubar";
 }
 
@@ -141,168 +114,120 @@ var clean = a => a.map( ar => ar.filter(x => (x != (undefined && 0))));
 var cleanB = a => a.filter(x => x != (undefined && 0));
 
 function M (x) {
-    return function (func) {
-        if (typeof func === "function") {
-            return M(func(x));
-        }
-        else if (func === "stop") return x;
-    }
+  return function go (func) {
+      if (typeof func === "function") {
+          x = func(x);
+          return go;
+      }
+      else if (func === "stop") return x;
+  }
 };
 
-var back;
-$: back = a => {
-    if (a[5].length > 0) {
-        var b = a[5][a[5].length - 1];
-        b[7] = a[7];
-        m2 = M(b);
-        update();
-        sfunc();
-    }
-    else console.log("In back. Can't compute")
-};
-var forward;
-$: forward = a => {
-    var index = a[6][0];
-    if (index < a[7].length - 1) {
-        var b = a[7][index + 1];
-        b[7] = a[7];
-        m2 = M(b);
-        update();
-        sfunc();
-    }
-    else console.log("Going out of bounds. The end of b[7] has been reached");
-};
 
-function test () {
-    var xx = m2(s);
-    console.log('<><><><><><><><> xx is', xx);
-    console.log(xx[0]);
-    console.log("xx[5].length is ", xx[5].length);
-    console.log("index is", xx[6]);
-    m2 = M(xx); 
-    return m2;
-}
-
-
-function fuu (a) {                                    
-  a[5].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7] ]));  
-  l("In fu. a is", a);
-  return a;
-}
-
-function fu (a) {                                    // fu
-  a[5].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7] ]));  
-  a[7].push(clone([ a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7] ]));  
-  a[6][0] += 1;
-    // a[1].push(a[0].pop());
+fu = a => {  
+  XO = a;
   var result;
-  SCORE = a[4];
+  var SCORE = a[4][0];
   var a1;
   if (a[1].length === 2 && a[2].length === 1)   {
     a1 = a[1];
     result = calc(a[1][0], a[1][1],a[2][0]);
+
     a[0].push(result);
     a[3].push(result);  
     a[1] = [];
-    m2 = M(a);
   }
 
   if (a[1].length === 3) {
     a[0].push(a[1].pop());
   }
- 
   if (result == 20 && intersection(a1, a[3]).length > 0) {
       if (a[4][0] === 4) {
-          ZWIN = "You win! "
-          a[4][0] = 0;
-          runRoll(0);
+          a[4] = 0;
+          Z = "You win! "
+          SCORE = 0;
       }
       else {
-          var aint = parseInt(a[4][0], 10);
-          aint += 1;
-          Z = "           Your score increased to " + aint;
-          runRoll(aint); 
+          SCORE = SCORE*1;
+          SCORE += 1;
+          Z = "           Your score increased to " + SCORE; // a[4][0] ;
       }
-      setTimeout(() => Z = ZWIN = "", 3000);
+      runRoll(SCORE);
+      setTimeout(() => Z = "", 3000);
   }
-  AA = m2(s)[0][0];
-  BB = m2(s)[0][1];
-  CC = m2(s)[0][2];
-  DD = m2(s)[0][3];
-  EE = m2(s)[2];
-  FF = m2(s)[3];
-  SCORE = m2(s)[4];
-  WW = m2(s)[1][0];
-  XX = m2(s)[1][1];
-  YY = m2(s)[1][2];
-  ZZ = m2(s)[1][3];
+  update();
   sfunc();
-  return m2(s);
+  return a;
 };
+
+m2 = M(x);
+
+var roll = x => {
+  m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [], [x] ]);
+  b4 = b5 = b6 = b7 = 'none';
+};
+// function fmon3 (f) {mon3 = mon3(f)};
+// function fmon3Reset () {mon3 = M([1,2,3,4])}
 
 var fmon = f => x => x(f);
 var reset = x => [1,2,3,4]
 
-var click0 = a => {
-    a[1].push(a[0][0])
-    a[0].shift();
-    m2 = M(a);
-    m2(fu);
-    // sfunc();
+var click0 = m => ar => {
+    ar[1].push(ar[0].splice(0,1)[0]);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-/* var click0 = a => {
-    a[1].push(a[0].splice(0,1)[0]);
-    m2 = M(a);
-
-}; */
-
-var click1 = a => {
-    a[1].push(a[0].splice(1,1)[0]);
-    m2 = M(a);
-    m2 = m2(fu);
+var click1 = m => ar => {
+    ar[1].push(ar[0].splice(1,1)[0]);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-var click2 = a => {
-    a[1].push(a[0].splice(2,1)[0]);
-    m2 = M(a);
-    m2 = m2(fu);
+var click2 = m => ar => {
+    ar[1].push(ar[0].splice(2,1)[0]);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-var click3 = a => {
-    a[1].push(a[0].splice(3,1)[0]);
-    m2 = M(a);
-    m2 = m2(fu);
+var click3 = m => ar => {
+    ar[1].push(ar[0].splice(3,1)[0]);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-function clic0 (m) {
+function clic0 () {
   EEE = "add";
-  m[2] = "+";
-  m2 = M(m) ;
+  m2(ar => ar = [ m2(s)[0], m2(s)[1], ['+'], m2(s)[3], m2(s)[4] ].map(v => v.flat()));
+  m2(fu);
 } 
 
-$: clic1 = m => {
+function clic1 () {
   EEE = "subtract";
-  m[2] = "-";
-  m2 = M(m) ;
+  m2(ar => ar = [ m2(s)[0], m2(s)[1], ['-'], m2(s)[3], m2(s)[4]    ].map(v => v.flat()));
+  m2(fu);
 } 
 
-function clic2 (m) {
+function clic2 () {
   EEE = "multiply";
-  m[2] = "*";
-  m2 = M(m) ;
+  m2(ar => ar = [ m2(s)[0], m2(s)[1], ['*'], m2(s)[3], m2(s)[4] ].map(v => v.flat()));
+  m2(fu);
 } 
 
-function clic3 (m) {
+function clic3 () {
   EEE = "divide";
-  m[2] = "/";
-  m2 = M(m) ;
+  m2(ar => ar = [ m2(s)[0], m2(s)[1], ['/'], m2(s)[3], m2(s)[4]  ].map(v => v.flat()));
+  m2(fu);
 } 
 
-function clic4 (m) {
+function clic4 () {
   EEE = "concat";
-  m[2] = "@"
-  m2 = M(m) ;
+  m2(ar => ar = [ m2(s)[0], m2(s)[1], ['concat'], m2(s)[3], m2(s)[4]  ].map(v => v.flat()));
+  m2(fu);
 } 
 
 $: Z = Z;
@@ -352,8 +277,6 @@ var resetFu = function resetFu (e) {
         m4 = m4(reset2(divFraction(e.target.value)))
     };
 };
-
-function intersection (a,b) {return (a.filter(x => b.includes(x)))};
 
 var fuDem = `fu = a => {  m2(fu) caused fu to operate on the closure's current value, a.
   var result;
@@ -420,25 +343,17 @@ var update = () => { // Now the values of DOM variables are updated.
 }`;
 
 var monad = `function M (x) {
-    return function (func) {
+    return function go (func) {
         if (typeof func === "function") {
-            return M(func(x));
+            x = func(x);
+            return go;
         }
         else if (func === "stop") return x;
     }
-};`
+};
 
-var monad2 = `
-function M (x) {
-    return function (func) {
-        if (typeof func === "function") {
-            AR.push(clone(x))
-            return M(func(x));
-        }
-        else if (func === "stop") return x;
-    }
-};`
-
+m2 = M(any value); // The argument can be any JavaScript value
+// For the game, the starting value is [ [0,0,0,0], [], [], [] ].`   
 
 var monad3 = `var mon3 = M([1,2,3,4]);
 function g(ar) {
@@ -459,30 +374,27 @@ var add = n => x => 1*x + 1*n;
 var mult = n => x => x * n;
 var reset2 = n => x => x = n;`;
 
-var runR = `runRoll = x => {
-    m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [], [x] ]);
+var runR = `function runRoll () {
+    m2 = M([ [Math.floor(Math.random()*6) + 1, Math.floor(Math.random()*6) + 1, // Actually one line
+    Math.floor(Math.random()*12) + 1, Math.floor(Math.random()*20) + 1], [], [], [] ]);
     updateRoll();
     EEE = "yet to be selected";
-    XO = m2('stop');
-    AR = [];
-    index = 0;
-}
+}  
 const updateRoll = () => {
-  AA = m2(s)[0][0];
-  BB = m2(s)[0][1];
-  CC = m2(s)[0][2];
-  DD = m2(s)[0][3];
+    AA = m2(s)[0][0];
+    BB = m2(s)[0][1];
+    CC = m2(s)[0][2];
+    DD = m2(s)[0][3];
   
-  WW = m2(s)[1][0];
-  XX = m2(s)[1][1];
-  YY = m2(s)[1][2];
-  ZZ = m2(s)[1][3];
-  EE = m2(s)[2];
-  FF = m2(s)[3];
-  SCORE = m2(s)[4];
-  b0 = b1 = b2 = b3 = "inline";
-  b4 = b5 = b6 = b7 = 'none';
-};`
+    WW = m2(s)[1][0];
+    XX = m2(s)[1][1];
+    YY = m2(s)[1][2];
+    ZZ = m2(s)[1][3];
+    EE = m2(s)[2];
+    FF = m2(s)[3];
+    b0 = b1 = b2 = b3 = "inline";
+    b4 = b5 = b6 = b7 = 'none';
+};`;
 
 var clickFuncs = `function clic0 () {
   EEE = "add";
@@ -514,56 +426,52 @@ function clic4 () {
   m2(fu);
 } 
 
-var click0 = ar => {
+var click0 = m => ar => {
     ar[1].push(ar[0].splice(0,1)[0]);
-    m2(fu);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-var click1 = ar => {
+var click1 = m => ar => {
     ar[1].push(ar[0].splice(1,1)[0]);
-    m2(fu);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-var click2 = ar => {
+var click2 = m => ar => {
     ar[1].push(ar[0].splice(2,1)[0]);
-    m2(fu);
+    ar = ar;
+    m(fu);
+    return ar;
 };
 
-var click3 = ar => {
+var click3 = m => ar => {
     ar[1].push(ar[0].splice(3,1)[0]);
-    m2(fu);
-};`
+    ar = ar;
+    m(fu);
+    return ar;
+};
 
-var fuComment = `fu = a => {  
-  XO = a;
+fu = a => {
   var result;
-  var SCORE = a[4][0];
-  var a1;
+  var interSec = intersection(a[1],a[3]);
   if (a[1].length === 2 && a[2].length === 1)   {
-    a1 = a[1];
     result = calc(a[1][0], a[1][1],a[2][0]);
-
     a[0].push(result);
     a[3].push(result);  
     a[1] = [];
   }
 
-  if (a[1].length === 3) {
-    a[0].push(a[1].pop());
+  if (a[1].length === 3) {   
+    a[0].push(a[1].pop());  // Returns a clicked third number.
   }
-  if (result == 20 && intersection(a1, a[3]).length > 0) {
-      if (a[4][0] === 4) {
-          a[4] = 0;
-          Z = "You win! "
-          SCORE = 0;
-      }
-      else {
-          SCORE = SCORE*1;
-          SCORE += 1;
-          Z = "           Your score increased to " + SCORE; // a[4][0] ;
-      }
-      runRoll(SCORE);
+
+  if (result == 20 && interSec[0]) {
+      Z = "Congratulations! You made it.";
       setTimeout(() => Z = "", 3000);
+      runRoll();
   }
   update();
   sfunc();
@@ -599,7 +507,6 @@ var upD = `var update = () => {
   YY = m2(s)[1][2];
   ZZ = m2(s)[1][3];
 };`;
-
 var fuFuncs = `function squareFu () {m4 = m4(square)};
 function cubeFu () {m4 = m4(cube)};
 
@@ -637,32 +544,31 @@ var resetFu = function resetFu (e) {
     };
 };`;
 
+function intersection (a,b) {return (a.filter(x => b.includes(x)))};
+
 var example = `var mon = M(2);
 mon(v=>v**4)(v=>v+5)(v=>v*2);
 // The value of x can be obtained later
 mon('stop');  // 42`
 
-$: XO = m2(s);
+m2 = M([[0,0,0,0], [], [], [],  [0]   ]);
 
 </script>
 
 <svelte:head>
-	<title>Recursive Closures Without Mutating State </title>
+	<title>Recursive Closures </title>
   <link rel="stylesheet" href="../Functions/style.css">
 </svelte:head>
 <br>
 <div>**************************************************************************</div>
 <div style = "font-family: Times New Roman; text-align:center; font-size: 32px;" transition:fade>
 <br>
-The Recursive Closure "m2 = M(x)" Controls the Action Without Mutating "x"
+The Recursive Closure "m2" Controls the Action
 </div>
 <br>
-<h2>Work In Progress</h2>
 <p>m2 is a recursive function spawned by the function M. Together,they form a closure as follows:
 <pre>{monad}</pre>
-<p>This differs from the version in <a href = "./monads">monads</a>. There, "x = func(x)" mutated x each time go(func) executed on a function "func". I see no harm in doing it that way, but I thought it would be interesting to work a version that returns M(func(x)) and thereby avoids assigning a new value to x. </p>
-<p>The game of Score in this section provides a way for players to take back actions. This depends on an array of cloned values of x, so it doesn't rely on x not being subject to mutation. I would like to preserve past states without cloning, so someday I will be back at the drawing board. </p>
-<p>I call functions returned by M "monads", much to the consternation of some "functional programmers" who scoff at the idea that JavaScript could possibly have monads such as those defined in the Haskell programming language. Neither my monads nor the Haskell monads are Category Theory monads. The Haskell part actually surprises some programmers. Google "hask is a category" if you don't believe me.</p>
+<p>I call functions returned by M "monads", much to the consternation of self-styled "functional programmers" who scoff at the idea that JavaScript could possibly have monads such as those defined in the Haskell programming language. Neither my monads nor the Haskell monads are Category Theory monads. The Haskell part actually surprises some programmers. Google "hask is a category" if you don't believe me.</p>
 <p>A monads created by, say, "monad = M(x)" creates an isolated pipeline allowing nested functions to operate on "x" insulated from any outer scope. For example, you could run:  </p>
 <pre>{example}</pre>
 <p>In the solitaire version of the game of score below, x will be an array of arrays in the form x =  [ [], [], [], [], [n] ] where x[0] contains four integers simulating a throw of two six-sided, one twelve-sided, and one twenty-sided dice. x[1] and x[3] contain the number selected by the player, x[2] is the selected operator, and x[4] keeps track of the number of successes until the player wins by reaching x[4] = 5. But first, let's consider some simpler examples. </p> 
@@ -702,44 +608,46 @@ The Recursive Closure "m2 = M(x)" Controls the Action Without Mutating "x"
 <p>Now for the game of score, a game involving four dice and two or three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught it to me a decade ago, when he was in middle school. I was also learning the Haskell programming language, so I developed a multiplayer online version with groups of interacting player, a chat box, and a shared-by-the-group todo list controlled by a Haskell WebSockets server backend. The backend could compute all possible solutions, if any existed, to any throw of the dice. It also identified all of the impossible-to-solve rolls. Users could change the default number of dice sides from 6,6,12,and 20 and the goal from the default value of 20. A version of it is online at <a href = "https://score.schalk.net">https://score.schalk.net</a>.</p>
 
 <p>This demonstration doesn't work in conjunction with a remote server, nor does it feature any Haskell code. It's just a little solitaire game providing an opportunity to consider the interesting possibilities of recursive closures. Instead of being argunents of function or global object methods, these monads are functions that consume functions. When the functions consumed by monads have no side effects outside of the monad's closure -- which should always be the case -- maintenance and bug tracking become more manageable. Minimizing side effects inside of monadic closure can help even more. </p>
-<h3>Score: {m2(s)[4]}</h3>
+<h3>Score: {SCORE}</h3>
 
-<button style = "display: {b0}" on:click = {() => m2(click0)}>{AA}</button> 
-<button style = "display: {b1}" on:click = {() => m2(click1)}>{BB}</button> 
-<button style = "display: {b2}" on:click = {() => m2(click2)}>{CC}</button> 
-<button style = "display: {b3}" on:click = {() => m2(click3)}>{DD}</button>
-<span style = "margin-left: 8%; font-size: 22px">The operator is {m2(s)[2]}</span>
+<button style = "display: {b0}" on:click = {() => m2(click0(m2))}>{AA}</button> 
+<button style = "display: {b1}" on:click = {() => m2(click1(m2))}>{BB}</button> 
+<button style = "display: {b2}" on:click = {() => m2(click2(m2))}>{CC}</button> 
+<button style = "display: {b3}" on:click = {() => m2(click3(m2))}>{DD}</button>
+<span style = "margin-left: 8%; font-size: 22px">The operator is {EE}</span>
 
 <br><br>
-<button on:click = {() => m2(clic0)}>add</button>
-<button on:click = {() => m2(clic1)}>subtract</button>
-<button on:click = {() => m2(clic2)}>multiply</button>
-<button on:click = {() => m2(clic3)}>divide</button>
-<button on:click = {() => m2(clic4)}>concat</button>
+<button on:click = {clic0}>add</button>
+<button on:click = {clic1}>subtract</button>
+<button on:click = {clic2}>multiply</button>
+<button on:click = {clic3}>divide</button>
+<button on:click = {clic4}>concat</button>
 
 
 <span style = "margin-left: 20px; color:#bbbbff; font-size:28px">{Z}</span>
-<span style = "margin-left: 20px; color:#bbbbff; font-size:38px">{ZWIN}</span>
 <br><br>
-<button on:click = {() => m2(runRoll(m2(s)[4]))}>ROLL</button>
+<button on:click = {() => runRoll(SCORE)}>ROLL</button>
 <br><br>
+<div>roll: {XO[0]}</div>
+<div>selected: {XO[1]}</div>
+<div>operator: {XO[2]}</div>
+<div>computed: {XO[3]}</div>
+<div>score: {XO[4]}</div>
+<br>
 
-<button on:click = {() => test()}>test</button>
 <button style = "display: {b4}">{WW}</button> 
 <button style = "display: {b5}">{XX}</button> 
 <button style = "display: {b6}">{YY}</button> 
 <button style = "display: {b7}">{ZZ}</button>
+<button style = "display: {b7}">{EE}</button>
 <br><br>
-<button on:click = {() => m2(back)}>Back</button>
-<button on:click = {() => m2(forward)}>Forward</button>
-
 <p>The function fu() is the brains behing the game of Score. Each time a number is clicked, m2(fu) is called and fu does various things depending on the state of the closures value, x. </p> 
 <p>At the end of fu(), two formatting functions are Called. The first displays or hides variables in the DOM and the second updates their values. Here they are:</p>
 <pre>{fuDem}</pre>  
 
 <p>Clicking "ROLL" calls runRoll() which, in turn, calls updateRoll() to re-set HTML variables.</p>
 <pre>{runR}</pre>
-<p>The "x = [ [], [], [], [], [0], [], [0] ]" format will be maintained throught game play. x[0] simulates the dice roll; x[1] recieves integers that are clicked; x[2] holds the operator; and x[4] contains numbers that are computed. x[4] makes sure at least one computed number is involved in arriving at 20. Here are the first few functions called when a number is clicked:</p>
+<p>The "x = [ [], [], [], [], [0] ]" format will be maintained throught game play. x[0] simulates the dice roll; x[1] recieves integers that are clicked; x[2] holds the operator; and x[4] contains numbers that are computed. x[4] makes sure at least one computed number is involved in arriving at 20. Here are the first few functions called when a number is clicked:</p>
 <pre>{clickFuncs}</pre>
 <p>The first line of fu() is the calculation result that is generated whenever there are two items in (s)[1] and an operator in m2(s)[3]. The intersection is important in fu()'s bottom test. If "intersect", the intersection of m2(s)[1] and m2(s)[3], is empty intersect[0] returns false and the last test in fu fails, even though 20 was produced on the second computation.</p> 
 <p>If no operator has been selected, it's possible to click a third number. The program doesn't complain, it just puts the number back for you with:</p>
