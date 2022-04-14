@@ -1,6 +1,6 @@
-import * as module from '../entries/pages/Functions/monadsOld.svelte.js';
+import * as module from '../entries/pages/Functions/bitmask_prime_generator.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/monadsOld.svelte-f8946fb5.js';
-export const js = ["pages/Functions/monadsOld.svelte-f8946fb5.js","chunks/vendor-4e552e70.js"];
+export const entry = 'pages/Functions/bitmask_prime_generator.svelte-c2b3d89f.js';
+export const js = ["pages/Functions/bitmask_prime_generator.svelte-c2b3d89f.js","chunks/vendor-bc30573c.js"];
 export const css = [];

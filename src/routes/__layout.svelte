@@ -64,7 +64,7 @@
     background-color: #2e2115;
     color: #d3ead5;
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 22px;
     font-family: "Proxima Nova Regular,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Arial,sans-serif;";
     -webkit-box-shadow: inset 0px 0px 20px 0px rgb(0,0,0);
     -moz-box-shadow:    inset 0px 0px 20px 0px rgb(0,0,0);
@@ -108,11 +108,12 @@
 
   :global(pre) {
     font-size:20px;
-    color: #e5affa;
+    color: #55ffff;
     margin-left: 4%;
   }
 
   :global(p) {
+    font-size: 25px;
     text-indent: 3%;
   }
 

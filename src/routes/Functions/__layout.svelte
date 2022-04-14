@@ -10,10 +10,17 @@
       <span> &nbsp;&nbsp;&nbsp;   </span>
       
       <li>
-          <a href="/Functions/monads">monads</a>
+          <a href="/Functions/monads">Monads</a>
+      </li>
+  
+  <!--
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+      
+      <li>
+          <a href="/Functions/experiment">experiment</a>
       </li>
 
-  <!--
+
       <span> &nbsp;&nbsp;&nbsp;   </span>
 
       <li>

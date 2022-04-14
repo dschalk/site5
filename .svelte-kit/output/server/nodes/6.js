@@ -1,6 +1,6 @@
-import * as module from '../entries/pages/Functions/monads5.svelte.js';
+import * as module from '../entries/pages/Functions/binary_arithmetic.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/monads5.svelte-f0853257.js';
-export const js = ["pages/Functions/monads5.svelte-f0853257.js","chunks/vendor-4e552e70.js"];
+export const entry = 'pages/Functions/binary_arithmetic.svelte-7d3c9234.js';
+export const js = ["pages/Functions/binary_arithmetic.svelte-7d3c9234.js","chunks/vendor-bc30573c.js"];
 export const css = [];

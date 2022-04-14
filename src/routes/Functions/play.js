@@ -351,3 +351,4 @@ function intersection (a,b) {return (a.filter(x => b.includes(x)))};
 console.log("***********************************************************************")
 console.log("<><><><><>typeof update", typeof update);
 console.log("***********************************************************************")
+// 42
