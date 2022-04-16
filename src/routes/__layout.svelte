@@ -109,12 +109,16 @@
   :global(pre) {
     font-size:20px;
     color: #55ffff;
-    margin-left: 4%;
+    margin-left: 2%;
   }
 
   :global(p) {
     font-size: 25px;
     text-indent: 3%;
+  }
+  
+  :global(span) {
+    font-size: 25px;
   }
 
   :global(button) {

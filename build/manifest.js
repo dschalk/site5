@@ -1,0 +1,315 @@
+export const manifest = {
+	appDir: "_app",
+	assets: new Set(["favicon.png"]),
+	mimeTypes: {".png":"image/png"},
+	_: {
+		entry: {"file":"start-b11b996e.js","js":["start-b11b996e.js","chunks/vendor-a263fa63.js"],"css":[]},
+		nodes: [
+			() => import('./server/nodes/0.js'),
+			() => import('./server/nodes/1.js'),
+			() => import('./server/nodes/2.js'),
+			() => import('./server/nodes/3.js'),
+			() => import('./server/nodes/4.js'),
+			() => import('./server/nodes/5.js'),
+			() => import('./server/nodes/6.js'),
+			() => import('./server/nodes/7.js'),
+			() => import('./server/nodes/8.js'),
+			() => import('./server/nodes/9.js'),
+			() => import('./server/nodes/10.js'),
+			() => import('./server/nodes/11.js'),
+			() => import('./server/nodes/12.js'),
+			() => import('./server/nodes/13.js'),
+			() => import('./server/nodes/14.js'),
+			() => import('./server/nodes/15.js'),
+			() => import('./server/nodes/16.js'),
+			() => import('./server/nodes/17.js'),
+			() => import('./server/nodes/18.js'),
+			() => import('./server/nodes/19.js'),
+			() => import('./server/nodes/20.js'),
+			() => import('./server/nodes/21.js'),
+			() => import('./server/nodes/22.js'),
+			() => import('./server/nodes/23.js'),
+			() => import('./server/nodes/24.js'),
+			() => import('./server/nodes/25.js'),
+			() => import('./server/nodes/26.js')
+		],
+		routes: [
+			{
+				type: 'page',
+				id: "",
+				pattern: /^\/$/,
+				names: [],
+				types: [],
+				path: "/",
+				shadow: null,
+				a: [0,2],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions",
+				pattern: /^\/Functions\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions",
+				shadow: null,
+				a: [0,3,4],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/bitmask_prime_generator",
+				pattern: /^\/Functions\/bitmask_prime_generator\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/bitmask_prime_generator",
+				shadow: null,
+				a: [0,3,5],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/binary_arithmetic",
+				pattern: /^\/Functions\/binary_arithmetic\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/binary_arithmetic",
+				shadow: null,
+				a: [0,3,6],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/Promises_Monad",
+				pattern: /^\/Functions\/Promises_Monad\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/Promises_Monad",
+				shadow: null,
+				a: [0,3,7],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/bitwise_primes",
+				pattern: /^\/Functions\/bitwise_primes\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/bitwise_primes",
+				shadow: null,
+				a: [0,3,8],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/Async_monad",
+				pattern: /^\/Functions\/Async_monad\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/Async_monad",
+				shadow: null,
+				a: [0,3,9],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/ObjectMonad",
+				pattern: /^\/Functions\/ObjectMonad\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/ObjectMonad",
+				shadow: null,
+				a: [0,3,10],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/experiment",
+				pattern: /^\/Functions\/experiment\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/experiment",
+				shadow: null,
+				a: [0,3,11],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/Quadratic",
+				pattern: /^\/Functions\/Quadratic\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/Quadratic",
+				shadow: null,
+				a: [0,3,12],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/monadsOld",
+				pattern: /^\/Functions\/monadsOld\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/monadsOld",
+				shadow: null,
+				a: [0,3,13],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/factors",
+				pattern: /^\/Functions\/factors\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/factors",
+				shadow: null,
+				a: [0,3,14],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/haskell",
+				pattern: /^\/Functions\/haskell\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/haskell",
+				shadow: null,
+				a: [0,3,15],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/monads5",
+				pattern: /^\/Functions\/monads5\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/monads5",
+				shadow: null,
+				a: [0,3,16],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/Monad0",
+				pattern: /^\/Functions\/Monad0\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/Monad0",
+				shadow: null,
+				a: [0,3,17],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/Monad3",
+				pattern: /^\/Functions\/Monad3\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/Monad3",
+				shadow: null,
+				a: [0,3,18],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/monads",
+				pattern: /^\/Functions\/monads\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/monads",
+				shadow: null,
+				a: [0,3,19],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/Monad",
+				pattern: /^\/Functions\/Monad\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/Monad",
+				shadow: null,
+				a: [0,3,20],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/proxy",
+				pattern: /^\/Functions\/proxy\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/proxy",
+				shadow: null,
+				a: [0,3,21],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/score",
+				pattern: /^\/Functions\/score\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/score",
+				shadow: null,
+				a: [0,3,22],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Functions/code",
+				pattern: /^\/Functions\/code\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/code",
+				shadow: null,
+				a: [0,3,23],
+				b: [1]
+			},
+			{
+				type: 'endpoint',
+				id: "Functions/play",
+				pattern: /^\/Functions\/play\/?$/,
+				names: [],
+				types: [],
+				load: () => import('./server/entries/endpoints/Functions/play.js')
+			},
+			{
+				type: 'page',
+				id: "Functions/time",
+				pattern: /^\/Functions\/time\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/time",
+				shadow: null,
+				a: [0,3,24],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "Button",
+				pattern: /^\/Button\/?$/,
+				names: [],
+				types: [],
+				path: "/Button",
+				shadow: null,
+				a: [0,25],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "shared/Button",
+				pattern: /^\/shared\/Button\/?$/,
+				names: [],
+				types: [],
+				path: "/shared/Button",
+				shadow: null,
+				a: [0,26],
+				b: [1]
+			}
+		],
+		matchers: async () => {
+			
+			return {  };
+		}
+	}
+};

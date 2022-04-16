@@ -134,7 +134,8 @@ function g(ar) {
 function g2 (ar) {return (ar.flatMap(v => (v+1)**3))};
 function g3 (ar) {return (ar.flatMap(v => Math.round(v**(1/3))))};
 
-function clone (x) {return JSON.parse(JSON.stringify(x))};
+//function clone (x) {return JSON.parse(JSON.stringify(x))};
+var clone = structuredClone;
 
 var clean = a => a.map( ar => ar.filter(x => (x != (undefined && 0))));
 
@@ -357,6 +358,9 @@ var resetFu = function resetFu (e) {
 
 function intersection (a,b) {return (a.filter(x => b.includes(x)))};
 
+$: XO = m2(s);
+
+
 var fuDem = `function fu (a) {                                    // fu
   a[5].push(clone(a));
   a[7].push(clone(a)); // All game states for use in "Back" and "Forward."
@@ -575,15 +579,15 @@ var resetFu = function resetFu (e) {
     };
 };`;
 
-var example0 = `var mon = M(2); // mon = the anonymous function returned by M  `  
+var example0 = `var mon = M(2); // mon's value is the anonymous function returned by M.     `  
 
-var example = `var mon = M(2);  
-mon(v=>v**4)(v=>v+5)(v=>v*2);
+var example3 = `var mon = M(2);  
+mon(v=>v**4)(v=>v+5)(v=>v*2);`;
 // The value of x can be obtained later
-mon('stop');  // 42
-mon(v => v*v);
+var example4 = `mon('stop');  // 42
+mon(v => v*v);`;
 // And later:
-mon('stop');  // 1764`;
+var example5 = `mon('stop');  // 1764`;
 
 var oldMonad =`function M (x) {
     return function go (func) {
@@ -641,29 +645,33 @@ $: forward = a => {
     }
 };`
 
-var example2 = `var cube = x => x**3;
-var log = console.log;
-var s = "stop";
-
-mon(v => 4); // Set x in M(x) at 4. 
+var example2 = `mon(v => 4)(s); // 4.`; 
 // The result is the same as calling "mon = M(4)";
-log(mon(s));  // 4
-mon(cube);
-log(mon(s));  // 64
-// Now set x in M() to 5
-mon(v => 5); 
-log(mon("stop"));  // 5
-// We can operate on x without changing it. 
-log(cube(mon(s)))  // 125
-log(mon(s))        //  5  x is unchanged.
-// Of course, we can do the calculation inside of mon's scope and revert x back to 5.
-log(mon(cube)(s));  // 125
-log(mon(v => 5)(s));  // 5 `
+var clone2 = `mon = M([ 1,[2],[[3]],[[{a:1, b:{c:2}}]] ])
+var mon2 = M(mon(s));
+log(mon(s) === mon2(s)); // true
+mon(v => [ [], [] ]);
+log(mon(s) === mon2(s)); // false
 
-var example3 = `M(2)(v=>v+1)(v=>v*2)(v=>v*7)(s) // 42`
+log("mon(s) is", mon(s)); // mon(s) is [ [], [] ]
+log("mon2(s) is", mon2(s)); // mon2(s) is 
+[ 1, (1) […], (1) […], (1) […] ]
+0: 1
+1: Array [ 2 ]
+2: Array [ (1) […] ]
+0: Array [ 3 ]
+length: 1
+<prototype>: Array []
+3: Array [ (1) […] ]
+0: Array [ {…} ]
+0: Object { a: 1, b: {…} }
+a: 1
+b: Object { c: 2 }`
 
 
-$: XO = m2(s);
+var example6 = `M(2)(v=>v+1)(v=>v*2)(v=>v*7)(s) // 42`
+
+
 
 </script>
 
@@ -682,17 +690,32 @@ A Very Simple Recursive Closure Insulates and Controls State Transformations
 <p> JavaScript monads are defined in various ways online and in print. I wouldn't say any of these definitions are right or wrong. Everyone is entitled to an opinion. Some of my thoughts on the matter will be in <a href = "./">Home</a> and in an addendum. </p>
 <p>The function M() (below) returns the function go(), thereby forming a closure. The returned function is named to facilitate recursion. Here's the definition of M():</p>
 <pre>{monad}</pre>
-<p> M() is most useful when the closure is named or, more precisely, when the function returned by M() is named. When M(x) is asigned a variable name, the state of "x" in M(x) can be preserved, transformed, and later used when neede, as illustrated below:  </p>
+<p> M(x) is most useful when the closure is named or, more precisely, when the function returned by M(x) is named. When M(x) is asigned a variable name, the state of "x" in M(x) can be preserved, transformed, and later used when needed, as illustrated below:  </p>
 
-<pre>{example}</pre>
-<p>Here are a few more simple operations on the very simple monad "mon":</p>
-<pre>{example2}</pre>
-<p>If you want to be certain that a computation won't clash with anything, you can use M() to perform computations without using variables, as illustrated below:</p>
 <pre>{example3}</pre>
+<p>The value held in the closure can be obtained later</p>
+<pre>{example4}</pre>
+<p>And later</p>
+<pre>{example5}</pre>
+<p>Here are a few more simple operations on the very simple monad "mon":</p>
+<p>We can set the value of x to 4 with a fresh closure, mon = M(4), or we can modify the one we have: </p>
+<pre>{example2}</pre>
+<p>These abreviations will be used from now on:</p>
+<pre>var s = "stop";
+var log = console.log;
+</pre>
+<span style = "font-size:26px; color: gold; text-decoration: underline">Deep Clone:</span>
+<span>I ran the following code in firefox.aurora. The result verifies that mon2 defined by "var mon2 = M(mon(s))" is a deep clone of mon. The mon2 closure is out of reach by everything in its outer scope, and the mon closure is no exception.  </span>
+<pre>{clone2}</pre>
 
-<p>Recursive closures created by "M" will control a fairly complicated dice game called "Score" (<a href = "#score">Link To Score</a>). It's a solitaire version of a <a href = "https://score.schalk.net">multiplayer version of the game</a> I developed eight years ago based on a Haskell WebSockets server. For solitaire version presented here, a function named "m2" will will form a closure with M as follows: "m2 = M(x)" where x = [ [], [], [], [], [0], [], [0], [] ]. m2 will consume functions that, as the definition of M specifies, operate on x. x will correspond to the current state of game play as seen on a computer monitor and will keep a record of all prior states for each roll of the dice. The record of prior states allows players to traverse the history of their choices . Players can revert to prior states of game play and then move back to more recent states. Traversing states back and forth makes the browser sluggish . They can also traverse prior states of the game in the oposite direction.</p>
+<p>If you want to be certain that a computation won't clash with anything, you can use M() to perform computations without relying on variables.</p>
+<pre>{example6}</pre>
 
-<p>In the solitaire version of the game of score below, x will be an array of arrays in the form x =  [ [], [], [], [], [], [], [], [] ] where x[0] starts out as four integers simulating a throw of two six-sided, one twelve-sided, and one twenty-sided dice. x[1] and x[3] contain the number selected by the player, x[2] is the selected operator, and x[4] keeps track of the number of successes until the player wins by reaching x[4] = 5, x[5] contains all prior states as the player selects numbers and operators and is used for reversing state a little or all the way back to the original roll, x[6] is an index of where in x[5] play is taking place, and x[7] contains every state during a round and uses x[6] to travers the history of game play forward. Before getting to that, here come two more simple examples. The first example shows callback functions used by buttons and text boxes. The second one shows operations on an array. </p> 
+<p>Recursive closures created by "M" will control a fairly complicated dice game called "Score" (<a href = "#score">Link To Score</a>). It's a solitaire version of a <a href = "https://score.schalk.net">multiplayer version of the game</a> I developed eight years ago based on a Haskell WebSockets server.</p> 
+
+<p>For solitaire version presented here, a function named "m2" will will form a closure with M as follows: "m2 = M(x)" where x = [ [], [], [], [], [0], [], [0], [] ]. m2 will consume functions that, as the definition of M specifies, operate on x inside of M. x will correspond to the current state of game play. After each click on a number or operator buttom, m2(fu) is called.  as seen on a computer monitor and will keep a record of all prior states for each roll of the dice. The record of prior states allows players to traverse the history of their choices . Players can revert to prior states of game play and then move back to more recent states. Traversing states back and forth makes the browser sluggish . They can also traverse prior states of the game in the oposite direction.</p>
+
+<p>In the solitaire version of the game of score below, x will be an array of arrays in the form x =  [ [], [], [], [], [], [], [], [], [] ] where x[0] starts out as four integers simulating a throw of two six-sided, one twelve-sided, and one twenty-sided dice. x[1] and x[3] contain the number selected by the player, x[2] is the selected operator, and x[4] keeps track of the number of successes until the player wins by reaching x[4] = 5, x[5] contains all prior states as the player selects numbers and operators and is used for reversing state a little or all the way back to the original roll, x[6] is an index of where in x[5] play is taking place, and x[7] contains every state during a round and uses x[6] to travers the history of game play forward. Before getting to that, here come two more simple examples. The first example shows callback functions used by buttons and text boxes. The second one shows operations on an array. </p> 
 
 <p>These are the demonstration's event handlers: </p>
 <pre>{fuFuncs}</pre>
