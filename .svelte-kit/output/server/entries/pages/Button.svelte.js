@@ -1,5 +1,5 @@
-import { c as create_ssr_component } from "../../chunks/index-63796eb4.js";
-var Button_svelte_svelte_type_style_lang = "";
+import { c as create_ssr_component } from "../../chunks/index-96ec22a1.js";
+var Button_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => "button.svelte-48gc2l{border:0;border-radius:6px;cursor:pointer;padding:8px 12px;font-weight:bold;box-shadow:1px, 2px, 3px rgba (0,0,0,0.2)}")();
 const css = {
   code: "button.svelte-48gc2l{border:0;border-radius:6px;cursor:pointer;padding:8px 12px;font-weight:bold;box-shadow:1px, 2px, 3px rgba (0,0,0,0.2)}",
   map: null

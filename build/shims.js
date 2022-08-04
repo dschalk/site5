@@ -1,8 +1,12 @@
-import './shims-eb608bdd.js';
+import './shims-dda63f8c.js';
 import 'node:http';
 import 'node:https';
 import 'node:zlib';
 import 'node:stream';
+import 'node:buffer';
 import 'node:util';
 import 'node:url';
-import 'net';
+import 'node:net';
+import 'node:fs';
+import 'node:path';
+import 'crypto';

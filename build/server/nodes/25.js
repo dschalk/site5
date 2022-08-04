@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/Button.svelte.js';
+import * as module from '../entries/pages/Functions/Archive/bitwise_primes.svelte.js';
 
 export { module };
-export const entry = 'pages/Button.svelte-ecdbea4c.js';
-export const js = ["pages/Button.svelte-ecdbea4c.js","chunks/vendor-a263fa63.js"];
-export const css = ["assets/pages/Button.svelte-58f9ee28.css"];
+export const index = 25;
+export const entry = 'pages/Functions/Archive/bitwise_primes.svelte-bbe2fc78.js';
+export const js = ["pages/Functions/Archive/bitwise_primes.svelte-bbe2fc78.js","chunks/index-19becca9.js"];
+export const css = [];

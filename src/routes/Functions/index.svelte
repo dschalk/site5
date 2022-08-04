@@ -1,34 +1,96 @@
-
 <script>
-    import {fade} from "svelte/transition";
+	import { merge_ssr_styles } from 'svelte/internal';
+	//	import { onMount } from "svelte";
+	import { fade } from 'svelte/transition';
+
 </script>
-<h2>Introduction</h2>
 
-<p>This website is built on the SvelteKit framework. It's hosted on a Linode Debian 11 server. </p>
+<svelte:head>
+	<title>Functional Programming</title>
+</svelte:head>
+<br />
+<div>**************************************************************************</div>
+<div style="font-family: Times New Roman; text-align:center; font-size: 32px;" transition:fade>
+	<br />
 
-<p>Svelte modules look a lot like ordinary HTML pages, with JavaScript inside of script tags,  CSS in style tags, and, aside from just a few quirks, plain JavaScript. There's no virtual DOM. Svelte modules can be imported to facilitate reactivity and animation, among other things. Svelte is well documentat, with examples and interactive tutorials, so getting started and learning to use the modules effectively is not a daunting challenge. Power users will find many features useful for fine tuning special features. </p>
+	Some Thoughts About Functional Programming in JavaScript
+</div>
+<br />
 
-<p>The modules in this presentation are small and isolated from other modules, making them easy to understand and maintain. There are no compelling reasons to avoid mutations and side effects, or to impose explicit type constraints on functions. There's no danger of introducing bugs, as would be the case in larger modules with more than one function reading or modifying global variables. </p>
 
-<p>Functions that manipulate values other than those provided as arguments are dangerous where there are many lines of code. You might be scrupulously careful, but future maintainers might not understand your code as well as you do. If bugs appear, they might be difficult to trace.</p>
+<h3>Home sweet home</h3>
 
-<p>When the global space is just a small, isolated module, many established "best practices" can be safely ignored. Deviations from usually adhered-to best practices are tolerated inside of functions; why not in small, isolated modules?   </p>
+<p>
+	The following is copied from the "Functional Cargo Cult" section of <a
+		href="https://legacy-monads.schalk2.com/">Legacy-Monads</a
+	> These links are cited at the bottom:
+</p>
 
-<h3>Ersatz Monads</h3>
-<p>"Monad" is rigorously defined in Category Theory, but not in this presentation. Here, a monad is a recursive closure that returns a function that facilitates the composition of values (usualy functions) in ways that can be specified by the monad's definition. For example, the Promises Monad processes chains of values, mostly asynchronous functions, assigning results to various attributes of a global object that is synchronized with the DOM. The "monads" demonstration shows how a very simple monad can maintain and modify state isolated from the global space. The functions it consume power the solitaire version of the game of Score.</p>
+<a href="https://www.youtube.com/watch?v=nm22duia0jU">Cargo Cult Programming video presentation</a>
 
-<h3>Some Thoughts about Functional Programming</h3>
-<p>"Functional programming is an approach to programming based on function calls as the primary programming construct." - Greg Michaelson on Page 3 of An Introduction to Functional Programming Through Lambda Calculus.</p>
+<a href="https://www.youtube.com/watch?v=yvfAtIJbatg"
+	>Cargo Cult Science -- Richard Feynman's 1974 Caltech lecture</a
+>
 
-<p>I created this section of the schalk.net site to share my enthusiasm for JavaScript functions, and especially for the recursive closures I call "monads". This are what come to mind when I think of "functional programming." The prevalent concept of "functional programming" involves using only pure functions and immutable values. I enjoy coding in Haskell that way, but mindlessly wasting the power and flexibility of JavaScript in situations where nothing can be gained from it doesn't seem very bright. These situations include code affecting on the internal workings of functions, and small modules where clobbering values used by other functions is easily avoided and side effects have nowhere to hide when debugging and refactoring occur. When benchmarkers evaluate the efficiency of having lots of modules, they overlook this important factor. Years ago, I elaborated on some of this in </p>
+<h3>FUNCTIONAL PROGRAMMING</h3>
+<p>
+	"Functional programming" means different things to different people. Applied to JavaScript, I wish
+	it meant making good use JavaScript functions.
+</p>
 
-<p>I still have code for a fairly elaborate Haskell backend to an application I developed in 2013 and maintained for a while. It's a multi-player, multi-group simulated dice game based on a game my young son learned in school. It includes a shared group todo list and chat box. A version is online at <a href="score.schalk.net">https://score.schalk.net/</a> The drag & drop boxes are too big, the buttons could be better arranged, and the rules are missing. Maybe I'll spruce it up someday. 
-    <br>
-<p>The rules of the Game of Score are missing right now. They were there at one time but I haven't recovered those versions. If you want to check out the multi-player simulated dice game, click Group A or Group B or make up a group name. Click "refresh" whenever it is available, then click "Roll". You get a point for making the number 20 if you click "score" first and do it in at least two computations. If it is impossible to make 20 in two steps, you get a point for clicking "Impossible" but beware, not many rolls are impossible and you lose a point if there is a solution. If you are stymied, you can click "Solutions" and see what my Haskell algorithm, in which I have great confidence, reveals. </p> 
+<p>
+	Mimicking features of the Haskell programming language vaguely hoping Haskell's reliability, ease
+	of maintenance, and other conveniences will come your way reminds me of the cargo cults. "The name
+	derives from the belief which began among Melanesians in the late 19th and early 20th centuries
+	that various ritualistic acts such as the building of an airplane runway will result in the
+	appearance of material wealth, particularly highly desirable Western goods (i.e., "cargo"), via
+	Western airplanes."
+</p>
 
-<p> It's convenient sometimes, in the safety of small, isolated modules, to have functions rely on and mutate variables outside their scope. When your functions don't have to be pure; for example, when you are free to define functions that return results only on every third, fourth, or whatever execution, JavaScript becomes more flexible and powerful. These sorts of things are safe in small, isolated modules, just as they are inside of functions that rely only on their arguments and have no side effects.   </p>
+<h4>Cargo Cult</h4>
+<p>
+	According to the Wikipedia article "Cargo Cult", "a cargo cult is a belief system among members of
+	a relatively undeveloped society in which adherents practice superstitious rituals hoping to bring
+	modern goods supplied by a more technologically advanced society. <a
+		href="https://en.wikipedia.org/wiki/Cargo_cult">Cargo Cult</a
+	> The article goes on to say, "The name derives from the belief which began among Melanesians in the
+	late 19th and early 20th centuries that various ritualistic acts such as the building of an airplane
+	runway will result in the appearance of material wealth, particularly highly desirable Western goods
+	(i.e., "cargo"), via Western airplanes." citing Burridge, Kenelm (1969). New Heaven, New Earth: A study
+	of Millenarian Activities. London: Basil Blackwell. p. 48 and Lindstrom, Lamont (1993). Cargo Cult:
+	Strange Stories of desire from Melanesia and beyond. Honolulu: University of Hawaii Press.
+</p>
 
-<p>Trying to make JavaScript functions behave like Haskell functions can be enriching and for some, much more entertaining than sudoku or crossword puzzles. Such diversions, however, aren't likely to help us develop robust, easily maintainable applications.</p>
+<p>
+	Haskell programming language code has, in my experience, been wonderfully reliable and
+	maintainable. The WebSockets server supporting two games and one of the monad demonstrations is a
+	good example. Hoping to bring some of this Haskell goodness into my JavaScript code, I toyed with
+	what I call "cargo cult functional JavaScript" for a time. Without thinking things through
+	intelligently, I imposed strict type checking, referential transparency, and immutability on my
+	JavaScript code in situations where these things needlessly caused clutter, inefficiency, code
+	bloat, and obfuscation. I invented all sorts of "monads" along with monad transformers and
+	mechanisms for lifting values into composite monadic types.
+</p>
 
-<p>In the modules that follow, I define functions, experiment with functions, admire the power and possibilities of functions, and generally dwell on functions. If, to you, "functional JavaScript" means "cargo-cult JavaScript" (superstitiously imitating Haskell and similar functional languages), then call me a heretic. Still, I hope you will at least consider the possibility that in some circumstances, abandoning strict adherence to the so-called "functional paradigm" can streamline your JavaScript code without risk.</p>
+<p>
+	Now that I have abandoned the folly of mindlessly mimicking features of functional programming
+	languages, I can console myself with the thought that I wasn't the first and I wasn't the last
+	JavaScript programmer to got lost in this manner. Strict typing where it serves no useful purpose
+	and insisting on immutability where all it does is polute memory with useless intermediate values
+	is trendy these days.
+</p>
 
+<p>
+	Code where functions might collide over mutable global variables leads programmers to religeously
+	avoid mutable global variables. I'm using the Svelte framework for this project, and my numerous
+	modules are quite small. Mutable global variables can't cause problems because I have no modules
+	or heirarchies of nested modules in which clashes might occur. Were I to constrain my creativity
+	by following "best practices" regarding global variables, I would be engaging in another form of
+	cargo cult coding, mindlessly micking forms that have no value.
+</p>
+
+<h4>References</h4>
+<a href="https://www.youtube.com/watch?v=nm22duia0jU">Cargo Cult Programming video presentation</a>
+
+<a href="https://www.youtube.com/watch?v=yvfAtIJbatg"
+	>Cargo Cult Science -- Richard Feynman's 1974 Caltech lecture</a>

@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/Functions/Monad0.svelte.js';
+import * as module from '../entries/pages/Functions/Archive/Button.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/Monad0.svelte-2126d63c.js';
-export const js = ["pages/Functions/Monad0.svelte-2126d63c.js","chunks/vendor-a263fa63.js"];
-export const css = ["assets/pages/Functions/Monad0.svelte-d809060c.css"];
+export const index = 17;
+export const entry = 'pages/Functions/Archive/Button.svelte-1f55e6c4.js';
+export const js = ["pages/Functions/Archive/Button.svelte-1f55e6c4.js","chunks/index-19becca9.js"];
+export const css = ["assets/Button.svelte_svelte_type_style_lang-63f25223.css"];

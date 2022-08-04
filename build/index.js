@@ -1,4 +1,4 @@
-import { p as parse$4, e as env, h as handler } from './handler-edaaddc2.js';
+import { p as parse$4, e as env, h as handler } from './handler-c0fb0568.js';
 import path$1 from 'path';
 import require$$0$1 from 'buffer';
 import require$$0$2 from 'tty';
@@ -7,13 +7,18 @@ import fs__default from 'fs';
 import require$$4 from 'net';
 import require$$7 from 'zlib';
 import http from 'http';
-import './shims-eb608bdd.js';
+import './shims-dda63f8c.js';
 import 'node:http';
 import 'node:https';
 import 'node:zlib';
 import 'node:stream';
+import 'node:buffer';
 import 'node:util';
 import 'node:url';
+import 'node:net';
+import 'node:fs';
+import 'node:path';
+import 'crypto';
 import 'querystring';
 import 'url';
 import 'stream';
@@ -39,8 +44,8 @@ var charset = {exports: {}};
  * @public
  */
 
-charset.exports = preferredCharsets;
-charset.exports.preferredCharsets = preferredCharsets;
+charset.exports = preferredCharsets$1;
+charset.exports.preferredCharsets = preferredCharsets$1;
 
 /**
  * Module variables.
@@ -145,7 +150,7 @@ function specify$3(charset, spec, index) {
  * @public
  */
 
-function preferredCharsets(accept, provided) {
+function preferredCharsets$1(accept, provided) {
   // RFC 2616 sec 14.2: no header = *
   var accepts = parseAcceptCharset(accept === undefined ? '*' : accept || '');
 
@@ -209,8 +214,8 @@ var encoding = {exports: {}};
  * @public
  */
 
-encoding.exports = preferredEncodings;
-encoding.exports.preferredEncodings = preferredEncodings;
+encoding.exports = preferredEncodings$1;
+encoding.exports.preferredEncodings = preferredEncodings$1;
 
 /**
  * Module variables.
@@ -330,7 +335,7 @@ function specify$2(encoding, spec, index) {
  * @public
  */
 
-function preferredEncodings(accept, provided) {
+function preferredEncodings$1(accept, provided) {
   var accepts = parseAcceptEncoding(accept || '');
 
   if (!provided) {
@@ -393,8 +398,8 @@ var language = {exports: {}};
  * @public
  */
 
-language.exports = preferredLanguages;
-language.exports.preferredLanguages = preferredLanguages;
+language.exports = preferredLanguages$1;
+language.exports.preferredLanguages = preferredLanguages$1;
 
 /**
  * Module variables.
@@ -434,9 +439,9 @@ function parseLanguage(str, i) {
   var match = simpleLanguageRegExp.exec(str);
   if (!match) return null;
 
-  var prefix = match[1],
-    suffix = match[2],
-    full = prefix;
+  var prefix = match[1];
+  var suffix = match[2];
+  var full = prefix;
 
   if (suffix) full += "-" + suffix;
 
@@ -508,7 +513,7 @@ function specify$1(language, spec, index) {
  * @public
  */
 
-function preferredLanguages(accept, provided) {
+function preferredLanguages$1(accept, provided) {
   // RFC 2616 sec 14.4: no header = *
   var accepts = parseAcceptLanguage(accept === undefined ? '*' : accept || '');
 
@@ -572,8 +577,8 @@ var mediaType = {exports: {}};
  * @public
  */
 
-mediaType.exports = preferredMediaTypes;
-mediaType.exports.preferredMediaTypes = preferredMediaTypes;
+mediaType.exports = preferredMediaTypes$1;
+mediaType.exports.preferredMediaTypes = preferredMediaTypes$1;
 
 /**
  * Module variables.
@@ -718,7 +723,7 @@ function specify(type, spec, index) {
  * @public
  */
 
-function preferredMediaTypes(accept, provided) {
+function preferredMediaTypes$1(accept, provided) {
   // RFC 2616 sec 14.2: no header = */*
   var accepts = parseAccept(accept === undefined ? '*/*' : accept || '');
 
@@ -860,12 +865,10 @@ function splitParameters(str) {
  * MIT Licensed
  */
 
-/**
- * Cached loaded submodules.
- * @private
- */
-
-var modules = Object.create(null);
+var preferredCharsets = charset.exports;
+var preferredEncodings = encoding.exports;
+var preferredLanguages = language.exports;
+var preferredMediaTypes = mediaType.exports;
 
 /**
  * Module exports.
@@ -895,7 +898,6 @@ Negotiator$1.prototype.charset = function charset(available) {
 };
 
 Negotiator$1.prototype.charsets = function charsets(available) {
-  var preferredCharsets = loadModule('charset').preferredCharsets;
   return preferredCharsets(this.request.headers['accept-charset'], available);
 };
 
@@ -905,7 +907,6 @@ Negotiator$1.prototype.encoding = function encoding(available) {
 };
 
 Negotiator$1.prototype.encodings = function encodings(available) {
-  var preferredEncodings = loadModule('encoding').preferredEncodings;
   return preferredEncodings(this.request.headers['accept-encoding'], available);
 };
 
@@ -915,7 +916,6 @@ Negotiator$1.prototype.language = function language(available) {
 };
 
 Negotiator$1.prototype.languages = function languages(available) {
-  var preferredLanguages = loadModule('language').preferredLanguages;
   return preferredLanguages(this.request.headers['accept-language'], available);
 };
 
@@ -925,7 +925,6 @@ Negotiator$1.prototype.mediaType = function mediaType(available) {
 };
 
 Negotiator$1.prototype.mediaTypes = function mediaTypes(available) {
-  var preferredMediaTypes = loadModule('mediaType').preferredMediaTypes;
   return preferredMediaTypes(this.request.headers.accept, available);
 };
 
@@ -938,42 +937,6 @@ Negotiator$1.prototype.preferredLanguage = Negotiator$1.prototype.language;
 Negotiator$1.prototype.preferredLanguages = Negotiator$1.prototype.languages;
 Negotiator$1.prototype.preferredMediaType = Negotiator$1.prototype.mediaType;
 Negotiator$1.prototype.preferredMediaTypes = Negotiator$1.prototype.mediaTypes;
-
-/**
- * Load the given module.
- * @private
- */
-
-function loadModule(moduleName) {
-  var module = modules[moduleName];
-
-  if (module !== undefined) {
-    return module;
-  }
-
-  // This uses a switch for static require analysis
-  switch (moduleName) {
-    case 'charset':
-      module = charset.exports;
-      break;
-    case 'encoding':
-      module = encoding.exports;
-      break;
-    case 'language':
-      module = language.exports;
-      break;
-    case 'mediaType':
-      module = mediaType.exports;
-      break;
-    default:
-      throw new Error('Cannot find module \'' + moduleName + '\'');
-  }
-
-  // Store to prevent invoking require()
-  modules[moduleName] = module;
-
-  return module;
-}
 
 var mimeTypes = {};
 
@@ -1265,6 +1228,10 @@ var require$$0 = {
 	"application/cfw": {
 	source: "iana"
 },
+	"application/city+json": {
+	source: "iana",
+	compressible: true
+},
 	"application/clr": {
 	source: "iana"
 },
@@ -1308,7 +1275,10 @@ var require$$0 = {
 },
 	"application/cpl+xml": {
 	source: "iana",
-	compressible: true
+	compressible: true,
+	extensions: [
+		"cpl"
+	]
 },
 	"application/csrattrs": {
 	source: "iana"
@@ -1345,6 +1315,13 @@ var require$$0 = {
 	compressible: true,
 	extensions: [
 		"mpd"
+	]
+},
+	"application/dash-patch+xml": {
+	source: "iana",
+	compressible: true,
+	extensions: [
+		"mpp"
 	]
 },
 	"application/dashdelta": {
@@ -1977,7 +1954,10 @@ var require$$0 = {
 },
 	"application/media-policy-dataset+xml": {
 	source: "iana",
-	compressible: true
+	compressible: true,
+	extensions: [
+		"mpf"
+	]
 },
 	"application/media_control+xml": {
 	source: "iana",
@@ -2164,6 +2144,9 @@ var require$$0 = {
 	"application/oauth-authz-req+jwt": {
 	source: "iana"
 },
+	"application/oblivious-dns-message": {
+	source: "iana"
+},
 	"application/ocsp-request": {
 	source: "iana"
 },
@@ -2302,7 +2285,10 @@ var require$$0 = {
 	]
 },
 	"application/pgp-keys": {
-	source: "iana"
+	source: "iana",
+	extensions: [
+		"asc"
+	]
 },
 	"application/pgp-signature": {
 	source: "iana",
@@ -4131,6 +4117,10 @@ var require$$0 = {
 	"application/vnd.ecip.rlp": {
 	source: "iana"
 },
+	"application/vnd.eclipse.ditto+json": {
+	source: "iana",
+	compressible: true
+},
 	"application/vnd.ecowin.chart": {
 	source: "iana",
 	extensions: [
@@ -4305,6 +4295,10 @@ var require$$0 = {
 	"application/vnd.etsi.tsl.der": {
 	source: "iana"
 },
+	"application/vnd.eu.kasparian.car+json": {
+	source: "iana",
+	compressible: true
+},
 	"application/vnd.eudora.data": {
 	source: "iana"
 },
@@ -4338,6 +4332,10 @@ var require$$0 = {
 },
 	"application/vnd.f-secure.mobile": {
 	source: "iana"
+},
+	"application/vnd.familysearch.gedcom+zip": {
+	source: "iana",
+	compressible: false
 },
 	"application/vnd.fastcopy-disk-image": {
 	source: "iana"
@@ -4720,6 +4718,16 @@ var require$$0 = {
 	extensions: [
 		"les"
 	]
+},
+	"application/vnd.hl7cda+xml": {
+	source: "iana",
+	charset: "UTF-8",
+	compressible: true
+},
+	"application/vnd.hl7v2+xml": {
+	source: "iana",
+	charset: "UTF-8",
+	compressible: true
 },
 	"application/vnd.hp-hpgl": {
 	source: "iana",
@@ -5252,6 +5260,10 @@ var require$$0 = {
 	"application/vnd.mason+json": {
 	source: "iana",
 	compressible: true
+},
+	"application/vnd.maxar.archive.3tz+zip": {
+	source: "iana",
+	compressible: false
 },
 	"application/vnd.maxmind.maxmind-db": {
 	source: "iana"
@@ -7204,6 +7216,10 @@ var require$$0 = {
 	source: "iana",
 	compressible: true
 },
+	"application/vnd.syft+json": {
+	source: "iana",
+	compressible: true
+},
 	"application/vnd.symbian.install": {
 	source: "apache",
 	extensions: [
@@ -7686,7 +7702,10 @@ var require$$0 = {
 },
 	"application/watcherinfo+xml": {
 	source: "iana",
-	compressible: true
+	compressible: true,
+	extensions: [
+		"wif"
+	]
 },
 	"application/webpush-options+json": {
 	source: "iana",
@@ -9587,10 +9606,16 @@ var require$$0 = {
 	]
 },
 	"image/avci": {
-	source: "iana"
+	source: "iana",
+	extensions: [
+		"avci"
+	]
 },
 	"image/avcs": {
-	source: "iana"
+	source: "iana",
+	extensions: [
+		"avcs"
+	]
 },
 	"image/avif": {
 	source: "iana",
@@ -11621,6 +11646,7 @@ var require$$0 = {
 /*!
  * mime-db
  * Copyright(c) 2014 Jonathan Ong
+ * Copyright(c) 2015-2022 Douglas Christopher Wilson
  * MIT Licensed
  */
 

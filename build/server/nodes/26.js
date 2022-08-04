@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/shared/Button.svelte.js';
+import * as module from '../entries/pages/Functions/Archive/code.svelte.js';
 
 export { module };
-export const entry = 'pages/shared/Button.svelte-be3aba12.js';
-export const js = ["pages/shared/Button.svelte-be3aba12.js","chunks/vendor-a263fa63.js"];
-export const css = ["assets/pages/shared/Button.svelte-b4eaaacc.css"];
+export const index = 26;
+export const entry = 'pages/Functions/Archive/code.svelte-2b834a8c.js';
+export const js = ["pages/Functions/Archive/code.svelte-2b834a8c.js","chunks/index-19becca9.js","chunks/_commonjsHelpers-7d66b65f.js"];
+export const css = [];

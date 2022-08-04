@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/Functions/time.svelte.js';
+import * as module from '../entries/pages/Functions/Archive/bitmask_prime_generator.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/time.svelte-6cc6a708.js';
-export const js = ["pages/Functions/time.svelte-6cc6a708.js","chunks/vendor-a263fa63.js"];
-export const css = ["assets/pages/Functions/time.svelte-eb38a1e9.css"];
+export const index = 24;
+export const entry = 'pages/Functions/Archive/bitmask_prime_generator.svelte-d4afba85.js';
+export const js = ["pages/Functions/Archive/bitmask_prime_generator.svelte-d4afba85.js","chunks/index-19becca9.js","chunks/index-bcf3ff98.js"];
+export const css = [];

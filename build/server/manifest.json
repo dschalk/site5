@@ -4,236 +4,26 @@
     "src": ".svelte-kit/build/index.js",
     "isEntry": true,
     "imports": [
-      "_index-63796eb4.js"
+      "_index-96ec22a1.js"
     ],
     "dynamicImports": [
       ".svelte-kit/build/hooks.js"
     ]
   },
-  "src/routes/Functions/play.js": {
-    "file": "entries/endpoints/Functions/play.js",
-    "src": "src/routes/Functions/play.js",
-    "isEntry": true
-  },
-  "src/routes/__layout.svelte": {
-    "file": "entries/pages/__layout.svelte.js",
-    "src": "src/routes/__layout.svelte",
+  "src/routes/stores.js": {
+    "file": "entries/endpoints/stores.js",
+    "src": "src/routes/stores.js",
     "isEntry": true,
     "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/__layout.svelte-df079604.css"
+      "_index-96ec22a1.js"
     ]
   },
-  ".svelte-kit/runtime/components/error.svelte": {
-    "file": "entries/fallbacks/error.svelte.js",
-    "src": ".svelte-kit/runtime/components/error.svelte",
+  "src/routes/Mahjong/experiments.js": {
+    "file": "entries/endpoints/Mahjong/experiments.js",
+    "src": "src/routes/Mahjong/experiments.js",
     "isEntry": true,
     "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/index.svelte": {
-    "file": "entries/pages/index.svelte.js",
-    "src": "src/routes/index.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/__layout.svelte": {
-    "file": "entries/pages/Functions/__layout.svelte.js",
-    "src": "src/routes/Functions/__layout.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/Functions/__layout.svelte-1cb46c94.css"
-    ]
-  },
-  "src/routes/Functions/index.svelte": {
-    "file": "entries/pages/Functions/index.svelte.js",
-    "src": "src/routes/Functions/index.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/bitmask_prime_generator.svelte": {
-    "file": "entries/pages/Functions/bitmask_prime_generator.svelte.js",
-    "src": "src/routes/Functions/bitmask_prime_generator.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/binary_arithmetic.svelte": {
-    "file": "entries/pages/Functions/binary_arithmetic.svelte.js",
-    "src": "src/routes/Functions/binary_arithmetic.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/Promises_Monad.svelte": {
-    "file": "entries/pages/Functions/Promises_Monad.svelte.js",
-    "src": "src/routes/Functions/Promises_Monad.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/Functions/Promises_Monad.svelte-723842d0.css"
-    ]
-  },
-  "src/routes/Functions/bitwise_primes.svelte": {
-    "file": "entries/pages/Functions/bitwise_primes.svelte.js",
-    "src": "src/routes/Functions/bitwise_primes.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/Async_monad.svelte": {
-    "file": "entries/pages/Functions/Async_monad.svelte.js",
-    "src": "src/routes/Functions/Async_monad.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/ObjectMonad.svelte": {
-    "file": "entries/pages/Functions/ObjectMonad.svelte.js",
-    "src": "src/routes/Functions/ObjectMonad.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/experiment.svelte": {
-    "file": "entries/pages/Functions/experiment.svelte.js",
-    "src": "src/routes/Functions/experiment.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/Quadratic.svelte": {
-    "file": "entries/pages/Functions/Quadratic.svelte.js",
-    "src": "src/routes/Functions/Quadratic.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/monadsOld.svelte": {
-    "file": "entries/pages/Functions/monadsOld.svelte.js",
-    "src": "src/routes/Functions/monadsOld.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/factors.svelte": {
-    "file": "entries/pages/Functions/factors.svelte.js",
-    "src": "src/routes/Functions/factors.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/Functions/factors.svelte-56ea9023.css"
-    ]
-  },
-  "src/routes/Functions/haskell.svelte": {
-    "file": "entries/pages/Functions/haskell.svelte.js",
-    "src": "src/routes/Functions/haskell.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/monads5.svelte": {
-    "file": "entries/pages/Functions/monads5.svelte.js",
-    "src": "src/routes/Functions/monads5.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/Monad0.svelte": {
-    "file": "entries/pages/Functions/Monad0.svelte.js",
-    "src": "src/routes/Functions/Monad0.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/Functions/Monad0.svelte-174f2036.css"
-    ]
-  },
-  "src/routes/Functions/Monad3.svelte": {
-    "file": "entries/pages/Functions/Monad3.svelte.js",
-    "src": "src/routes/Functions/Monad3.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/monads.svelte": {
-    "file": "entries/pages/Functions/monads.svelte.js",
-    "src": "src/routes/Functions/monads.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/Monad.svelte": {
-    "file": "entries/pages/Functions/Monad.svelte.js",
-    "src": "src/routes/Functions/Monad.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/proxy.svelte": {
-    "file": "entries/pages/Functions/proxy.svelte.js",
-    "src": "src/routes/Functions/proxy.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/Functions/proxy.svelte-7766bb44.css"
-    ]
-  },
-  "src/routes/Functions/score.svelte": {
-    "file": "entries/pages/Functions/score.svelte.js",
-    "src": "src/routes/Functions/score.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/code.svelte": {
-    "file": "entries/pages/Functions/code.svelte.js",
-    "src": "src/routes/Functions/code.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ]
-  },
-  "src/routes/Functions/time.svelte": {
-    "file": "entries/pages/Functions/time.svelte.js",
-    "src": "src/routes/Functions/time.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-63796eb4.js"
-    ],
-    "css": [
-      "assets/entries/pages/Functions/time.svelte-769d45c9.css"
+      "_Chun-c77faa24.js"
     ],
     "assets": [
       "assets/Man1-03e52da6.svg",
@@ -263,7 +53,6 @@
       "assets/Sou7-f9f4bc8a.svg",
       "assets/Sou8-88efce5d.svg",
       "assets/Sou9-0c0682e2.svg",
-      "assets/Chun-34b9d3b2.svg",
       "assets/Haku-3fa1fb22.svg",
       "assets/Hatsu-3570c54f.svg",
       "assets/Nan-745be89c.svg",
@@ -272,15 +61,490 @@
       "assets/Shaa-bb25f593.svg"
     ]
   },
+  "src/routes/Functions/Archive/game.js": {
+    "file": "entries/endpoints/Functions/Archive/game.js",
+    "src": "src/routes/Functions/Archive/game.js",
+    "isEntry": true
+  },
+  "src/routes/__layout.svelte": {
+    "file": "entries/pages/__layout.svelte.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/__layout.svelte-df079604.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/__layout.svelte": {
+    "file": "entries/pages/Functions/__layout.svelte.js",
+    "src": "src/routes/Functions/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte": {
+    "file": "entries/pages/Functions/A_Simple_Recursive_Closure/__layout.svelte.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/__layout.svelte": {
+    "file": "entries/pages/Functions/Archive/__layout.svelte.js",
+    "src": "src/routes/Functions/Archive/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Functions/Archive/__layout.svelte-d66c1d17.css"
+    ]
+  },
+  "src/routes/Grammar/__layout.svelte": {
+    "file": "entries/pages/Grammar/__layout.svelte.js",
+    "src": "src/routes/Grammar/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Law/__layout.svelte": {
+    "file": "entries/pages/Law/__layout.svelte.js",
+    "src": "src/routes/Law/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Law/__layout.svelte-332b1fe5.css"
+    ]
+  },
+  "src/routes/Legal and Constitutional Matters/__layout.svelte": {
+    "file": "entries/pages/Legal and Constitutional Matters/__layout.svelte.js",
+    "src": "src/routes/Legal and Constitutional Matters/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Mahjong/__layout.svelte": {
+    "file": "entries/pages/Mahjong/__layout.svelte.js",
+    "src": "src/routes/Mahjong/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Law/__layout.svelte-332b1fe5.css"
+    ]
+  },
+  "src/routes/Sara/__layout.svelte": {
+    "file": "entries/pages/Sara/__layout.svelte.js",
+    "src": "src/routes/Sara/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
   "src/routes/Button.svelte": {
     "file": "entries/pages/Button.svelte.js",
     "src": "src/routes/Button.svelte",
     "isEntry": true,
     "imports": [
-      "_index-63796eb4.js"
+      "_index-96ec22a1.js"
     ],
     "css": [
       "assets/entries/pages/Button.svelte-7fafda25.css"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/array.svelte": {
+    "file": "entries/pages/Functions/A_Simple_Recursive_Closure/array.svelte.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/array.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte": {
+    "file": "entries/pages/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/functional_programming.svelte": {
+    "file": "entries/pages/Functions/A_Simple_Recursive_Closure/functional_programming.svelte.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/functional_programming.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/index.svelte": {
+    "file": "entries/pages/Functions/A_Simple_Recursive_Closure/index.svelte.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js",
+      "src/routes/stores.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/score.svelte": {
+    "file": "entries/pages/Functions/A_Simple_Recursive_Closure/score.svelte.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/score.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js",
+      "src/routes/stores.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Async_monad.svelte": {
+    "file": "entries/pages/Functions/Archive/Async_monad.svelte.js",
+    "src": "src/routes/Functions/Archive/Async_monad.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Button.svelte": {
+    "file": "entries/pages/Functions/Archive/Button.svelte.js",
+    "src": "src/routes/Functions/Archive/Button.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/Button.svelte_svelte_type_style_lang-5ad6e1fd.css"
+    ]
+  },
+  "src/routes/Functions/Archive/Monad.svelte": {
+    "file": "entries/pages/Functions/Archive/Monad.svelte.js",
+    "src": "src/routes/Functions/Archive/Monad.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Monad0.svelte": {
+    "file": "entries/pages/Functions/Archive/Monad0.svelte.js",
+    "src": "src/routes/Functions/Archive/Monad0.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Functions/Archive/Monad0.svelte-e6cbd179.css"
+    ]
+  },
+  "src/routes/Functions/Archive/Monad3.svelte": {
+    "file": "entries/pages/Functions/Archive/Monad3.svelte.js",
+    "src": "src/routes/Functions/Archive/Monad3.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/ObjectMonad.svelte": {
+    "file": "entries/pages/Functions/Archive/ObjectMonad.svelte.js",
+    "src": "src/routes/Functions/Archive/ObjectMonad.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Quadratic.svelte": {
+    "file": "entries/pages/Functions/Archive/Quadratic.svelte.js",
+    "src": "src/routes/Functions/Archive/Quadratic.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/binary_arithmetic.svelte": {
+    "file": "entries/pages/Functions/Archive/binary_arithmetic.svelte.js",
+    "src": "src/routes/Functions/Archive/binary_arithmetic.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/bitmask_prime_generator.svelte": {
+    "file": "entries/pages/Functions/Archive/bitmask_prime_generator.svelte.js",
+    "src": "src/routes/Functions/Archive/bitmask_prime_generator.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/bitwise_primes.svelte": {
+    "file": "entries/pages/Functions/Archive/bitwise_primes.svelte.js",
+    "src": "src/routes/Functions/Archive/bitwise_primes.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/code.svelte": {
+    "file": "entries/pages/Functions/Archive/code.svelte.js",
+    "src": "src/routes/Functions/Archive/code.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/experiment.svelte": {
+    "file": "entries/pages/Functions/Archive/experiment.svelte.js",
+    "src": "src/routes/Functions/Archive/experiment.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/factors.svelte": {
+    "file": "entries/pages/Functions/Archive/factors.svelte.js",
+    "src": "src/routes/Functions/Archive/factors.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Functions/Archive/factors.svelte-e0402926.css"
+    ]
+  },
+  "src/routes/Functions/Archive/functional_JS.svelte": {
+    "file": "entries/pages/Functions/Archive/functional_JS.svelte.js",
+    "src": "src/routes/Functions/Archive/functional_JS.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/game.svelte": {
+    "file": "entries/pages/Functions/Archive/game.svelte.js",
+    "src": "src/routes/Functions/Archive/game.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Functions/Archive/game.svelte-bcbfbdb8.css",
+      "assets/Button.svelte_svelte_type_style_lang-5ad6e1fd.css"
+    ]
+  },
+  "src/routes/Functions/Archive/gameBA KUP.svelte": {
+    "file": "entries/pages/Functions/Archive/gameBA KUP.svelte.js",
+    "src": "src/routes/Functions/Archive/gameBA KUP.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Functions/Archive/game.svelte-bcbfbdb8.css",
+      "assets/Button.svelte_svelte_type_style_lang-5ad6e1fd.css"
+    ]
+  },
+  "src/routes/Functions/Archive/haskell.svelte": {
+    "file": "entries/pages/Functions/Archive/haskell.svelte.js",
+    "src": "src/routes/Functions/Archive/haskell.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/index.svelte": {
+    "file": "entries/pages/Functions/Archive/index.svelte.js",
+    "src": "src/routes/Functions/Archive/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/monadsOld.svelte": {
+    "file": "entries/pages/Functions/Archive/monadsOld.svelte.js",
+    "src": "src/routes/Functions/Archive/monadsOld.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Archive/proxy.svelte": {
+    "file": "entries/pages/Functions/Archive/proxy.svelte.js",
+    "src": "src/routes/Functions/Archive/proxy.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Functions/Archive/proxy.svelte-77b1159e.css"
+    ]
+  },
+  "src/routes/Functions/Archive/score.svelte": {
+    "file": "entries/pages/Functions/Archive/score.svelte.js",
+    "src": "src/routes/Functions/Archive/score.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/Zeta.svelte": {
+    "file": "entries/pages/Functions/Zeta.svelte.js",
+    "src": "src/routes/Functions/Zeta.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/asyncMonads.svelte": {
+    "file": "entries/pages/Functions/asyncMonads.svelte.js",
+    "src": "src/routes/Functions/asyncMonads.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/index.svelte": {
+    "file": "entries/pages/Functions/index.svelte.js",
+    "src": "src/routes/Functions/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/play.svelte": {
+    "file": "entries/pages/Functions/play.svelte.js",
+    "src": "src/routes/Functions/play.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Functions/stopwatch.svelte": {
+    "file": "entries/pages/Functions/stopwatch.svelte.js",
+    "src": "src/routes/Functions/stopwatch.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Grammar/Niether of us (has or have).svelte": {
+    "file": "entries/pages/Grammar/Niether of us (has or have).svelte.js",
+    "src": "src/routes/Grammar/Niether of us (has or have).svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Grammar/index.svelte": {
+    "file": "entries/pages/Grammar/index.svelte.js",
+    "src": "src/routes/Grammar/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Law/archive.svelte": {
+    "file": "entries/pages/Law/archive.svelte.js",
+    "src": "src/routes/Law/archive.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Law/chapter-1.svelte": {
+    "file": "entries/pages/Law/chapter-1.svelte.js",
+    "src": "src/routes/Law/chapter-1.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Law/index.svelte": {
+    "file": "entries/pages/Law/index.svelte.js",
+    "src": "src/routes/Law/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Law/law.svelte": {
+    "file": "entries/pages/Law/law.svelte.js",
+    "src": "src/routes/Law/law.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js",
+      "_Chun-c77faa24.js"
+    ]
+  },
+  "src/routes/Legal and Constitutional Matters/index.svelte": {
+    "file": "entries/pages/Legal and Constitutional Matters/index.svelte.js",
+    "src": "src/routes/Legal and Constitutional Matters/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Mahjong/index.svelte": {
+    "file": "entries/pages/Mahjong/index.svelte.js",
+    "src": "src/routes/Mahjong/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Mahjong/terms.svelte": {
+    "file": "entries/pages/Mahjong/terms.svelte.js",
+    "src": "src/routes/Mahjong/terms.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Mahjong/yaku.svelte": {
+    "file": "entries/pages/Mahjong/yaku.svelte.js",
+    "src": "src/routes/Mahjong/yaku.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ],
+    "css": [
+      "assets/entries/pages/Mahjong/yaku.svelte-b36a3fee.css"
+    ]
+  },
+  "src/routes/Sara/For-Sarabeth.svelte": {
+    "file": "entries/pages/Sara/For-Sarabeth.svelte.js",
+    "src": "src/routes/Sara/For-Sarabeth.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/Sara/index.svelte": {
+    "file": "entries/pages/Sara/index.svelte.js",
+    "src": "src/routes/Sara/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "entries/pages/index.svelte.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-96ec22a1.js"
     ]
   },
   "src/routes/shared/Button.svelte": {
@@ -288,14 +552,20 @@
     "src": "src/routes/shared/Button.svelte",
     "isEntry": true,
     "imports": [
-      "_index-63796eb4.js"
+      "_index-96ec22a1.js"
     ],
     "css": [
-      "assets/entries/pages/shared/Button.svelte-173c30e7.css"
+      "assets/Button.svelte_svelte_type_style_lang-5ad6e1fd.css"
     ]
   },
-  "_index-63796eb4.js": {
-    "file": "chunks/index-63796eb4.js"
+  "_index-96ec22a1.js": {
+    "file": "chunks/index-96ec22a1.js"
+  },
+  "_Chun-c77faa24.js": {
+    "file": "chunks/Chun-c77faa24.js",
+    "assets": [
+      "assets/Chun-34b9d3b2.svg"
+    ]
   },
   ".svelte-kit/build/hooks.js": {
     "file": "chunks/hooks-1c45ba0b.js",

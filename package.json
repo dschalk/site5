@@ -1,25 +1,31 @@
 {
-  "name": "site7",
-  "version": "0.0.1",
+  "name": "site5",
+  "version": "1.1.2",
   "scripts": {
-    "dev": "svelte-kit dev -p 3005",
-    "build": "svelte-kit build -p 3005",
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
     "package": "svelte-kit package",
-    "preview": "svelte-kit preview -p 3005",
-    "prepare": "svelte-kit sync"
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync",
+    "check": "svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
+    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "svelte": "^3.44.0"
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.2.6",
+    "typescript": "~4.6.2"
   },
   "type": "module",
   "dependencies": {
     "@cycle/dom": "^23.1.0",
     "@sveltejs/adapter-node": "^1.0.0-next.73",
-    "@sveltejs/adapter-static": "^1.0.0-next.29",
-    "lru-cache": "^7.7.1",
-    "node-ttl": "^0.2.0",
-    "svelte-preprocess": "^4.10.6"
+    "array-comprehension": "^0.1.1",
+    "mathjs": "^10.6.4"
   }
 }

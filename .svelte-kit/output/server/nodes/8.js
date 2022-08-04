@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/Functions/bitwise_primes.svelte.js';
+import * as module from '../entries/pages/Mahjong/__layout.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/bitwise_primes.svelte-118d3f19.js';
-export const js = ["pages/Functions/bitwise_primes.svelte-118d3f19.js","chunks/vendor-a263fa63.js"];
-export const css = [];
+export const index = 8;
+export const entry = 'pages/Mahjong/__layout.svelte-fef64de9.js';
+export const js = ["pages/Mahjong/__layout.svelte-fef64de9.js","chunks/index-19becca9.js"];
+export const css = ["assets/pages/Law/__layout.svelte-68f6d88a.css"];

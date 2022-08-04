@@ -1,35 +1,5 @@
-
-<div>
-    <br><br>
-  <nav>
-      <ul>
-      <li>    
-          <a href="/">Home</a>
-      </li>
-
-      <span> &nbsp;&nbsp;&nbsp;   </span>
-  
-      <li>
-          <a href="/Functions">Functions</a>
-      </li>
- <!-- 
-      <li>
-          <a href="/Mahjong/">Riichi Mahjong</a>
-      </li>
-  
-      <li>
-          <a href="/Grammar ">Grammar</a>
-      </li>
-  
-      <li>
-          <a href="/Law">Rule By Law</a>
-      </li>
-    -->
-  </ul>
-  </nav>
-  </div>
 <style>
-  :global(a) {
+  :global(a) { 
     color: #e37eec;
     font-size: 22px;
   }
@@ -192,6 +162,48 @@
 }
 </style>  
 
+
+<div>
+    <br><br>
+  <nav>
+      <ul>
+      <li>    
+          <a href="/">Home</a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+      <li>
+          <a href="/Functions">Functions</a>
+      </li>
+ 
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+
+      <li>
+          <a href="/Mahjong">Riichi Mahjong</a>
+      </li>
+  
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+
+      <li>
+          <a href="/Grammar">Grammar</a>
+      </li>
+  
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+
+      <li>
+          <a href="/Law/">Rule By Law</a>
+      </li>
+      
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+      <li>
+          <a href="/Sara">Sara</a>
+      </li>
+  
+    </ul>
+    </nav>
+  </div>
 
   <!-- <style>
    /* .container {margin-right: 10px} */

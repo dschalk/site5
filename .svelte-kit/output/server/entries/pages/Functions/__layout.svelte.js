@@ -1,22 +1,18 @@
-import { c as create_ssr_component } from "../../../chunks/index-63796eb4.js";
-var __layout_svelte_svelte_type_style_lang = "";
-const css = {
-  code: "ul.svelte-5x036g{display:flex;list-style:none;margin:0;font-size:11px;color:#bbccff\n}li.svelte-5x036g{margin-right:10px}",
-  map: null
-};
+import { c as create_ssr_component } from "../../../chunks/index-96ec22a1.js";
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css);
   return `<div><br><br>
-  <nav><ul class="${"svelte-5x036g"}"><li class="${"svelte-5x036g"}"><a href="${"/Functions/"}">Home</a></li>
-  
+  <nav><ul><li><a href="${"/Functions"}">Home</a></li>
+
       <span>\xA0\xA0\xA0   </span>
-      
-      <li class="${"svelte-5x036g"}"><a href="${"/Functions/monads"}">Monads</a></li>
   
-  </ul></nav></div>
-  
-  
-  <div></div>
-  ${slots.default ? slots.default({}) : ``}`;
+      <li><a href="${"/Functions/A_Simple_Recursive_Closure"}">Simple_Recursive_Closures a/k/a MONADS</a></li>
+ 
+      <span>\xA0\xA0\xA0   </span>
+i
+      <li><a href="${"/Functions/Archive/"}">Archive</a></li>
+
+      <span>\xA0\xA0\xA0   </span></ul></nav></div>
+
+${slots.default ? slots.default({}) : ``}`;
 });
 export { _layout as default };

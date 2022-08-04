@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/Functions/code.svelte.js';
+import * as module from '../entries/pages/Functions/Archive/binary_arithmetic.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/code.svelte-d8cb7233.js';
-export const js = ["pages/Functions/code.svelte-d8cb7233.js","chunks/vendor-a263fa63.js"];
+export const index = 23;
+export const entry = 'pages/Functions/Archive/binary_arithmetic.svelte-87c66b4b.js';
+export const js = ["pages/Functions/Archive/binary_arithmetic.svelte-87c66b4b.js","chunks/index-19becca9.js"];
 export const css = [];

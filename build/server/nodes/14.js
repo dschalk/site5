@@ -1,6 +1,7 @@
-import * as module from '../entries/pages/Functions/factors.svelte.js';
+import * as module from '../entries/pages/Functions/A_Simple_Recursive_Closure/index.svelte.js';
 
 export { module };
-export const entry = 'pages/Functions/factors.svelte-c64688f9.js';
-export const js = ["pages/Functions/factors.svelte-c64688f9.js","chunks/vendor-a263fa63.js"];
-export const css = ["assets/pages/Functions/factors.svelte-55088df6.css"];
+export const index = 14;
+export const entry = 'pages/Functions/A_Simple_Recursive_Closure/index.svelte-b0910560.js';
+export const js = ["pages/Functions/A_Simple_Recursive_Closure/index.svelte-b0910560.js","chunks/index-19becca9.js","chunks/index-bcf3ff98.js","chunks/stores-bcec01c4.js","chunks/index-eb87bfe4.js"];
+export const css = [];
