@@ -1,0 +1,1 @@
+import{w as t}from"./index-786f648c.js";const o=t(localStorage.getItem("userName")),a=t(localStorage.getItem("top"));o.subscribe(e=>localStorage.userName=e);a.subscribe(e=>localStorage.top=e);export{a as t,o as u};

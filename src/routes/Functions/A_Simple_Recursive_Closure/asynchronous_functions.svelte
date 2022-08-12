@@ -1,6 +1,8 @@
 <script>
 	// @ts-ignore
 
+  import array from '$lib/Screenshot_array.png';
+
 	import { merge_ssr_styles } from 'svelte/internal';
 	//	import { onMount } from "svelte";
 	import { fade } from 'svelte/transition';
@@ -25,7 +27,12 @@ m1(mpow(3))(mpow(3))(mMult(2))(msqrt)(madd(10))
 console.log("m1(dev) is", m1(ret));
 
 </script>
-
+<style>
+    img {
+        width:90%; 
+        height:90%;
+    }
+</style>
 <svelte:head>
 	<title>Recursive Closures Over Arrays</title>
 </svelte:head>
@@ -39,3 +46,4 @@ console.log("m1(dev) is", m1(ret));
 <br />
 
 <p>The result, as expected, is [ {m1(ret)} ].</p>
+<img src={array}/>

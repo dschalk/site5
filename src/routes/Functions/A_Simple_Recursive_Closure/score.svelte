@@ -556,21 +556,22 @@ function sfunc () {
     if (ZZ != (undefined && 0)) b7 = "inline";
 }`;
 
-	var monad = `function M (x) {
-  return function go (func) {
-      if (typeof func === "function") {
-          x = func(x);
-          return go;
-      }
-      else if (func === "stop") return x;
-  }
-};`;
 
-	var monad3 = `var mon3 = M([1,2,3,4]);
-function g(ar) {
-    var x = (ar.pop())**3;
-    ar.unshift(x);
-  return ar;
+var monad = `function M (x) {
+    return function go (func) {
+        if (func === ret) return x
+        else x = func(x);
+        return go;
+  }
+}`;
+
+var retCode = `function ret () {}`
+
+var monad3 = `var mon3 = M([1,2,3,4]);
+    function g(ar) {
+        var x = (ar.pop())**3;
+        ar.unshift(x);
+        return ar;
 };
 function g2 (ar) {return (ar.flatMap(v => (v+1)**3))};
 function g3 (ar) {return (ar.flatMap(v => Math.round(v**(1/3))))};`;
@@ -868,158 +869,44 @@ setTimeout(() => console.log("m3(s) is", m3(s)),0);
 16:13:15.590 m3(s) is 1000
 16:13:17.590 m3(s) resolved is 888
 // Two seconds after "1000" appears in the console log, "888" is displayed.`;
+
+
+var start = `m2 = M(
+    [ 
+      [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1,
+      Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 20) + 1], 
+      [], ['+'], [], [0], [], [0], [] 
+    ]);`
+
+
+
 </script>
 
+<style>
+	pre {margin-left: 3%;}
+</style>
+
 <svelte:head>
-	<title>Solitaire Game of Score</title>
+	<title>The Solitaire Game of Score</title>
 </svelte:head>
 <br />
 <div>**************************************************************************</div>
 <div style="font-family: Times New Roman; text-align:center; font-size: 32px;" transition:fade>
 	<br />
 
-	The Unmodified Simple Monad Holds State For the Game of Score
+	The State of Score Maintained in a Recursive Closure
 </div>
 <br />
-<!--
-<p>
-	JavaScript monads are defined in various ways online and in print. I wouldn't say any of these
-	definitions are right or wrong. Everyone is entitled to an opinion. Some of my thoughts on the
-	matter will be in <a href="./">Home</a> and in an addendum.
-</p>
-<p>
-	The function M() (below) returns the function go(), thereby forming a closure. The returned
-	function is named to facilitate recursion. Here's the definition of M():
-</p>
+<p> The game is held in the recursive closure returned initially by M(x) where M is: </p>
 <pre>{monad}</pre>
-<p>
-	M(x) is most useful when the closure is named or, more precisely, when the function returned by
-	M(x) is named. When M(x) is asigned a variable name, the value of "x" in M(x) can be preserved,
-	transformed, and later used if it is eventually needed. "x" in M(x) will correspond to the state
-	of play in the solitaire game of Score (below), but before we get to that, let's take a closer
-	look at M and the function returned by M(x).
-</p>
+<p>and x is an array of eight arrays defined as:</p>
+<pre>{start}</pre>
+<p>It doesn't matter what, if anything, the function ret() would do if it were to be called because it doesn't get called. It's only purpose is to cause go(), the function returned by M, to return the current state of the value x held in the closure that was created by running var some-name = M(x). M can also be used anonymously to chain functions as in <span style="color: #55ffff">M(2)(v=>v+4)(v=>v*7)(ret) = 42</span>. </p>
 
-<pre>{example3}</pre>
-<p>The value held in the closure can be obtained later</p>
-<pre>{example4}</pre>
-<p>And later</p>
-<pre>{example5}</pre>
-<p>Here are a few more simple operations on the very simple monad "mon":</p>
-<p>
-	We can set the value of x to 4 with the expression "mon = M(4)", or by modifying mon as follows:
-</p>
-<pre>{example2}</pre>
-<p>These abreviations will be used from now on:</p>
-<pre>var s = "stop";
-var log = console.log;
-</pre>
-<span style="font-size:26px; color: gold; text-decoration: underline">Deep Clone:</span>
-<span
-	>I ran the following code in the Firefox.aurora console. The result verifies that mon2 defined by
-	"var mon2 = M(mon(s))" is a deep clone of mon. The mon2 closure is out of reach by everything in
-	its outer scope, and the mon closure is no exception.
-</span>
-<pre>{example2}</pre>
 
-<span style="font-size:26px; color: gold; text-decoration: underline">Function Composition:</span>
-<span
-	>M provides a way to anonymously compose functions concisely and transparently; a good alternative
-	to callback spahgetti.
-</span>
-<pre>{example6}</pre>
-
-<p>
-	Recursive closures created by "M" will control a fairly complicated dice game called "Score" (<a
-		href="#score">Link To Score</a
-	>). It's a solitaire version of a
-	<a href="https://score.schalk.net">multiplayer version of the game</a>
-	I developed eight years ago based on a Haskell WebSockets server. The server code is
-	<a href="./score">here</a>
-</p>
-
-<p>These are the demonstration's event handlers:</p>
-<pre>{fuFuncs}</pre>
-<p>m4(s) is <span style="font-size:54px">{parseFloat(m4(s)).toFixed(5).toString()}</span></p>
-<p>
-	<br />
-	<button on:click={cubeFu}>m4(cube)</button>
-	<button on:click={squareFu}>m4(square)</button>
-	<br /><br />
-	<span style="font-size: 24px">To call m4(pow(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={powFu} />
-	<br /><br />
-
-	<span style="font-size: 24px">To call m4(add(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={addFu} />
-	<br /><br />
-
-	<span style="font-size: 24px">To call m4(mult(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={multFu} />
-	<br /><br />
-
-	<span style="font-size: 24px">To call m4(reset(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={resetFu} />
-	<br /><br />
-</p>
-<p>
-	Next, x will be an array. Here are the functions responsible for the interactive demonstration
-	below:
-</p>
-<pre>{monad3}</pre>
-<p>
-	If you click mon3 = mon3(g) four times and the click mon3 = mon3(g3), you will see that mon3(s)
-	returns its original value, [1,2,3,4]. By the way, the "mon3 =" part of "mon3 = mon3(g)" is
-	included solely to trigger updating of browser displays. Svelte doesn't have a virtual DOM, and
-	merely changing objects isn't enough to trigger DOM updates. For example, arr = [1,2,3] doesn't
-	change in the DOM when arr.push(888) is called. arr = arr afterwards or arr = arr.push(888)
-	initially both do the trick.
-</p>
-<div id="score" style="margin-left: 10%; font-size:44px; color:#ddaadd">[{mon3(s).join(', ')}]</div>
-<br /><br />
-<button on:click={() => (mon3 = mon3(g))}>mon3 = mon3(g)</button>
-<button on:click={() => (mon3 = mon3(g2))}>mon3 = mon3(g2)</button>
-<button on:click={() => (mon3 = mon3(g3))}>mon3 = mon3(g3)</button>
-<button on:click={() => (mon3 = mon3((x) => [1, 2, 3, 4]))}>mon3 = mon3(x => [1,2,3,4])</button>
-<br /><br />
-Here's a contrived example showing one way asynchronous code can be handled:
-<pre>{async}</pre>
-<p>
-	A robust monad that deals with a variety of contingencies is at <a
-		href="/Functions/Archive/Monad3">Monad3</a
-	>. There's a more elaborate demonstration (Demonstration 1) at
-	<a href="https://functional-javascript.schalk2.com/">functional-javascript</a>. I'm sticking with
-	the simple monad generator M in this module. At
-	<a href="https://functional-javascript.schalk2.com/">functional-javascript</a> the monad is defines
-	as follows:
-</p>
-<pre>{bigMonad}</pre>
--->
-<p>
-	Now back to the little monad M and the game of score; a game involving four dice and two or
-	three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught
-	it to me a decade ago, when he was in middle school. After some messy experiences with other
-	programming languages, I turned to Haskell for the robust and easily maintainable backend that
-	carried me through several experiments with front ends. The server can handle an indeterminate
-	number of groups of interacting players. Each group has its own chat box and shared todo list, and
-	all members always see the same dice roll as it gets whittled down by players selecting numbers.
-	The backend can also compute all possible solutions to any roll, if any exist, to any throw of the
-	dice. It also identifies all of the impossible-to-solve rolls. Players can gain a point by
-	clicking "Impossible" unless another player finds a solution. In that case, they lose a point.
-	Users can change the default number of dice sides from 6,6,12,and 20 and the goal from the default
-	value of 20. A version of it is online at <a href="https://score.schalk2.com"
-		>https://score.schalk2.com</a
-	>.
-</p>
-
-<p>
-	This demonstration doesn't rely on a remote server, nor does it feature any Haskell code. It's
-	just a little solitaire game providing an opportunity to consider the interesting possibilities of
-	recursive closures. You can traverse the history of game play for the current roll. If you make a
-	mistake, you can take back your move and do something else. If you traverse back and forth very
-	far, subsequent computations will be very slow and the program might even crash. If you just take back a move, computations proceed normally.
-</p>
-
+<p>Here, ret() is defined as  <span style="color: #55ffff">{retCode}</span>. Explanations of how M(x) works are below the game interface here and at "Simple_Recursive_Closures a/k/a MONADS/Home.
+	 </p>
+<p>Your score will be the elapsed time after three rounds. A round is completed by computing the number 20 in two or three steps. For example, if your numbers are 1,3,4,20, you can complete the round in two steps with 4-3 and then 1 * 20. You'll have two 1's before the multiplication. It won't matter which one you use. If your first computation is 1 * 20, your numbers will be 3,4,20. You can still subtract 3 from 4 and multiply by 1, finishing in three steps instead of two. </p>
 <!-- <h1>{$userName}</h1> -->
 <span>Player: </span>
 <input style="color: black; " type="text" bind:value={$userName} />
@@ -1031,6 +918,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <!-- <button on:click={display}>Start</button>
 <button on:click={stoptimer}>Stop</button> -->
 <br />
+
 <button on:click={resettimer}>Reset</button>
 <br /><br />
 <button style="display: {b0}" on:click={() => m2(click0)}>{AA}</button>
@@ -1067,6 +955,25 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <p>
 	Remember, just computing 20 isn't always enough. One of the numbers used to get 20 has to be the
 	result of a prior computation
+</p>
+<p>
+	<h2>Background</h2>
+	<p>Score is a game involving four dice and two or three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught it to me a decade ago, when he was in middle school. I decided to make an online multi-player version. </p>
+	<p> After some messy experiences developing a server with other	programming languages, I turned to Haskell for the robust and easily maintainable backend that carried me through several experiments with various front ends. The server can handle a large number of 	number of groups of interacting players. Each group has its own chat box and shared todo list, and all members always see the same dice roll as it gets whittled down by players selecting numbers. </p>
+	<p> One of my fondest memories began with Alex asking me to to devise a way to display all solutions to a dice roll or else report that no solution exists. My initial impression was that an algorithm that could so that would be unreasonably complicated and resource intensive. But not long afterward, I was delighted -- maybe "euphoric" is the right word -- as I showed Alex a button on the player interface that would abort gameplay and display every way to get 20 in two or three steps. It even broke the solutions down into categories. My appreciation of the Haskell programming language continued to grow.</p>
+	<p> In the online game, players can gain a point by	clicking "Impossible" unless another player finds a solution. In that case, the player who clicked "Impossible" loses a point. Players can change the default number of dice sides from 6,6,12,and 20 and the goal from the default
+	value of 20. A drag and drop version of Score is online at <a href="https://score.schalk2.com"
+		>https://score.schalk2.com</a
+	>.
+</p>
+<h2>About this Solitaire Version</h2>
+
+<p>
+	This demonstration doesn't rely on a remote server, nor does it feature any Haskell code. It's
+	just a little solitaire game providing an opportunity to consider the interesting possibilities of
+	recursive closures. You can traverse the history of game play for the current roll. If you make a
+	mistake, you can take back your move and do something else. If you traverse back and forth very
+	far, subsequent computations will be very slow and the program might even crash. If you just take back a move, computations proceed normally.
 </p>
 <p>
 	The function fu() is the brains behing the game of Score. Each time a number or operator is
@@ -1174,8 +1081,8 @@ Caution:
 <pre>{caution}</pre>
 <br /><br />
 
-<style>
-	/* (A) CONTAINER
+<!-- <style>
+	 (A) CONTAINER
 #stopwatch {
   display: flex;
   flex-wrap: wrap;
@@ -1205,7 +1112,7 @@ Caution:
 #sw-rst { background-color: #a32208; }
 #sw-go { background-color: #20a308; }
 
-	*/
-</style>
+
+</style> -->
 
 <slot></slot>

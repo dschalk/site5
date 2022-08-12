@@ -39,7 +39,7 @@ function pip () {return π }   // π
  const m4 = M(0);
 
 var qq = null;
-// $: qq = m4("stop");
+// $: qq = m4ret;
 
 const fun = a => b => {
         for (let k = 1; k < a; k+=4) {
@@ -52,8 +52,8 @@ const fun = a => b => {
 		if (e.keyCode == 13) {
            m4 (v => 0);     // Returns the "x" value to 0.
            (m4(fun(e.target.value * 1)));
-           qq = m4("stop");
-           console.log("qq and m4(s) are", qq, m4("stop"));
+           qq = m4ret;
+           console.log("qq and m4(s) are", qq, m4ret);
            return qq;
 		}
 	};
@@ -73,7 +73,7 @@ var fu = a => b => c => {
 const reset = function reset() {
         m3 (v => 0);              
         m3(fu(AA * 1)(BB*1));  
-       q = m3("stop");
+       q = m3ret;
        return q;                       
     }
 
@@ -101,7 +101,7 @@ var fuCode = `var fu = a => b => c => {
 var runCode = `const reset = function reset() {
         m3 (v => 0);     // Re-sets x in M to 0. 
         m3(fu(AA * 1)(BB*1));  
-        q = m3("stop");
+        q = m3ret;
         return q;    // The extra line of code helps assure reactivity   
     }`
 
@@ -109,7 +109,7 @@ var runCode = `const reset = function reset() {
 		if (e.keyCode == 13) {
            m3 (v => 0);     // Returns the "x" value to 0.
            (m3(fu(e.target.value * 1)));
-           q = m3("stop");
+           q = m3ret;
            return q;
 		}
 	}`;
@@ -152,7 +152,7 @@ const funCode = `const fun = a => b => {
 <p> "s" can be any complex number in the Riemann zeta function, but right now, only real numbers are computed on this page. Here are some ideas for some values of s: <a href="https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function">Particular values of the Riemann zeta function </a>  </p>
 <p> "AA" and "BB" are the numbers in the left and right boxes (respectively) below. Clicking "Compute" runs:</p>
 <pre>{runCode}</pre>
-<p>fu() takes three arguments but fu() with only its "a" and "b" parameters specified is provided to m3. The "c" value in fu's definition is named "x" in the m3 closure. fu(a)(b)(x) changes the value of x in preparation for another recursion or for m3("stop"). Ater "stop", m3 still holds its most recent value and can resume recursive computations at any time.  </p>
+<p>fu() takes three arguments but fu() with only its "a" and "b" parameters specified is provided to m3. The "c" value in fu's definition is named "x" in the m3 closure. fu(a)(b)(x) changes the value of x in preparation for another recursion or for m3ret. Ater "stop", m3 still holds its most recent value and can resume recursive computations at any time.  </p>
 
 <p style="font-size:28px;">This is the actual value of  π is 3.141592653...</p>
 

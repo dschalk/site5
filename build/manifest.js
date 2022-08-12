@@ -3,44 +3,44 @@ export const manifest = {
 	assets: new Set(["favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		entry: {"file":"start-3103f6cc.js","js":["start-3103f6cc.js","chunks/index-19becca9.js","chunks/index-eb87bfe4.js"],"css":[]},
+		entry: {"file":"_app/immutable/start-69bf00eb.js","imports":["_app/immutable/start-69bf00eb.js","_app/immutable/chunks/index-cac77216.js","_app/immutable/chunks/index-786f648c.js"],"stylesheets":[]},
 		nodes: [
 			() => import('./server/nodes/0.js'),
 			() => import('./server/nodes/1.js'),
-			() => import('./server/nodes/54.js'),
+			() => import('./server/nodes/55.js'),
 			() => import('./server/nodes/10.js'),
 			() => import('./server/nodes/2.js'),
-			() => import('./server/nodes/39.js'),
-			() => import('./server/nodes/5.js'),
-			() => import('./server/nodes/43.js'),
-			() => import('./server/nodes/6.js'),
-			() => import('./server/nodes/46.js'),
-			() => import('./server/nodes/7.js'),
-			() => import('./server/nodes/48.js'),
-			() => import('./server/nodes/8.js'),
-			() => import('./server/nodes/49.js'),
-			() => import('./server/nodes/9.js'),
-			() => import('./server/nodes/53.js'),
-			() => import('./server/nodes/3.js'),
-			() => import('./server/nodes/14.js'),
-			() => import('./server/nodes/4.js'),
-			() => import('./server/nodes/33.js'),
-			() => import('./server/nodes/37.js'),
-			() => import('./server/nodes/38.js'),
 			() => import('./server/nodes/40.js'),
+			() => import('./server/nodes/5.js'),
+			() => import('./server/nodes/44.js'),
+			() => import('./server/nodes/6.js'),
+			() => import('./server/nodes/47.js'),
+			() => import('./server/nodes/7.js'),
+			() => import('./server/nodes/49.js'),
+			() => import('./server/nodes/8.js'),
+			() => import('./server/nodes/50.js'),
+			() => import('./server/nodes/9.js'),
+			() => import('./server/nodes/54.js'),
+			() => import('./server/nodes/3.js'),
+			() => import('./server/nodes/15.js'),
+			() => import('./server/nodes/4.js'),
+			() => import('./server/nodes/34.js'),
+			() => import('./server/nodes/38.js'),
+			() => import('./server/nodes/39.js'),
 			() => import('./server/nodes/41.js'),
 			() => import('./server/nodes/42.js'),
-			() => import('./server/nodes/44.js'),
+			() => import('./server/nodes/43.js'),
 			() => import('./server/nodes/45.js'),
-			() => import('./server/nodes/47.js'),
-			() => import('./server/nodes/50.js'),
+			() => import('./server/nodes/46.js'),
+			() => import('./server/nodes/48.js'),
 			() => import('./server/nodes/51.js'),
 			() => import('./server/nodes/52.js'),
-			() => import('./server/nodes/55.js'),
+			() => import('./server/nodes/53.js'),
+			() => import('./server/nodes/56.js'),
 			() => import('./server/nodes/11.js'),
 			() => import('./server/nodes/12.js'),
 			() => import('./server/nodes/13.js'),
-			() => import('./server/nodes/15.js'),
+			() => import('./server/nodes/14.js'),
 			() => import('./server/nodes/16.js'),
 			() => import('./server/nodes/17.js'),
 			() => import('./server/nodes/18.js'),
@@ -58,9 +58,10 @@ export const manifest = {
 			() => import('./server/nodes/30.js'),
 			() => import('./server/nodes/31.js'),
 			() => import('./server/nodes/32.js'),
-			() => import('./server/nodes/34.js'),
+			() => import('./server/nodes/33.js'),
 			() => import('./server/nodes/35.js'),
-			() => import('./server/nodes/36.js')
+			() => import('./server/nodes/36.js'),
+			() => import('./server/nodes/37.js')
 		],
 		routes: [
 			{
@@ -334,13 +335,24 @@ export const manifest = {
 			},
 			{
 				type: 'page',
+				id: "Functions/A_Simple_Recursive_Closure/asyncMonads",
+				pattern: /^\/Functions\/A_Simple_Recursive_Closure\/asyncMonads\/?$/,
+				names: [],
+				types: [],
+				path: "/Functions/A_Simple_Recursive_Closure/asyncMonads",
+				shadow: null,
+				a: [0,4,16,33],
+				b: [1]
+			},
+			{
+				type: 'page',
 				id: "Functions/A_Simple_Recursive_Closure/asynchronous_functions",
 				pattern: /^\/Functions\/A_Simple_Recursive_Closure\/asynchronous_functions\/?$/,
 				names: [],
 				types: [],
 				path: "/Functions/A_Simple_Recursive_Closure/asynchronous_functions",
 				shadow: null,
-				a: [0,4,16,33],
+				a: [0,4,16,34],
 				b: [1]
 			},
 			{
@@ -351,7 +363,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/A_Simple_Recursive_Closure/functional_programming",
 				shadow: null,
-				a: [0,4,16,34],
+				a: [0,4,16,35],
 				b: [1]
 			},
 			{
@@ -362,7 +374,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/A_Simple_Recursive_Closure/score",
 				shadow: null,
-				a: [0,4,16,35],
+				a: [0,4,16,36],
 				b: [1]
 			},
 			{
@@ -373,7 +385,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/Async_monad",
 				shadow: null,
-				a: [0,4,18,36],
+				a: [0,4,18,37],
 				b: [1]
 			},
 			{
@@ -384,7 +396,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/Button",
 				shadow: null,
-				a: [0,4,18,37],
+				a: [0,4,18,38],
 				b: [1]
 			},
 			{
@@ -395,7 +407,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/Monad",
 				shadow: null,
-				a: [0,4,18,38],
+				a: [0,4,18,39],
 				b: [1]
 			},
 			{
@@ -406,7 +418,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/Monad0",
 				shadow: null,
-				a: [0,4,18,39],
+				a: [0,4,18,40],
 				b: [1]
 			},
 			{
@@ -417,7 +429,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/Monad3",
 				shadow: null,
-				a: [0,4,18,40],
+				a: [0,4,18,41],
 				b: [1]
 			},
 			{
@@ -428,7 +440,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/ObjectMonad",
 				shadow: null,
-				a: [0,4,18,41],
+				a: [0,4,18,42],
 				b: [1]
 			},
 			{
@@ -439,7 +451,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/Quadratic",
 				shadow: null,
-				a: [0,4,18,42],
+				a: [0,4,18,43],
 				b: [1]
 			},
 			{
@@ -450,7 +462,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/binary_arithmetic",
 				shadow: null,
-				a: [0,4,18,43],
+				a: [0,4,18,44],
 				b: [1]
 			},
 			{
@@ -461,7 +473,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/bitmask_prime_generator",
 				shadow: null,
-				a: [0,4,18,44],
+				a: [0,4,18,45],
 				b: [1]
 			},
 			{
@@ -472,7 +484,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/bitwise_primes",
 				shadow: null,
-				a: [0,4,18,45],
+				a: [0,4,18,46],
 				b: [1]
 			},
 			{
@@ -483,7 +495,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/code",
 				shadow: null,
-				a: [0,4,18,46],
+				a: [0,4,18,47],
 				b: [1]
 			},
 			{
@@ -494,7 +506,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/experiment",
 				shadow: null,
-				a: [0,4,18,47],
+				a: [0,4,18,48],
 				b: [1]
 			},
 			{
@@ -505,7 +517,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/factors",
 				shadow: null,
-				a: [0,4,18,48],
+				a: [0,4,18,49],
 				b: [1]
 			},
 			{
@@ -516,7 +528,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/functional_JS",
 				shadow: null,
-				a: [0,4,18,49],
+				a: [0,4,18,50],
 				b: [1]
 			},
 			{
@@ -527,7 +539,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/game",
 				shadow: () => import('./server/entries/endpoints/Functions/Archive/game.js'),
-				a: [0,4,18,50],
+				a: [0,4,18,51],
 				b: [1]
 			},
 			{
@@ -538,7 +550,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/gameBA KUP",
 				shadow: null,
-				a: [0,4,18,51],
+				a: [0,4,18,52],
 				b: [1]
 			},
 			{
@@ -549,7 +561,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/haskell",
 				shadow: null,
-				a: [0,4,18,52],
+				a: [0,4,18,53],
 				b: [1]
 			},
 			{
@@ -560,7 +572,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/monadsOld",
 				shadow: null,
-				a: [0,4,18,53],
+				a: [0,4,18,54],
 				b: [1]
 			},
 			{
@@ -571,7 +583,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/proxy",
 				shadow: null,
-				a: [0,4,18,54],
+				a: [0,4,18,55],
 				b: [1]
 			},
 			{
@@ -582,7 +594,7 @@ export const manifest = {
 				types: [],
 				path: "/Functions/Archive/score",
 				shadow: null,
-				a: [0,4,18,55],
+				a: [0,4,18,56],
 				b: [1]
 			}
 		],

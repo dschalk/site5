@@ -1,3 +1,5 @@
+<h1>HOME</h1>
+
 <script>
 	// @ts-ignore
 
@@ -29,6 +31,11 @@
 	import { userName } from '../../stores.js';
 
 	console.log('top is', top);
+
+	function ret () {};
+	var s = ret;
+	
+	
 	var m2;
 	var PIN, WINNERS;
 	var WIN = 1000.0;
@@ -64,7 +71,10 @@
 	var b5 = 'none';
 	var b6 = 'none';
 	var b7 = 'none';
-	var s = 'stop';
+
+	// var s = 'stop';
+	
+	
 	var AA;
 	var BB;
 	var CC;
@@ -75,8 +85,9 @@
 	var XX;
 	var YY;
 	var ZZ;
-	var SCORE;
-	$: SCORE = [0];
+	var SCORE = [0];
+	// $: SCORE = [0];
+
 	var ZYXW;
 	var WXYZ;
 
@@ -97,12 +108,13 @@
 			[0],
 			[]
 		];
+		
 		m2 = M(arr);
 		// m2 = m2(fuu);
 
 		//[5].push(clone([ a[0], a[1], a[2], a[3], a[4], [], a[6] ]));
 		EEE = 'yet to be selected';
-		m2 = M(m2(s));
+		m2 = M(m2(ret));
 		updateRoll(m2);
 		m2(fu);
 		if (tog) display();
@@ -170,6 +182,8 @@
 		ZZ = m2(s)[1][3];
 	};
 
+	update();
+
 	$: AA = m2(s)[0][0];
 	$: BB = m2(s)[0][1];
 	$: CC = m2(s)[0][2];
@@ -218,14 +232,22 @@
 
 	var cleanB = (a) => a.filter((x) => x != (undefined && 0));
 
-	function M(x) {
+	/* function M(x) {
 		return function go(func) {
 			if (typeof func === 'function') {
 				x = func(x);
 				return go;
 			} else if (func === 'stop') return x;
 		};
-	}
+	} */ 
+
+function M (x) {
+    return function go (func) {
+        if (func === ret) return x
+        else x = func(x);
+        return go;
+  }
+}
 
 	var back;
 	back = (a) => {
@@ -361,7 +383,7 @@
 		m2 = M(m);
 	}
 
-	$: clic1 = (m) => {
+	function clic1 (m) {
 		EEE = 'subtract';
 		m[2] = '-';
 		m2 = M(m);
@@ -555,15 +577,15 @@ function sfunc () {
     if (ZZ != (undefined && 0)) b7 = "inline";
 }`;
 
-	var monad = `function M (x) {
-  return function go (func) {
-      if (typeof func === "function") {
-          x = func(x);
-          return go;
-      }
-      else if (func === "stop") return x;
+var monad = `function M (x) {
+    return function go (func) {
+        if (func === ret) return x
+        else x = func(x);
+        return go;
   }
-};`;
+}`;
+
+var retCode = `function ret () {}`
 
 	var monad3 = `var mon3 = M([1,2,3,4]);
 function g(ar) {
@@ -837,17 +859,16 @@ m3(asyncAdd(-51))(asyncMult(6/7))(s).then(v => log("And back to", v)) // And bac
   })(x)
 }`;
 
-	var caution = `var s = 'stop';
+	var caution = `var s = dev;
 var log = console.log;
 
-function M(x) {
-  return function go(func) {
-    if (typeof func === "function") {
-      x = func(x);
-      return go;
-    } else if (func === "stop") return x;
+function M (x) {
+    return function go (func) {
+        if (func === ret) return x
+        else x = func(x);
+        return go;
   }
-};
+}
 
 var m3 = M(3);
 
@@ -869,6 +890,10 @@ setTimeout(() => console.log("m3(s) is", m3(s)),0);
 // Two seconds after "1000" appears in the console log, "888" is displayed.`;
 </script>
 
+<style>
+	pre {margin-left: 3%;}
+</style>
+
 <svelte:head>
 	<title>Recursive Closures Without Mutating State</title>
 </svelte:head>
@@ -887,9 +912,11 @@ setTimeout(() => console.log("m3(s) is", m3(s)),0);
 </p>
 <p>
 	The function M() (below) returns the function go(), thereby forming a closure. The returned
-	function is named to facilitate recursion. Here's the definition of M():
+	function is named to facilitate recursion.  Here's the definition of M():
 </p>
 <pre>{monad}</pre>
+<p>The function "ret" needs no functionality of its own. It just prompts the return of the current value of x. Here's the definition of ret() used on this page: <span style="color: #55ffff">{retCode}</span>. </p>
+<p></p>
 <p>
 	M(x) is most useful when the closure is named or, more precisely, when the function returned by
 	M(x) is named. When M(x) is asigned a variable name, the value of "x" in M(x) can be preserved,
@@ -909,8 +936,8 @@ setTimeout(() => console.log("m3(s) is", m3(s)),0);
 </p>
 <pre>{example2}</pre>
 <p>These abreviations will be used from now on:</p>
-<pre>var s = "stop";
-var log = console.log;
+<pre>const s = ret;
+const log = console.log;
 </pre>
 <span style="font-size:26px; color: gold; text-decoration: underline">Deep Clone:</span>
 <span
@@ -1068,7 +1095,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <p>
 	The function fu() is the brains behing the game of Score. Each time a number or operator is
 	clicked, m2(fu) is called, the monad m2 is modified, and the change is reflected in the DOM. The
-	state of play in M is an array of seven arrays. Let's call it ar. If an operator op is in ar[2]
+	state of play in M is an array of eight arrays. Let's call it ar. If an operator op is in ar[2]
 	and two numbers a and b are in ar[1], fu calls calc(a,b,op) and the result is added to ar[0] and
 	ar[3]. ar[0] are the numbers in the game interface. ar[3] hold numbers that have been computed. At
 	least one of the numbers in ar[3] has to be used to compute 20 in order to gain a point. If the
@@ -1126,7 +1153,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 
 <p>
 	In the solitaire version of the game of score, x in M(x) is, as mentioned above, the array of
-	arrays [ [], [], [], [], [], [], [], [], [] ] where x[0] starts out as four integers simulating a
+	arrays [ [], [], [], [], [], [], [], [] ] where x[0] starts out as four integers simulating a
 	throw of two six-sided, one twelve-sided, and one twenty-sided dice. x[1] and x[3] contain the
 	number selected by the player, x[2] is the selected operator, and x[4] keeps track of the number
 	of successes until the player wins by reaching 5, x[5] contains all prior states as the player
@@ -1172,8 +1199,10 @@ Caution:
 <pre>{caution}</pre>
 <br /><br />
 
-<style>
-	/* (A) CONTAINER
+
+
+<!-- <style>
+	 (A) CONTAINER
 #stopwatch {
   display: flex;
   flex-wrap: wrap;
@@ -1203,5 +1232,4 @@ Caution:
 #sw-rst { background-color: #a32208; }
 #sw-go { background-color: #20a308; }
 
-	*/
-</style>
+</style> -->

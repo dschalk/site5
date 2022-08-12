@@ -29,7 +29,8 @@ const sum = a => b => a+b;
 let num = 6;
 
 let run = function run(num) {
-return [Monad(num)(sum(7))(prod(4))(sum(-10))("stop")]}
+    return [Monad(num)(sum(7))(prod(4))(sum(-10))]
+}
 
 
 let mona = run(num);
@@ -85,9 +86,9 @@ const sum = a => b => a+b;
 
 <pre>
 var m = Monad(3)
-m("stop");  // returns 3
+mret;  // returns 3
 m(v => v**3)  // Returns foo()
-m("stop")  // returns 27</pre>
+mret  // returns 27</pre>
 
 
 

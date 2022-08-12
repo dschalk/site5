@@ -1,0 +1,7 @@
+import * as module from '../entries/pages/Law/law.svelte.js';
+
+export { module };
+export const index = 48;
+export const file = '_app/immutable/pages/Law/law.svelte-ae0f9245.js';
+export const imports = ["_app/immutable/pages/Law/law.svelte-ae0f9245.js","_app/immutable/chunks/index-cac77216.js","_app/immutable/chunks/index-54fd7bcd.js"];
+export const stylesheets = [];

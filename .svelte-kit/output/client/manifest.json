@@ -1,0 +1,785 @@
+{
+  "src/lib/Screenshot_async.png": {
+    "file": "_app/immutable/assets/Screenshot_async-4d2c9494.png",
+    "src": "src/lib/Screenshot_async.png"
+  },
+  "src/routes/images/Chun.svg": {
+    "file": "_app/immutable/assets/Chun-34b9d3b2.svg",
+    "src": "src/routes/images/Chun.svg"
+  },
+  "src/lib/Screenshot_array.png": {
+    "file": "_app/immutable/assets/Screenshot_array-ef4daf70.png",
+    "src": "src/lib/Screenshot_array.png"
+  },
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "_app/immutable/start-69bf00eb.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-786f648c.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/Functions/__layout.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte",
+      "src/routes/Functions/Archive/__layout.svelte",
+      "src/routes/Grammar/__layout.svelte",
+      "src/routes/Law/__layout.svelte",
+      "src/routes/Legal and Constitutional Matters/__layout.svelte",
+      "src/routes/Mahjong/__layout.svelte",
+      "src/routes/Sara/__layout.svelte",
+      "src/routes/Button.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/array.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/functional_programming.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/index.svelte",
+      "src/routes/Functions/A_Simple_Recursive_Closure/score.svelte",
+      "src/routes/Functions/Archive/Async_monad.svelte",
+      "src/routes/Functions/Archive/Button.svelte",
+      "src/routes/Functions/Archive/Monad.svelte",
+      "src/routes/Functions/Archive/Monad0.svelte",
+      "src/routes/Functions/Archive/Monad3.svelte",
+      "src/routes/Functions/Archive/ObjectMonad.svelte",
+      "src/routes/Functions/Archive/Quadratic.svelte",
+      "src/routes/Functions/Archive/binary_arithmetic.svelte",
+      "src/routes/Functions/Archive/bitmask_prime_generator.svelte",
+      "src/routes/Functions/Archive/bitwise_primes.svelte",
+      "src/routes/Functions/Archive/code.svelte",
+      "src/routes/Functions/Archive/experiment.svelte",
+      "src/routes/Functions/Archive/factors.svelte",
+      "src/routes/Functions/Archive/functional_JS.svelte",
+      "src/routes/Functions/Archive/game.svelte",
+      "src/routes/Functions/Archive/gameBA KUP.svelte",
+      "src/routes/Functions/Archive/haskell.svelte",
+      "src/routes/Functions/Archive/index.svelte",
+      "src/routes/Functions/Archive/monadsOld.svelte",
+      "src/routes/Functions/Archive/proxy.svelte",
+      "src/routes/Functions/Archive/score.svelte",
+      "src/routes/Functions/Zeta.svelte",
+      "src/routes/Functions/asyncMonads.svelte",
+      "src/routes/Functions/index.svelte",
+      "src/routes/Functions/play.svelte",
+      "src/routes/Functions/stopwatch.svelte",
+      "src/routes/Grammar/Niether of us (has or have).svelte",
+      "src/routes/Grammar/index.svelte",
+      "src/routes/Law/archive.svelte",
+      "src/routes/Law/chapter-1.svelte",
+      "src/routes/Law/index.svelte",
+      "src/routes/Law/law.svelte",
+      "src/routes/Legal and Constitutional Matters/index.svelte",
+      "src/routes/Mahjong/index.svelte",
+      "src/routes/Mahjong/terms.svelte",
+      "src/routes/Mahjong/yaku.svelte",
+      "src/routes/Sara/For-Sarabeth.svelte",
+      "src/routes/Sara/index.svelte",
+      "src/routes/index.svelte",
+      "src/routes/shared/Button.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "_app/immutable/pages/__layout.svelte-99a18b74.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/__layout-03afeb9a.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "_app/immutable/error.svelte-85dee993.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/__layout.svelte": {
+    "file": "_app/immutable/pages/Functions/__layout.svelte-f99fd304.js",
+    "src": "src/routes/Functions/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/__layout.svelte-ccb58606.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/Archive/__layout.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/__layout.svelte-ae376aa4.js",
+    "src": "src/routes/Functions/Archive/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/__layout-cd1e75df.css"
+    ]
+  },
+  "src/routes/Grammar/__layout.svelte": {
+    "file": "_app/immutable/pages/Grammar/__layout.svelte-ab28e04c.js",
+    "src": "src/routes/Grammar/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Law/__layout.svelte": {
+    "file": "_app/immutable/pages/Law/__layout.svelte-e5359335.js",
+    "src": "src/routes/Law/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/__layout-1bc7c06c.css"
+    ]
+  },
+  "src/routes/Legal and Constitutional Matters/__layout.svelte": {
+    "file": "_app/immutable/pages/Legal and Constitutional Matters/__layout.svelte-ebb4a05a.js",
+    "src": "src/routes/Legal and Constitutional Matters/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Mahjong/__layout.svelte": {
+    "file": "_app/immutable/pages/Mahjong/__layout.svelte-b8382ba9.js",
+    "src": "src/routes/Mahjong/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/__layout-1bc7c06c.css"
+    ]
+  },
+  "src/routes/Sara/__layout.svelte": {
+    "file": "_app/immutable/pages/Sara/__layout.svelte-6f7d660f.js",
+    "src": "src/routes/Sara/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Button.svelte": {
+    "file": "_app/immutable/pages/Button.svelte-df24ad46.js",
+    "src": "src/routes/Button.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button-6faa77b5.css"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/array.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/array.svelte-97814557.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/array.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js",
+      "_Screenshot_async-76142dca.js"
+    ],
+    "css": [
+      "_app/immutable/assets/array-e20cfc41.css"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/asyncMonads.svelte-d04bf2c1.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_Screenshot_async-76142dca.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/asyncMonads-8f0f9b8f.css"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte-403e51b1.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/asynchronous_functions-8b05e3c7.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/Screenshot_array-ef4daf70.png"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/functional_programming.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/functional_programming.svelte-91f683d7.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/functional_programming.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/index.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/index.svelte-6c7187e1.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js",
+      "_stores-8c4d0105.js",
+      "_index-786f648c.js"
+    ],
+    "css": [
+      "_app/immutable/assets/index-c1f9fd08.css"
+    ]
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/score.svelte": {
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/score.svelte-f652078b.js",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/score.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js",
+      "_stores-8c4d0105.js",
+      "_index-786f648c.js"
+    ],
+    "css": [
+      "_app/immutable/assets/score-c1f9fd08.css"
+    ]
+  },
+  "src/routes/Functions/Archive/Async_monad.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/Async_monad.svelte-73d6087f.js",
+    "src": "src/routes/Functions/Archive/Async_monad.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Button.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/Button.svelte-7b018d41.js",
+    "src": "src/routes/Functions/Archive/Button.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button-7555aca2.css"
+    ]
+  },
+  "src/routes/Functions/Archive/Monad.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/Monad.svelte-d1d38388.js",
+    "src": "src/routes/Functions/Archive/Monad.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Monad0.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/Monad0.svelte-f90f780d.js",
+    "src": "src/routes/Functions/Archive/Monad0.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Monad0-ffc6df28.css"
+    ]
+  },
+  "src/routes/Functions/Archive/Monad3.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/Monad3.svelte-3c4a86d3.js",
+    "src": "src/routes/Functions/Archive/Monad3.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/ObjectMonad.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/ObjectMonad.svelte-b2c27e09.js",
+    "src": "src/routes/Functions/Archive/ObjectMonad.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/Quadratic.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/Quadratic.svelte-aca71d7c.js",
+    "src": "src/routes/Functions/Archive/Quadratic.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/binary_arithmetic.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/binary_arithmetic.svelte-ff2e372d.js",
+    "src": "src/routes/Functions/Archive/binary_arithmetic.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/Archive/bitmask_prime_generator.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/bitmask_prime_generator.svelte-e123760f.js",
+    "src": "src/routes/Functions/Archive/bitmask_prime_generator.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/bitwise_primes.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/bitwise_primes.svelte-e7dd673b.js",
+    "src": "src/routes/Functions/Archive/bitwise_primes.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/Archive/code.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/code.svelte-2551d767.js",
+    "src": "src/routes/Functions/Archive/code.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "__commonjsHelpers-e864563f.js"
+    ]
+  },
+  "src/routes/Functions/Archive/experiment.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/experiment.svelte-78e49724.js",
+    "src": "src/routes/Functions/Archive/experiment.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/Archive/factors.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/factors.svelte-b94f94bb.js",
+    "src": "src/routes/Functions/Archive/factors.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/factors-61f8c1ad.css"
+    ]
+  },
+  "src/routes/Functions/Archive/functional_JS.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/functional_JS.svelte-f53aa00b.js",
+    "src": "src/routes/Functions/Archive/functional_JS.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/game.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/game.svelte-620a6cf5.js",
+    "src": "src/routes/Functions/Archive/game.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/game-2bdcac67.css",
+      "_app/immutable/assets/Button-7555aca2.css"
+    ]
+  },
+  "src/routes/Functions/Archive/gameBA KUP.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/gameBA KUP.svelte-d9bc94d8.js",
+    "src": "src/routes/Functions/Archive/gameBA KUP.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/gameBA KUP-2bdcac67.css",
+      "_app/immutable/assets/Button-7555aca2.css"
+    ]
+  },
+  "src/routes/Functions/Archive/haskell.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/haskell.svelte-6ab59349.js",
+    "src": "src/routes/Functions/Archive/haskell.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/index.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/index.svelte-6c70f4de.js",
+    "src": "src/routes/Functions/Archive/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/Archive/monadsOld.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/monadsOld.svelte-53f570c0.js",
+    "src": "src/routes/Functions/Archive/monadsOld.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Archive/proxy.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/proxy.svelte-76336958.js",
+    "src": "src/routes/Functions/Archive/proxy.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/proxy-7b3105be.css"
+    ]
+  },
+  "src/routes/Functions/Archive/score.svelte": {
+    "file": "_app/immutable/pages/Functions/Archive/score.svelte-ae4a63b8.js",
+    "src": "src/routes/Functions/Archive/score.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/Zeta.svelte": {
+    "file": "_app/immutable/pages/Functions/Zeta.svelte-790aa4e6.js",
+    "src": "src/routes/Functions/Zeta.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js",
+      "__commonjsHelpers-e864563f.js"
+    ]
+  },
+  "src/routes/Functions/asyncMonads.svelte": {
+    "file": "_app/immutable/pages/Functions/asyncMonads.svelte-a115d4cd.js",
+    "src": "src/routes/Functions/asyncMonads.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/index.svelte": {
+    "file": "_app/immutable/pages/Functions/index.svelte-a57f56df.js",
+    "src": "src/routes/Functions/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Functions/play.svelte": {
+    "file": "_app/immutable/pages/Functions/play.svelte-c5e3aac5.js",
+    "src": "src/routes/Functions/play.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Functions/stopwatch.svelte": {
+    "file": "_app/immutable/pages/Functions/stopwatch.svelte-8bb3cd97.js",
+    "src": "src/routes/Functions/stopwatch.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Grammar/Niether of us (has or have).svelte": {
+    "file": "_app/immutable/pages/Grammar/Niether of us (has or have).svelte-1c2eb970.js",
+    "src": "src/routes/Grammar/Niether of us (has or have).svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Grammar/index.svelte": {
+    "file": "_app/immutable/pages/Grammar/index.svelte-b424c37f.js",
+    "src": "src/routes/Grammar/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Law/archive.svelte": {
+    "file": "_app/immutable/pages/Law/archive.svelte-d1b5890f.js",
+    "src": "src/routes/Law/archive.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Law/chapter-1.svelte": {
+    "file": "_app/immutable/pages/Law/chapter-1.svelte-a56cc967.js",
+    "src": "src/routes/Law/chapter-1.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Law/index.svelte": {
+    "file": "_app/immutable/pages/Law/index.svelte-dea05fb6.js",
+    "src": "src/routes/Law/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ]
+  },
+  "src/routes/Law/law.svelte": {
+    "file": "_app/immutable/pages/Law/law.svelte-ae0f9245.js",
+    "src": "src/routes/Law/law.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js",
+      "_index-54fd7bcd.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/Chun-34b9d3b2.svg"
+    ]
+  },
+  "src/routes/Legal and Constitutional Matters/index.svelte": {
+    "file": "_app/immutable/pages/Legal and Constitutional Matters/index.svelte-fb12323e.js",
+    "src": "src/routes/Legal and Constitutional Matters/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Mahjong/index.svelte": {
+    "file": "_app/immutable/pages/Mahjong/index.svelte-d973a65f.js",
+    "src": "src/routes/Mahjong/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Mahjong/terms.svelte": {
+    "file": "_app/immutable/pages/Mahjong/terms.svelte-15791e7e.js",
+    "src": "src/routes/Mahjong/terms.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Mahjong/yaku.svelte": {
+    "file": "_app/immutable/pages/Mahjong/yaku.svelte-c7da5089.js",
+    "src": "src/routes/Mahjong/yaku.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/yaku-1c539150.css"
+    ]
+  },
+  "src/routes/Sara/For-Sarabeth.svelte": {
+    "file": "_app/immutable/pages/Sara/For-Sarabeth.svelte-93a7cfdc.js",
+    "src": "src/routes/Sara/For-Sarabeth.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/Sara/index.svelte": {
+    "file": "_app/immutable/pages/Sara/index.svelte-9565094f.js",
+    "src": "src/routes/Sara/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "_app/immutable/pages/index.svelte-b7dede53.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "src/routes/shared/Button.svelte": {
+    "file": "_app/immutable/pages/shared/Button.svelte-2c49e3e4.js",
+    "src": "src/routes/shared/Button.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cac77216.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button-7555aca2.css"
+    ]
+  },
+  "_index-cac77216.js": {
+    "file": "_app/immutable/chunks/index-cac77216.js"
+  },
+  "_index-786f648c.js": {
+    "file": "_app/immutable/chunks/index-786f648c.js",
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "_index-54fd7bcd.js": {
+    "file": "_app/immutable/chunks/index-54fd7bcd.js",
+    "imports": [
+      "_index-cac77216.js"
+    ]
+  },
+  "_Screenshot_async-76142dca.js": {
+    "file": "_app/immutable/chunks/Screenshot_async-76142dca.js",
+    "assets": [
+      "_app/immutable/assets/Screenshot_async-4d2c9494.png"
+    ]
+  },
+  "_stores-8c4d0105.js": {
+    "file": "_app/immutable/chunks/stores-8c4d0105.js",
+    "imports": [
+      "_index-786f648c.js"
+    ]
+  },
+  "__commonjsHelpers-e864563f.js": {
+    "file": "_app/immutable/chunks/_commonjsHelpers-e864563f.js"
+  },
+  "src/routes/Mahjong/__layout.css": {
+    "file": "_app/immutable/assets/__layout-1bc7c06c.css",
+    "src": "src/routes/Mahjong/__layout.css"
+  },
+  "src/routes/shared/Button.css": {
+    "file": "_app/immutable/assets/Button-7555aca2.css",
+    "src": "src/routes/shared/Button.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/score.css": {
+    "file": "_app/immutable/assets/score-c1f9fd08.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/score.css"
+  },
+  "src/routes/Mahjong/yaku.css": {
+    "file": "_app/immutable/assets/yaku-1c539150.css",
+    "src": "src/routes/Mahjong/yaku.css"
+  },
+  "src/routes/Functions/Archive/factors.css": {
+    "file": "_app/immutable/assets/factors-61f8c1ad.css",
+    "src": "src/routes/Functions/Archive/factors.css"
+  },
+  "src/routes/Functions/Archive/game.css": {
+    "file": "_app/immutable/assets/game-2bdcac67.css",
+    "src": "src/routes/Functions/Archive/game.css"
+  },
+  "src/routes/__layout.css": {
+    "file": "_app/immutable/assets/__layout-03afeb9a.css",
+    "src": "src/routes/__layout.css"
+  },
+  "src/routes/Functions/Archive/__layout.css": {
+    "file": "_app/immutable/assets/__layout-cd1e75df.css",
+    "src": "src/routes/Functions/Archive/__layout.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.css": {
+    "file": "_app/immutable/assets/asyncMonads-8f0f9b8f.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/index.css": {
+    "file": "_app/immutable/assets/index-c1f9fd08.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/index.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.css": {
+    "file": "_app/immutable/assets/asynchronous_functions-8b05e3c7.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/array.css": {
+    "file": "_app/immutable/assets/array-e20cfc41.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/array.css"
+  },
+  "src/routes/Functions/Archive/Monad0.css": {
+    "file": "_app/immutable/assets/Monad0-ffc6df28.css",
+    "src": "src/routes/Functions/Archive/Monad0.css"
+  },
+  "src/routes/Functions/Archive/gameBA KUP.css": {
+    "file": "_app/immutable/assets/gameBA KUP-2bdcac67.css",
+    "src": "src/routes/Functions/Archive/gameBA KUP.css"
+  },
+  "src/routes/Button.css": {
+    "file": "_app/immutable/assets/Button-6faa77b5.css",
+    "src": "src/routes/Button.css"
+  },
+  "src/routes/Functions/Archive/proxy.css": {
+    "file": "_app/immutable/assets/proxy-7b3105be.css",
+    "src": "src/routes/Functions/Archive/proxy.css"
+  }
+}
