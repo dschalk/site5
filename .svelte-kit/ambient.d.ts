@@ -77,5 +77,4 @@ declare module '$env/static/private' {
 	export const VTE_VERSION: string;
 	export const INIT_CWD: string;
 	export const EDITOR: string;
-	export const NODE_ENV: string;
 }

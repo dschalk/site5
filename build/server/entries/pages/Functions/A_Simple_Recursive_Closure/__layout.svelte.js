@@ -9,10 +9,6 @@ const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
       <span>\xA0\xA0\xA0   </span>
   
-      <li><a href="${"/Functions/A_Simple_Recursive_Closure/indexBackup"}">indexBackup </a></li>
-
-      <span>\xA0\xA0\xA0   </span>
-  
       <li><a href="${"/Functions/A_Simple_Recursive_Closure/asyncMonads"}">Asynchronous Monads</a></li>
 
       <span>\xA0\xA0\xA0   </span>

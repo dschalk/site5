@@ -1,2 +1,15 @@
 {
+    "cSpell.enabled": true,
+    "spellright.language": [],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "svelte"
+    ],
+    "spellright.parserByClass": {
+        "svelte": {
+            "parser": "plain"
+        }
+    }
 }

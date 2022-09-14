@@ -3,16 +3,16 @@
     "file": "_app/immutable/assets/Screenshot_async-4d2c9494.png",
     "src": "src/lib/Screenshot_async.png"
   },
-  "src/routes/images/Chun.svg": {
-    "file": "_app/immutable/assets/Chun-34b9d3b2.svg",
-    "src": "src/routes/images/Chun.svg"
-  },
   "src/lib/Screenshot_array.png": {
     "file": "_app/immutable/assets/Screenshot_array-ef4daf70.png",
     "src": "src/lib/Screenshot_array.png"
   },
+  "src/routes/images/Chun.svg": {
+    "file": "_app/immutable/assets/Chun-34b9d3b2.svg",
+    "src": "src/routes/images/Chun.svg"
+  },
   ".svelte-kit/runtime/client/start.js": {
-    "file": "_app/immutable/start-69bf00eb.js",
+    "file": "_app/immutable/start-19d39a35.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -80,7 +80,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "_app/immutable/pages/__layout.svelte-99a18b74.js",
+    "file": "_app/immutable/pages/__layout.svelte-cfe6e6fc.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -88,7 +88,7 @@
       "_index-cac77216.js"
     ],
     "css": [
-      "_app/immutable/assets/__layout-03afeb9a.css"
+      "_app/immutable/assets/__layout-24ce9011.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -110,7 +110,7 @@
     ]
   },
   "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte": {
-    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/__layout.svelte-ccb58606.js",
+    "file": "_app/immutable/pages/Functions/A_Simple_Recursive_Closure/__layout.svelte-f9bd4fc1.js",
     "src": "src/routes/Functions/A_Simple_Recursive_Closure/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -718,68 +718,68 @@
   "__commonjsHelpers-e864563f.js": {
     "file": "_app/immutable/chunks/_commonjsHelpers-e864563f.js"
   },
-  "src/routes/Mahjong/__layout.css": {
-    "file": "_app/immutable/assets/__layout-1bc7c06c.css",
-    "src": "src/routes/Mahjong/__layout.css"
-  },
-  "src/routes/shared/Button.css": {
+  "Button.css": {
     "file": "_app/immutable/assets/Button-7555aca2.css",
-    "src": "src/routes/shared/Button.css"
-  },
-  "src/routes/Functions/A_Simple_Recursive_Closure/score.css": {
-    "file": "_app/immutable/assets/score-c1f9fd08.css",
-    "src": "src/routes/Functions/A_Simple_Recursive_Closure/score.css"
-  },
-  "src/routes/Mahjong/yaku.css": {
-    "file": "_app/immutable/assets/yaku-1c539150.css",
-    "src": "src/routes/Mahjong/yaku.css"
-  },
-  "src/routes/Functions/Archive/factors.css": {
-    "file": "_app/immutable/assets/factors-61f8c1ad.css",
-    "src": "src/routes/Functions/Archive/factors.css"
-  },
-  "src/routes/Functions/Archive/game.css": {
-    "file": "_app/immutable/assets/game-2bdcac67.css",
-    "src": "src/routes/Functions/Archive/game.css"
-  },
-  "src/routes/__layout.css": {
-    "file": "_app/immutable/assets/__layout-03afeb9a.css",
-    "src": "src/routes/__layout.css"
-  },
-  "src/routes/Functions/Archive/__layout.css": {
-    "file": "_app/immutable/assets/__layout-cd1e75df.css",
-    "src": "src/routes/Functions/Archive/__layout.css"
-  },
-  "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.css": {
-    "file": "_app/immutable/assets/asyncMonads-8f0f9b8f.css",
-    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.css"
-  },
-  "src/routes/Functions/A_Simple_Recursive_Closure/index.css": {
-    "file": "_app/immutable/assets/index-c1f9fd08.css",
-    "src": "src/routes/Functions/A_Simple_Recursive_Closure/index.css"
-  },
-  "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.css": {
-    "file": "_app/immutable/assets/asynchronous_functions-8b05e3c7.css",
-    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.css"
-  },
-  "src/routes/Functions/A_Simple_Recursive_Closure/array.css": {
-    "file": "_app/immutable/assets/array-e20cfc41.css",
-    "src": "src/routes/Functions/A_Simple_Recursive_Closure/array.css"
-  },
-  "src/routes/Functions/Archive/Monad0.css": {
-    "file": "_app/immutable/assets/Monad0-ffc6df28.css",
-    "src": "src/routes/Functions/Archive/Monad0.css"
+    "src": "Button.css"
   },
   "src/routes/Functions/Archive/gameBA KUP.css": {
     "file": "_app/immutable/assets/gameBA KUP-2bdcac67.css",
     "src": "src/routes/Functions/Archive/gameBA KUP.css"
   },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.css": {
+    "file": "_app/immutable/assets/asynchronous_functions-8b05e3c7.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asynchronous_functions.css"
+  },
+  "src/routes/Mahjong/__layout.css": {
+    "file": "_app/immutable/assets/__layout-1bc7c06c.css",
+    "src": "src/routes/Mahjong/__layout.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.css": {
+    "file": "_app/immutable/assets/asyncMonads-8f0f9b8f.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/asyncMonads.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/array.css": {
+    "file": "_app/immutable/assets/array-e20cfc41.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/array.css"
+  },
+  "src/routes/Functions/A_Simple_Recursive_Closure/score.css": {
+    "file": "_app/immutable/assets/score-c1f9fd08.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/score.css"
+  },
+  "src/routes/Functions/Archive/Monad0.css": {
+    "file": "_app/immutable/assets/Monad0-ffc6df28.css",
+    "src": "src/routes/Functions/Archive/Monad0.css"
+  },
   "src/routes/Button.css": {
     "file": "_app/immutable/assets/Button-6faa77b5.css",
     "src": "src/routes/Button.css"
   },
+  "src/routes/Functions/A_Simple_Recursive_Closure/index.css": {
+    "file": "_app/immutable/assets/index-c1f9fd08.css",
+    "src": "src/routes/Functions/A_Simple_Recursive_Closure/index.css"
+  },
+  "src/routes/Functions/Archive/factors.css": {
+    "file": "_app/immutable/assets/factors-61f8c1ad.css",
+    "src": "src/routes/Functions/Archive/factors.css"
+  },
+  "src/routes/Functions/Archive/__layout.css": {
+    "file": "_app/immutable/assets/__layout-cd1e75df.css",
+    "src": "src/routes/Functions/Archive/__layout.css"
+  },
+  "src/routes/Mahjong/yaku.css": {
+    "file": "_app/immutable/assets/yaku-1c539150.css",
+    "src": "src/routes/Mahjong/yaku.css"
+  },
+  "src/routes/__layout.css": {
+    "file": "_app/immutable/assets/__layout-24ce9011.css",
+    "src": "src/routes/__layout.css"
+  },
   "src/routes/Functions/Archive/proxy.css": {
     "file": "_app/immutable/assets/proxy-7b3105be.css",
     "src": "src/routes/Functions/Archive/proxy.css"
+  },
+  "src/routes/Functions/Archive/game.css": {
+    "file": "_app/immutable/assets/game-2bdcac67.css",
+    "src": "src/routes/Functions/Archive/game.css"
   }
 }

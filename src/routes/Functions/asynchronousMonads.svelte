@@ -296,7 +296,7 @@ setTimeout(() => L = ar(),3500);
     where ar = () => AR.join(" --> ")
       and AR and other relevant functions are defined below.`
 
-    var MCode = `function M(x) {
+var MCode = `function M(x) {
     return function go(func) {
         if (func == "stop") return x
         if (x instanceof Promise) x = x.then(v => x = func(v));

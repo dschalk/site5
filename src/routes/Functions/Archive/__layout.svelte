@@ -1,30 +1,154 @@
 
+
+
+
+
+<script>
+  var current = '/Functions/';
+</script>
+
+<style>
+button {
+      display: block;
+      font-size: 18px;
+    }
+     .selected {
+    color: #000000;
+    background-color: #eab676;
+    border-color: #E8F7C1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px 0px rgb(255, 255, 0);
+    } 
+span {
+    font-size:30px;
+}    
+  </style>
+
+<span>Archive</span>
+
+<nav>
+    <ul>
+
+      <li>    
+          <a href="/Functions/Archive/">           
+  <button
+    class:selected="{current === '/Functions/Archive/'}"
+    on:click="{() => current = '/Functions/Archive/'}"
+  >Home</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+      <li>
+          <a href="/Functions/Archive/JS_Servers/">
+  <button
+    class:selected="{current === '/Functions/Archive/JS_Servers/'}"
+    on:click="{() => current = '/Functions/Archive/JS_Servers'}"
+  >JS_Servers</button>
+          </a>
+      </li>
+ 
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+
+        
+      <li>    
+          <a href="/Functions/Archive/functional_JS">           
+  <button
+    class:selected="{current === '/Functions/Archive/functional_JS'}"
+    on:click="{() => current = '/Functions/Archive/functional_JS'}"
+  >functional_JS</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+        
+      <li>    
+          <a href="/Functions/Archive/factors">           
+  <button
+    class:selected="{current === '/Functions/Archive/factior'}"
+    on:click="{() => current = '/Functions/Archive/factors'}"
+  >factors</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+        
+      <li>    
+          <a href="/Functions/Archive/functional_JS">           
+  <button
+    class:selected="{current === '/Functions/Archive/functional_JS'}"
+    on:click="{() => current = '/Functions/Archive/functional_JS'}"
+  >functional_JS</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+        
+      <li>    
+          <a href="/Functions/Archive/functional_JS">           
+  <button
+    class:selected="{current === '/Functions/Archive/functional_JS'}"
+    on:click="{() => current = '/Functions/Archive/functional_JS'}"
+  >functional_JS</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+        
+      <li>    
+          <a href="/Functions/Archive/functional_JS">           
+  <button
+    class:selected="{current === '/Functions/Archive/functional_JS'}"
+    on:click="{() => current = '/Functions/Archive/functional_JS'}"
+  >functional_JS</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+        
+      <li>    
+          <a href="/Functions/Archive/functional_JS">           
+  <button
+    class:selected="{current === '/Functions/Archive/functional_JS'}"
+    on:click="{() => current = '/Functions/Archive/functional_JS'}"
+  >functional_JS</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+        
+      <li>    
+          <a href="/Functions/Archive/functional_JS">           
+  <button
+    class:selected="{current === '/Functions/Archive/functional_JS'}"
+    on:click="{() => current = '/Functions/Archive/functional_JS'}"
+  >functional_JS</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+  
+  
+  
+  
+
+    </ul>
+
+</nav>
+
+
+
+
+
 <div>
     <br><br>
   <nav>
       <ul>
-      <li>
-          <a href="/Functions/Archive/">Home</a>
-      </li>
-  
-      <span> &nbsp;&nbsp;&nbsp;   </span>
       
-      <li>
-          <a href="/Functions/Archive/Async_monad">Async_monad</a>
-      </li>
-  
-      <span> &nbsp;&nbsp;&nbsp;   </span>
-      
-      <li>
-          <a href="/Functions/Archive/functional_JS">functional_JS</a>
-      </li>
-      <span> &nbsp;&nbsp;&nbsp;   </span>
-      
-      <li>
-          <a href="/Functions/Archive/binary_arithmetic">binary-arithmetic</a>
-      </li>
-
-
       <span> &nbsp;&nbsp;&nbsp;   </span>
 
       <li>
@@ -48,8 +172,8 @@
   </ul>
   </nav>
   </div>
- <style>
-/*
+ <!-- <style>
+
   html {
     background-color:#211500;
     width: 100%;

@@ -16,7 +16,7 @@
     </ul>
 </nav>
 
-<style>
+<!--<style>
     ul {
         display:flex;
         list-style: none;
@@ -24,8 +24,8 @@
 		font-size: 14px;
     }
     li {margin-right: 10px}
-</style>
+</style> -->
 
 
 <slot></slot>
->
+

@@ -30,6 +30,9 @@
 	import { userName } from '../../stores.js';
 
 	console.log('top is', top);
+
+    function ret () {};
+
 	var m2;
 	var PIN, WINNERS;
 	var WIN = 1000.0;
@@ -65,7 +68,7 @@
 	var b5 = 'none';
 	var b6 = 'none';
 	var b7 = 'none';
-	var s = 'stop';
+	var s = ret;
 	var AA;
 	var BB;
 	var CC;
@@ -215,19 +218,14 @@
 	}
 	// var clone = structuredClone;
 
-	var clean = (a) => a.map((ar) => ar.filter((x) => x != (undefined && 0)));
-
-	var cleanB = (a) => a.filter((x) => x != (undefined && 0));
-
-	function M(x) {
-		return function go(func) {
-			if (typeof func === 'function') {
-				x = func(x);
-				return go;
-			} else if (func === 'stop') return x;
-		};
-	}
-
+	function M (x) {
+        return function go (func) {
+            if (func === ret) return x
+            x = func(x);
+            return go;
+        }
+    }
+	
 	var back;
 	back = (a) => {
 		if (a[5].length < 1) {
@@ -713,10 +711,10 @@ var resetFu = function resetFu (e) {
 	var example3 = `var mon = M(2);
 mon(v=>v**4)(v=>v+5)(v=>v*2);`;
 	// The value of x can be obtained later
-	var example4 = `mon('stop');  // 42
+	var example4 = `mon(ret);  // 42
 mon(v => v*v);`;
 	// And later:
-	var example5 = `mon('stop');  // 1764`;
+	var example5 = `mon(ret);  // 1764`;
 
 	var oldMonad = `function M (x) {
     return function go (func) {
@@ -839,7 +837,7 @@ m3(asyncAdd(-51))(asyncMult(6/7))(s).then(v => log("And back to", v)) // And bac
   })(x)
 }`;
 
-	var caution = `var s = 'stop';
+	var caution = `var s = ret;
 var log = console.log;
 
 function M(x) {

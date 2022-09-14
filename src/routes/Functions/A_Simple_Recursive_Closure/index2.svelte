@@ -1,5 +1,6 @@
 <h1>HOME</h1>
 
+
 <script>
 	// @ts-ignore
 
@@ -23,7 +24,7 @@
 		all
 	} from 'mathjs';
 
-	console.log('square(pow(-4, 1/2))', square(pow(complex(4), 1/2))); 
+	console.log('square(pow(-4, 1/2))', square(pow(complex(4), 1/2)));
 	// var im = sqrt(complex(16, -4));
 	// console.log('sqrt(complex(16,-4', sqrt(complex(16, -4)));
 */
@@ -34,8 +35,8 @@
 
 	function ret () {};
 	var s = ret;
-	
-	
+
+
 	var m2;
 	var PIN, WINNERS;
 	var WIN = 1000.0;
@@ -72,9 +73,6 @@
 	var b6 = 'none';
 	var b7 = 'none';
 
-	// var s = 'stop';
-	
-	
 	var AA;
 	var BB;
 	var CC;
@@ -83,7 +81,7 @@
 	var FF;
 	var WW;
 	var XX;
-	var YY;
+	var YY;https://www.youtube.com/watch?v=iDhIjPn4UKc
 	var ZZ;
 	var SCORE = [0];
 	// $: SCORE = [0];
@@ -108,7 +106,7 @@
 			[0],
 			[]
 		];
-		
+
 		m2 = M(arr);
 		// m2 = m2(fuu);
 
@@ -239,12 +237,12 @@
 				return go;
 			} else if (func === 'stop') return x;
 		};
-	} */ 
+	} */
 
 function M (x) {
     return function go (func) {
         if (func === ret) return x
-        else x = func(x);
+        x = func(x);
         return go;
   }
 }
@@ -414,7 +412,7 @@ function M (x) {
 	var m4 = M(3.1415926535);
 	var cube = (x) => x ** 3;
 	var pow = n => x => x**n;
-	var square = x => x*x; 
+	var square = x => x*x;
 	var add = (n) => (x) => 1 * x + 1 * n;
 	var mult = (n) => (x) => x * n;
 	var reset2 = (n) => (x) => (x = n);
@@ -733,10 +731,10 @@ var resetFu = function resetFu (e) {
 	var example3 = `var mon = M(2);
 mon(v=>v**4)(v=>v+5)(v=>v*2);`;
 	// The value of x can be obtained later
-	var example4 = `mon(ret);  // 42
+	var example4 = `mon('stop');  // 42
 mon(v => v*v);`;
 	// And later:
-	var example5 = `mon(ret);  // 1764`;
+	var example5 = `mon('stop');  // 1764`;
 
 	var oldMonad = `function M (x) {
     return function go (func) {
@@ -794,7 +792,7 @@ $: forward = a => {
     }
 };`;
 
-var example2 = `var m3 = M(3);
+	var example2 = `var m3 = M(3);
 var m4 = M(m3(s));
 m3(v => v + 3);
 m4(v => v + 4);
@@ -859,7 +857,7 @@ m3(asyncAdd(-51))(asyncMult(6/7))(s).then(v => log("And back to", v)) // And bac
   })(x)
 }`;
 
-	var caution = `var s = ret;
+	var caution = `var s = dev;
 var log = console.log;
 
 function M (x) {
@@ -888,58 +886,11 @@ setTimeout(() => console.log("m3(s) is", m3(s)),0);
 16:13:15.590 m3(s) is 1000
 16:13:17.590 m3(s) resolved is 888
 // Two seconds after "1000" appears in the console log, "888" is displayed.`;
-
-var asyncCode = `function M1 (x) {
-  return function go (func) {
-      if (func === ret) return x;
-      x = asyncId(x).then(v => func(v));
-      return go;
-  }
-}
-
-WHERE async function asyncId (x) {return x};`
-
-var monad = `function M (x) {
-    return function go (func) {
-        if (func === ret) return x
-        else x = func(x);
-        return go;
-  }
-}`
-
-var fib = `var ar7 = [0];  // Define an array containing 0.
-mon = M(10);    // M(10) returns a copy of go() named "mon".
-
-var g = n => {  // g generates n Fibonacci numbers. 
-  let a = 0, b = 1;
-  for (let k = 1; k < n; k += 1) {
-    let z = a; a = b; b = a + z;
-    ar7.push(b); 
-  };
-};
-
-mon(g) // [ 0, 1, 2, 3, 5, 8, 13, 21, 34, 55 ] `;
-
-var score1 = `[ [Math.floor(Math.random() * 6) + 1,
-   Math.floor(Math.random() * 6) + 1,
-   Math.floor(Math.random() * 12) + 1,
-   Math.floor(Math.random() * 20) + 1 ], 
-   [], ['+'], [], [b], [1], 1, [] 
-]`;
-
-
 </script>
 
-<!-- ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>-->
-
 <style>
-	pre {margin-left: 3%}
-	.spn {font-style: italic; font-weight:800  }
-	.spy {color: turquoise;}
-	h2 {color: lightgreen; text-indent: 3%; text-align: left;}
+	pre {margin-left: 3%;}
 </style>
-
-<!--<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>-->
 
 <svelte:head>
 	<title>Recursive Closures Without Mutating State</title>
@@ -949,82 +900,67 @@ var score1 = `[ [Math.floor(Math.random() * 6) + 1,
 <div style="font-family: Times New Roman; text-align:center; font-size: 32px;" transition:fade>
 	<br />
 
-	Recursive Closures Insulate and Facilitate State Transformations
+	A Very Simple Recursive Closure Insulates and Controls State Transformations
 </div>
 <br />
-<h2>Introduction</h2>
-<p>The pages in this section revolve around this function, so simple and so pregnant with possibilities.</p>
 
-
-<pre>{monad}</pre>
-
-
-<p>"x" can be number that specifies how many times recursion occurs, as in this trivial example: <p>
-
-<pre>{fib}</pre>
-
-<p> The Fibonacci sequence generator illustrates the mechanics of using monads returned by M(x), but M shines when it hold the states of more complicated things. For example, the solitaire game of Score begins with M(x) where x is the eight-element array: </p>
-
-<pre>{score1}</pre>
-
-
-<p>Before moving on to the game of Score, you might want to take a look at some simpler examples on this page. You can play the game in this section at <a href=./A_Simple_Recursive_Closure/score9>Solitaire Game of Score</a> After doing so, consider coming back here and looking at some of the other pages in this section. I hope you will try using M(x) and experiment with recursive closures you devise in JavaScript and other languages.  </p>
-
-
-
-	<p>JavaScript monads are defined in various ways online and in print. These definitions differ from one another but none are right or wrong. In the Category Theory branch of mathematics, "monad" has a precise definition. The Haskell Programming Language defines "monad" in its own precise manner.</p>
-	
-	<p>Here's one of many articles attempting to implement the Haskell paradygm in JavaScript: <a href = "https://curiosity-driven.org/monads-in-javascript">JavaScript Monads the Haskell Way.</a> I recommend it as an enlightening and enjoyable read, but I reject it's rigid, authoritarian dictates -- especially its insistence on strict typing. </p>
-<p> I programmed a server in the Haskell programming language for a multi-player, online game called "Score" a decade or so ago. The only version I can find right now is missing instructions and has a klunky drag-and-drop user interface, but it computes all solutions (if they exist) for any roll and can be modified by users in various ways. Here's a link: <a href=https://schalk2.com/score>Game of Score</a>  </p>
-
+<p>
+	JavaScript monads are defined in various ways online and in print. I wouldn't say any of these
+	definitions are right or wrong. Everyone is entitled to an opinion. Some of my thoughts on the
+	matter will be in <a href="./">Home</a> and in an addendum.
+</p>
 <p>
 	The function M() (below) returns the function go(), thereby forming a closure. The returned
 	function is named to facilitate recursion.  Here's the definition of M():
 </p>
 <pre>{monad}</pre>
+<p>The function "ret" needs no functionality of its own. It just prompts the return of the current value of x. Here's the definition of ret() used on this page: <span style="color: #55ffff">{retCode}</span>. </p>
+<p></p>
+<p>
+	M(x) is most useful when the closure is named or, more precisely, when the function returned by
+	M(x) is named. When M(x) is asigned a variable name, the value of "x" in M(x) can be preserved,
+	transformed, and later used if it is eventually needed. "x" in M(x) will correspond to the state
+	of play in the solitaire game of Score (below), but before we get to that, let's take a closer
+	look at M and the function returned by M(x).
+</p>
 
-<p>What the function "ret()" does or doesn't do, if called, doesn't matter. It serves as a flag signalling that it's time to return the value held by M in the closure. It's a function for the convenience of coders who use Typescript, a try-catch block, or other error-checking methods. Here's the definition of ret() used on this page: <span style="color: #55ffff">{retCode}</span>. </p>
-
-<p>Internally, the function returned by M is named "go." Externally, it can be named just about anything. When go() is assigned an external variable name, say "monadOne", the value in the monadOne-M closure (named "x" internally) will not be garbage-collected. As shown below, M provides a clear, concise way of chaining functions when it is used anonymously. </p>
-
-<pre>const mon = M(2)
-mon(v=>v**4)(v=>v+5)(v=>v*2)(v=>v**2)(ret); 1764</pre>
+<pre>{example3}</pre>
 <p>The value held in the closure can be obtained later</p>
-<pre>mon(ret)  // 1764</pre>
-<p>Then modify the closure's state a little:</p>
-<pre>mon(v=>1764)(v => v/49)(Math.sqrt)(v=>v*7)</pre>
-<p>And get the value whenever you need it.</p>
-<pre>mon(ret) // 42</pre>
-
-
-
-<pre>{asyncCode}</pre>
-
-
-
-<p>These abbreviations will be used from now on:</p>
+<pre>{example4}</pre>
+<p>And later</p>
+<pre>{example5}</pre>
+<p>Here are a few more simple operations on the very simple monad "mon":</p>
+<p>
+	We can set the value of x to 4 with the expression "mon = M(4)", or by modifying mon as follows:
+</p>
+<pre>{example2}</pre>
+<p>These abreviations will be used from now on:</p>
 <pre>const s = ret;
 const log = console.log;
 </pre>
 <span style="font-size:26px; color: gold; text-decoration: underline">Deep Clone:</span>
-<span>I ran the following code in the Firefox console. The result verifies that mon2 defined by
+<span
+	>I ran the following code in the Firefox.aurora console. The result verifies that mon2 defined by
 	"var mon2 = M(mon(s))" is a deep clone of mon. The mon2 closure is out of reach by everything in
 	its outer scope, and the mon closure is no exception.
 </span>
 <pre>{example2}</pre>
 
 <span style="font-size:26px; color: gold; text-decoration: underline">Function Composition:</span>
-<span> M provides a way to anonymously compose functions concisely and transparently; a good alternative
-	to callback spaghetti.
+<span
+	>M provides a way to anonymously compose functions concisely and transparently; a good alternative
+	to callback spahgetti.
 </span>
 <pre>{example6}</pre>
 
-<p> Recursive closures created by "M" will control a fairly complicated dice game called "Score" (<a
+<p>
+	Recursive closures created by "M" will control a fairly complicated dice game called "Score" (<a
 		href="#score">Link To Score</a
 	>). It's a solitaire version of a
 	<a href="https://score.schalk.net">multiplayer version of the game</a>
 	I developed eight years ago based on a Haskell WebSockets server. The server code is
-	<a href="./score">here</a></p>
+	<a href="./score">here</a>
+</p>
 
 <p>These are the demonstration's event handlers:</p>
 <pre>{fuFuncs}</pre>
@@ -1107,7 +1043,6 @@ Here's a contrived example showing one way asynchronous code can be handled:
 	far, subsequent computations will be very slow and the program might even crash. If you just take back a move, computations proceed normally.
 </p>
 
-<!-- <h1>{$userName}</h1> -->
 <span>Player: </span>
 <input style="color: black; " type="text" bind:value={$userName} />
 <br /><br />
@@ -1115,8 +1050,9 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <input style="color: black;" type="number" bind:value={$top} />
 
 <h2>{d2}</h2>
-<!-- <button on:click={display}>Start</button>
-<button on:click={stoptimer}>Stop</button> -->
+ 
+// <button on:click={display}>Start</button>
+// <button on:click={stoptimer}>Stop</button>
 <br />
 <button on:click={resettimer}>Reset</button>
 <br /><br />
@@ -1165,6 +1101,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 	number of points reaches 5, fu causes "You win" to be displayed, sets the score back to 0, and
 	calls runRoll, starting another round of play.
 </p>
+
 <p>
 	At the end of fu(), two formatting functions are Called. The first, update(), refreshes the game
 	buttons, causing them to reflect the current state of ar. The second hides buttons that correspond
@@ -1195,7 +1132,9 @@ Here's a contrived example showing one way asynchronous code can be handled:
 	complain, it just puts the number back for you with:
 </p>
 <pre>{putBack}</pre>
+
 <p>
+
 	If you roll the dice and keep clicking on the leftmost number, you'll see the numbers shift back
 	and forth on every try. The first element of m2(s)[0] keeps getting pulled out of the first
 	position and pushed back on the right.

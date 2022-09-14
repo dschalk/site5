@@ -1,4 +1,5 @@
-<h1>HOME</h1>
+
+
 
 <script>
 	// @ts-ignore
@@ -7,36 +8,50 @@
 	//	import { onMount } from "svelte";
 	import { fade } from 'svelte/transition';
 	// import Index from "./index.svelte";
-/*
-	import {
-		complex,
-		square,
-		chain,
-		e,
-		evaluate,
-		log,
-		pi,
-		pow,
-		round,
-		sqrt,
-		create,
-		all
-	} from 'mathjs';
-
-	console.log('square(pow(-4, 1/2))', square(pow(complex(4), 1/2))); 
-	// var im = sqrt(complex(16, -4));
-	// console.log('sqrt(complex(16,-4', sqrt(complex(16, -4)));
-*/
 	import { top } from '../../stores.js';
 	import { userName } from '../../stores.js';
-
+    var m3 = M(3);
+    var s = ret; 
 	console.log('top is', top);
 
-	function ret () {};
-	var s = ret;
-	
-	
-	var m2;
+var m2 = M(32);	
+var m0 = M([]);
+		m2 = M(m2(s));
+function nav2 () {
+	let n = m2(ret)[5];
+	m2(ar => m0(ret).slice(-n)[0])
+	update();
+	sfunc();
+	return m2;
+}
+var QQ;
+$: QQ = m2(ret)[6];
+
+function back () {
+	if (ar3.length < 3) return;
+	var o = ar3.pop();
+	m2(ar => o);
+	update();
+	sfunc();
+	return m2;
+}
+
+function splash (a) {
+    m2 = M(a);
+	// console.log("In splash @@@ m2(ret) is",m0(ret).join(", "));
+    update();
+    sfunc();
+}
+
+ /*   m0(ar => ar.concat(clone([m2(ret)])));
+	m2(v => [[1,2,3,4], [], ["+"], [], [0], [], [0], []]);
+    m0(ar => ar.concat(clone([m2(ret)])));
+	m2(v => [[0,7,0,7], [], ["+"], [], [0], [], [0], []]);
+    m0(ar => ar.concat(clone([m2(ret)]))); */
+console.log("**********************************************");
+console.log("At the top. m0(ret) is", m0(ret));
+console.log("**********************************************");
+
 	var PIN, WINNERS;
 	var WIN = 1000.0;
 	var FIN = 1001.0;
@@ -71,10 +86,7 @@
 	var b5 = 'none';
 	var b6 = 'none';
 	var b7 = 'none';
-
-	// var s = 'stop';
-	
-	
+	var s = ret;
 	var AA;
 	var BB;
 	var CC;
@@ -85,11 +97,49 @@
 	var XX;
 	var YY;
 	var ZZ;
-	var SCORE = [0];
-	// $: SCORE = [0];
-
+	var SCORE;
+	$: SCORE = [0];
 	var ZYXW;
 	var WXYZ;
+
+	var zeros = () => {
+		var arr2 = [
+			[0,0,0,0],
+			[],
+			['+'],
+			[],
+			[0],
+			[],
+			0,
+			[]
+		]};
+
+function ret () {};
+
+function M (x) {
+    return function go (func) {
+        if (func === ret) return x
+        else x = func(x);
+        return go;
+  }
+}
+
+	var runRoller = (b = 0) => {
+		var arr2 = [
+			[0,0,0,0],
+			[],
+			['+'],
+			[],
+			[b],
+			[],
+			0,
+			[]
+		];
+		m2 = M(arr2);
+		updateRoll(m2);
+		resettimer();
+		resettimer();
+	};
 
 	var runRoll;
 	runRoll = (b) => {
@@ -104,20 +154,18 @@
 			['+'],
 			[],
 			[b],
-			[],
-			[0],
+			[1],
+			1,
 			[]
 		];
-		
-		m2 = M(arr);
-		// m2 = m2(fuu);
-
-		//[5].push(clone([ a[0], a[1], a[2], a[3], a[4], [], a[6] ]));
+		QQ = 1;
+		m2(a => arr);
+		ar3 = [clone(arr),clone(arr), clone(arr)];
 		EEE = 'yet to be selected';
-		m2 = M(m2(ret));
 		updateRoll(m2);
-		m2(fu);
+		// m2(fu);
 		if (tog) display();
+	    console.log("In runRoll. m0(ret) is", m0(ret));
 		return m2;
 	};
 	var Z = '';
@@ -152,22 +200,6 @@
 		if (ZZ != (undefined && 0)) b7 = 'inline';
 	}
 
-	m2 = M([
-		[
-			Math.floor(Math.random() * 6) + 1,
-			Math.floor(Math.random() * 6) + 1,
-			Math.floor(Math.random() * 12) + 1,
-			Math.floor(Math.random() * 20) + 1
-		],
-		[],
-		['+'],
-		[],
-		[0],
-		[],
-		[0],
-		[]
-	]);
-
 	var update = function update() {
 		AA = m2(s)[0][0];
 		BB = m2(s)[0][1];
@@ -181,9 +213,7 @@
 		YY = m2(s)[1][2];
 		ZZ = m2(s)[1][3];
 	};
-
-	update();
-
+/*
 	$: AA = m2(s)[0][0];
 	$: BB = m2(s)[0][1];
 	$: CC = m2(s)[0][2];
@@ -194,7 +224,7 @@
 	$: WW = m2(s)[1][0];
 	$: XX = m2(s)[1][1];
 	$: YY = m2(s)[1][2];
-	$: ZZ = m2(s)[1][3];
+	$: ZZ = m2(s)[1][3];    */
 
 	var ZWIN = '';
 	var mon3 = M([1, 2, 3, 4]);
@@ -226,93 +256,29 @@
 	function clone(x) {
 		return JSON.parse(JSON.stringify(x));
 	}
-	// var clone = structuredClone;
-
-	var clean = (a) => a.map((ar) => ar.filter((x) => x != (undefined && 0)));
-
-	var cleanB = (a) => a.filter((x) => x != (undefined && 0));
-
-	/* function M(x) {
-		return function go(func) {
-			if (typeof func === 'function') {
-				x = func(x);
-				return go;
-			} else if (func === 'stop') return x;
-		};
-	} */ 
-
-function M (x) {
-    return function go (func) {
-        if (func === ret) return x
-        else x = func(x);
-        return go;
-  }
-}
-
-	var back;
-	back = (a) => {
-		if (a[5].length < 1) {
-			m2 = M(a);
-			console.log("You're already all the way back");
-			return;
-		} else {
-			var a7 = a[7];
-			var a = a[5][a[5].length - 1];
-			a[7] = a7;
-			m2 = M(a);
-			update();
-			sfunc();
-		}
-	};
-
-	var forward;
-	forward = (a) => {
-		var index = a[6][0];
-		if (a[5].length === a[7].length) {
-			console.log('Already at the top');
-			m2 = M(a);
-			return;
-		} else {
-			var a7 = clone(a[7]);
-			var a = a[7][index + 1];
-			a[7] = a7;
-			m2 = M(a);
-			update();
-			sfunc();
-		}
-	};
 
 	function test() {
-		var xx = m2(s);
-		console.log('<><><><><><><><> xx is', xx);
-		console.log(xx[0]);
-		console.log('xx[5].length is ', xx[5].length);
-		console.log('index is', xx[6]);
-		m2 = M(xx);
-		return m2;
+        console.log("m2(ret)is", m2(ret));
+        console.log("ar3 is", ar3);
 	}
 
-	function fuu(a) {
-		a[5].push(clone([a[0], a[1], a[2], a[3], a[4], a[5][0], a[6], a[7]]));
-		l('In fu. a is', a);
-		return a;
-	}
-
+	var ar3;
+	$: ar3 = [];
+	$: ar3.length;
+	
 	function fu(a) {
-		a[5].push(clone([a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7]]));
-		a[7].push(clone(a));
-		a[6][0] += 1;
-		// a[1].push(a[0].pop());
 		var result;
-		SCORE = a[4];
 		var a1;
+
 		if (a[1].length === 2 && a[2].length === 1) {
 			a1 = a[1];
 			result = calc(a[1][0], a[1][1], a[2][0]);
 			a[0].push(result);
 			a[3].push(result);
 			a[1] = [];
-			m2 = M(a);
+			a[5][0] += 1;
+			a[6] += 1;
+			m2(v => a);
 		}
 
 		if (a[1].length === 3) {
@@ -327,7 +293,7 @@ function M (x) {
 				ZWIN = 'You win! Your score is ';
 				WINNERS = WIN;
 				top.set([WIN]);
-
+				setTimeout(() => runRoller(),4000);
 				// setTimeout(() => a[4][0] = 0,8000);
 			} else {
 				var aint = parseInt(a[4], 10);
@@ -337,6 +303,8 @@ function M (x) {
 			}
 			setTimeout(() => (Z = ZWIN = ''), 8000);
 		}
+		ar3.push(clone(a));
+		ar3 = ar3;
 		update();
 		sfunc();
 		return m2(s);
@@ -383,7 +351,7 @@ function M (x) {
 		m2 = M(m);
 	}
 
-	function clic1 (m) {
+	$: clic1 = (m) => {
 		EEE = 'subtract';
 		m[2] = '-';
 		m2 = M(m);
@@ -408,8 +376,6 @@ function M (x) {
 	}
 
 	$: Z = Z;
-
-	var m3 = M(3);
 
 	var m4 = M(3.1415926535);
 	var cube = (x) => x ** 3;
@@ -577,21 +543,22 @@ function sfunc () {
     if (ZZ != (undefined && 0)) b7 = "inline";
 }`;
 
+
 var monad = `function M (x) {
     return function go (func) {
         if (func === ret) return x
-        x = func(x);
+        else x = func(x);
         return go;
   }
 }`;
 
 var retCode = `function ret () {}`
 
-	var monad3 = `var mon3 = M([1,2,3,4]);
-function g(ar) {
-    var x = (ar.pop())**3;
-    ar.unshift(x);
-  return ar;
+var monad3 = `var mon3 = M([1,2,3,4]);
+    function g(ar) {
+        var x = (ar.pop())**3;
+        ar.unshift(x);
+        return ar;
 };
 function g2 (ar) {return (ar.flatMap(v => (v+1)**3))};
 function g3 (ar) {return (ar.flatMap(v => Math.round(v**(1/3))))};`;
@@ -819,8 +786,6 @@ var asyncAdd = a => async b => {
     return a + d;
 }
 
-var m3 = M(3);
-
 m3(asyncAdd(4))(asyncMult(6))(s).then(v => log("The result is", v));  // The result is 42
 m3(asyncAdd(8))(asyncMult(2))(s).then(v => log("Now we are at", v));  // Now we are at 100
 m3(asyncAdd(-51))(asyncMult(6/7))(s).then(v => log("And back to", v)) // And back to 42 `;
@@ -862,13 +827,14 @@ m3(asyncAdd(-51))(asyncMult(6/7))(s).then(v => log("And back to", v)) // And bac
 	var caution = `var s = ret;
 var log = console.log;
 
-function M (x) {
-    return function go (func) {
-        if (func === ret) return x
-        else x = func(x);
-        return go;
+function M(x) {
+  return function go(func) {
+    if (typeof func === "function") {
+      x = func(x);
+      return go;
+    } else if (func === "stop") return x;
   }
-}
+};
 
 var m3 = M(3);
 
@@ -889,236 +855,64 @@ setTimeout(() => console.log("m3(s) is", m3(s)),0);
 16:13:17.590 m3(s) resolved is 888
 // Two seconds after "1000" appears in the console log, "888" is displayed.`;
 
-var asyncCode = `function M1 (x) {
-  return function go (func) {
-      if (func === ret) return x;
-      x = asyncId(x).then(v => func(v));
-      return go;
-  }
-}
 
-WHERE async function asyncId (x) {return x};`
+var start = `m2 = M(
+    [ 
+      [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1,
+      Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 20) + 1], 
+      [], ['+'], [], [0], [], [0], [] 
+    ]);`
 
-var monad = `function M (x) {
-    return function go (func) {
-        if (func === ret) return x
-        else x = func(x);
-        return go;
-  }
-}`
 
-var fib = `var ar7 = [0];  // Define an array containing 0.
-mon = M(10);    // M(10) returns a copy of go() named "mon".
 
-var g = n => {  // g generates n Fibonacci numbers. 
-  let a = 0, b = 1;
-  for (let k = 1; k < n; k += 1) {
-    let z = a; a = b; b = a + z;
-    ar7.push(b); 
-  };
-};
-
-mon(g) // [ 0, 1, 2, 3, 5, 8, 13, 21, 34, 55 ] `;
-
-var score1 = `[ [Math.floor(Math.random() * 6) + 1,
-   Math.floor(Math.random() * 6) + 1,
-   Math.floor(Math.random() * 12) + 1,
-   Math.floor(Math.random() * 20) + 1 ], 
-   [], ['+'], [], [b], [1], 1, [] 
-]`;
+setTimeout(() => splash( [[1,,,], [], ["+"], [], [0], [], [0], []] ),500);
+setTimeout(() => splash( [[0,,,], [], ["+"], [], [0], [], [0], []] ),1000);
+setTimeout(() => splash( [[0,0,0,0], [], ["+"], [], [0], [], [0], []] ),1500);
+/*  setTimeout(() => splash( [[4,4,4,4], [], ["+"], [], [0], [], [0], []] ),1500);
+setTimeout(() => splash( [[3,3,3,3], [], ["+"], [], [0], [], [0], []] ),2000);
+setTimeout(() => splash( [[2,2,2,2], [], ["+"], [], [0], [], [0], []] ),2500);
+setTimeout(() => splash( [[1,1,1,1], [], ["+"], [], [0], [], [0], []] ),3000);
+setTimeout(() => splash( [[0,0,0,0], [], ["+"], [], [0], [], [0], []] ),3500);
+setTimeout(() => splash( [[8,8,8,8], [], ["+"], [], [0], [], [0], []] ),4000);
+setTimeout(() => splash( [[0,0,0,0], [], ["+"], [], [0], [], [0], []] ),4500);  */
 
 
 </script>
 
-<!-- ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>-->
-
 <style>
-	pre {margin-left: 3%}
-	.spn {font-style: italic; font-weight:800  }
-	.spy {color: turquoise;}
-	h2 {color: lightgreen; text-indent: 3%; text-align: left;}
+	pre {margin-left: 3%;}
 </style>
 
-<!--<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>-->
-
 <svelte:head>
-	<title>Recursive Closures Without Mutating State</title>
+	<title>The Solitaire Game of Score</title>
 </svelte:head>
 <br />
 <div>**************************************************************************</div>
 <div style="font-family: Times New Roman; text-align:center; font-size: 32px;" transition:fade>
 	<br />
 
-	Recursive Closures Insulate and Facilitate State Transformations
+	The State of Score Maintained in a Recursive Closure
 </div>
 <br />
-<h2>Introduction</h2>
-<p>The pages in this section revolve around this function, so simple and so pregnant with possibilities.</p>
-
-
+<p> The game is held in the recursive closure returned initially by M(x) where M is: </p>
 <pre>{monad}</pre>
+<p>and x is an array of eight arrays defined as:</p>
+<pre>{start}</pre>
+<p>It doesn't matter what, if anything, the function ret() would do if it were to be called because it doesn't get called. It's only purpose is to cause go(), the function returned by M, to return the current state of the value x held in the closure that was created by running var some-name = M(x). M can also be used anonymously to chain functions as in <span style="color: #55ffff">M(2)(v=>v+4)(v=>v*7)(ret) = 42</span>. </p>
 
 
-<p>"x" can be number that specifies how many times recursion occurs, as in this trivial example: <p>
-
-<pre>{fib}</pre>
-
-<p> The Fibonacci sequence generator illustrates the mechanics of using monads returned by M(x), but M shines when it hold the states of more complicated things. For example, the solitaire game of Score begins with M(x) where x is the eight-element array: </p>
-
-<pre>{score1}</pre>
-
-
-<p>Before moving on to the game of Score, you might want to take a look at some simpler examples on this page. You can play the game in this section at <a href=./A_Simple_Recursive_Closure/score9>Solitaire Game of Score</a> After doing so, consider coming back here and looking at some of the other pages in this section. I hope you will try using M(x) and experiment with recursive closures you devise in JavaScript and other languages.  </p>
-
-
-
-	<p>JavaScript monads are defined in various ways online and in print. These definitions differ from one another but none are right or wrong. In the Category Theory branch of mathematics, "monad" has a precise definition. The Haskell Programming Language defines "monad" in its own precise manner.</p>
-	
-	<p>Here's one of many articles attempting to implement the Haskell paradygm in JavaScript: <a href = "https://curiosity-driven.org/monads-in-javascript">JavaScript Monads the Haskell Way.</a> I recommend it as an enlightening and enjoyable read, but I reject it's rigid, authoritarian dictates -- especially its insistence on strict typing. </p>
-<p> I programmed a server in the Haskell programming language for a multi-player, online game called "Score" a decade or so ago. The only version I can find right now is missing instructions and has a klunky drag-and-drop user interface, but it computes all solutions (if they exist) for any roll and can be modified by users in various ways. Here's a link: <a href=https://schalk2.com/score>Game of Score</a>  </p>
-
-<p>
-	The function M() (below) returns the function go(), thereby forming a closure. The returned
-	function is named to facilitate recursion.  Here's the definition of M():
-</p>
-<pre>{monad}</pre>
-
-<p>What the function "ret()" does or doesn't do, if called, doesn't matter. It serves as a flag signalling that it's time to return the value held by M in the closure. It's a function for the convenience of coders who use Typescript, a try-catch block, or other error-checking methods. Here's the definition of ret() used on this page: <span style="color: #55ffff">{retCode}</span>. </p>
-
-<p>Internally, the function returned by M is named "go." Externally, it can be named just about anything. When go() is assigned an external variable name, say "monadOne", the value in the monadOne-M closure (named "x" internally) will not be garbage-collected. As shown below, M provides a clear, concise way of chaining functions when it is used anonymously. </p>
-
-<pre>const mon = M(2)
-mon(v=>v**4)(v=>v+5)(v=>v*2)(v=>v**2)(ret); 1764</pre>
-<p>The value held in the closure can be obtained later</p>
-<pre>mon(ret)  // 1764</pre>
-<p>Then modify the closure's state a little:</p>
-<pre>mon(v=>1764)(v => v/49)(Math.sqrt)(v=>v*7)</pre>
-<p>And get the value whenever you need it.</p>
-<pre>mon(ret) // 42</pre>
-
-
-
-<pre>{asyncCode}</pre>
-
-
-
-<p>These abbreviations will be used from now on:</p>
-<pre>const s = ret;
-const log = console.log;
-</pre>
-<span style="font-size:26px; color: gold; text-decoration: underline">Deep Clone:</span>
-<span>I ran the following code in the Firefox console. The result verifies that mon2 defined by
-	"var mon2 = M(mon(s))" is a deep clone of mon. The mon2 closure is out of reach by everything in
-	its outer scope, and the mon closure is no exception.
-</span>
-<pre>{example2}</pre>
-
-<span style="font-size:26px; color: gold; text-decoration: underline">Function Composition:</span>
-<span> M provides a way to anonymously compose functions concisely and transparently; a good alternative
-	to callback spaghetti.
-</span>
-<pre>{example6}</pre>
-
-<p> Recursive closures created by "M" will control a fairly complicated dice game called "Score" (<a
-		href="#score">Link To Score</a
-	>). It's a solitaire version of a
-	<a href="https://score.schalk.net">multiplayer version of the game</a>
-	I developed eight years ago based on a Haskell WebSockets server. The server code is
-	<a href="./score">here</a></p>
-
-<p>These are the demonstration's event handlers:</p>
-<pre>{fuFuncs}</pre>
-<p>m4(s) is <span style="font-size:54px">{parseFloat(m4(s)).toFixed(5).toString()}</span></p>
-<p>
-	<br />
-	<button on:click={cubeFu}>m4(cube)</button>
-	<button on:click={squareFu}>m4(square)</button>
-	<br /><br />
-	<span style="font-size: 24px">To call m4(pow(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={powFu} />
-	<br /><br />
-
-	<span style="font-size: 24px">To call m4(add(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={addFu} />
-	<br /><br />
-
-	<span style="font-size: 24px">To call m4(mult(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={multFu} />
-	<br /><br />
-
-	<span style="font-size: 24px">To call m4(reset(n)), enter n in the box -> </span>
-	<input type="text" style="width: 65px" on:keydown={resetFu} />
-	<br /><br />
-</p>
-<p>
-	Next, x will be an array. Here are the functions responsible for the interactive demonstration
-	below:
-</p>
-<pre>{monad3}</pre>
-<p>
-	If you click mon3 = mon3(g) four times and the click mon3 = mon3(g3), you will see that mon3(s)
-	returns its original value, [1,2,3,4]. By the way, the "mon3 =" part of "mon3 = mon3(g)" is
-	included solely to trigger updating of browser displays. Svelte doesn't have a virtual DOM, and
-	merely changing objects isn't enough to trigger DOM updates. For example, arr = [1,2,3] doesn't
-	change in the DOM when arr.push(888) is called. arr = arr afterwards or arr = arr.push(888)
-	initially both do the trick.
-</p>
-<div id="score" style="margin-left: 10%; font-size:44px; color:#ddaadd">[{mon3(s).join(', ')}]</div>
-<br /><br />
-<button on:click={() => (mon3 = mon3(g))}>mon3 = mon3(g)</button>
-<button on:click={() => (mon3 = mon3(g2))}>mon3 = mon3(g2)</button>
-<button on:click={() => (mon3 = mon3(g3))}>mon3 = mon3(g3)</button>
-<button on:click={() => (mon3 = mon3((x) => [1, 2, 3, 4]))}>mon3 = mon3(x => [1,2,3,4])</button>
-<br /><br />
-Here's a contrived example showing one way asynchronous code can be handled:
-<pre>{async}</pre>
-<p>
-	A robust monad that deals with a variety of contingencies is at <a
-		href="/Functions/Archive/Monad3">Monad3</a
-	>. There's a more elaborate demonstration (Demonstration 1) at
-	<a href="https://functional-javascript.schalk2.com/">functional-javascript</a>. I'm sticking with
-	the simple monad generator M in this module. At
-	<a href="https://functional-javascript.schalk2.com/">functional-javascript</a> the monad is defines
-	as follows:
-</p>
-<pre>{bigMonad}</pre>
-<p>
-	Now back to the little monad M and the game of score; a game involving four dice and two or
-	three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught
-	it to me a decade ago, when he was in middle school. After some messy experiences with other
-	programming languages, I turned to Haskell for the robust and easily maintainable backend that
-	carried me through several experiments with front ends. The server can handle an indeterminate
-	number of groups of interacting players. Each group has its own chat box and shared todo list, and
-	all members always see the same dice roll as it gets whittled down by players selecting numbers.
-	The backend can also compute all possible solutions to any roll, if any exist, to any throw of the
-	dice. It also identifies all of the impossible-to-solve rolls. Players can gain a point by
-	clicking "Impossible" unless another player finds a solution. In that case, they lose a point.
-	Users can change the default number of dice sides from 6,6,12,and 20 and the goal from the default
-	value of 20. A version of it is online at <a href="https://score.schalk2.com"
-		>https://score.schalk2.com</a
-	>.
-</p>
-
-<p>
-	This demonstration doesn't rely on a remote server, nor does it feature any Haskell code. It's
-	just a little solitaire game providing an opportunity to consider the interesting possibilities of
-	recursive closures. You can traverse the history of game play for the current roll. If you make a
-	mistake, you can take back your move and do something else. If you traverse back and forth very
-	far, subsequent computations will be very slow and the program might even crash. If you just take back a move, computations proceed normally.
-</p>
-
+<p>Here, ret() is defined as  <span style="color: #55ffff">{retCode}</span>. Explanations of how M(x) works are below the game interface here and at "Simple_Recursive_Closures a/k/a MONADS/Home.
+	 </p>
+<p>Your score will be the elapsed time after three rounds. A round is completed by computing the number 20 in two or three steps. For example, if your numbers are 1,3,4,20, you can complete the round in two steps with 4-3 and then 1 * 20. You'll have two 1's before the multiplication. It won't matter which one you use. If your first computation is 1 * 20, your numbers will be 3,4,20. You can still subtract 3 from 4 and multiply by 1, finishing in three steps instead of two. </p>
 <!-- <h1>{$userName}</h1> -->
-<span>Player: </span>
-<input style="color: black; " type="text" bind:value={$userName} />
-<br /><br />
-<span>Best Score: </span>
-<input style="color: black;" type="number" bind:value={$top} />
-
+<br />
+<span>Best Score: {$top} </span>
 <h2>{d2}</h2>
 <!-- <button on:click={display}>Start</button>
 <button on:click={stoptimer}>Stop</button> -->
 <br />
-<button on:click={resettimer}>Reset</button>
+
+<button on:click={runRoller}>Reset</button>
 <br /><br />
 <button style="display: {b0}" on:click={() => m2(click0)}>{AA}</button>
 <button style="display: {b1}" on:click={() => m2(click1)}>{BB}</button>
@@ -1139,7 +933,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <span style="margin-left: 20px; color:#bbbbff; font-size:38px">{FIN}</span>
 
 <br /><br />
-<button on:click={() => m2(runRoll(m2(s)[4][0]))}>ROLL</button>
+<button on:click={() => runRoll(m2(s)[4][0])}>ROLL</button>
 <br /><br />
 
 <button on:click={() => test()}>test</button>
@@ -1148,17 +942,35 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <button style="display: {b6}">{YY}</button>
 <button style="display: {b7}">{ZZ}</button>
 <br /><br />
-<button on:click={() => m2(back)}>Back</button>
-<button on:click={() => m2(forward)}>Forward</button>
-
+<button on:click={back}>Back</button>
+<h3>{QQ}</h3>
 <p>
 	Remember, just computing 20 isn't always enough. One of the numbers used to get 20 has to be the
 	result of a prior computation
 </p>
 <p>
+	<h2>Background</h2>
+	<p>Score is a game involving four dice and two or three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught it to me a decade ago, when he was in middle school. I decided to make an online multi-player version. </p>
+	<p> After some messy experiences developing a server with other	programming languages, I turned to Haskell for the robust and easily maintainable backend that carried me through several experiments with various front ends. The server can handle a large number of 	number of groups of interacting players. Each group has its own chat box and shared todo list, and all members always see the same dice roll as it gets whittled down by players selecting numbers. </p>
+	<p> One of my fondest memories began with Alex asking me to to devise a way to display all solutions to a dice roll or else report that no solution exists. My initial impression was that an algorithm that could so that would be unreasonably complicated and resource intensive. But not long afterward, I was delighted -- maybe "euphoric" is the right word -- as I showed Alex a button on the player interface that would abort gameplay and display every way to get 20 in two or three steps. It even broke the solutions down into categories. My appreciation of the Haskell programming language continued to grow.</p>
+	<p> In the online game, players can gain a point by	clicking "Impossible" unless another player finds a solution. In that case, the player who clicked "Impossible" loses a point. Players can change the default number of dice sides from 6,6,12,and 20 and the goal from the default
+	value of 20. A drag and drop version of Score is online at <a href="https://score.schalk2.com"
+		>https://score.schalk2.com</a
+	>.
+</p>
+<h2>About this Solitaire Version</h2>
+
+<p>
+	This demonstration doesn't rely on a remote server, nor does it feature any Haskell code. It's
+	just a little solitaire game providing an opportunity to consider the interesting possibilities of
+	recursive closures. You can traverse the history of game play for the current roll. If you make a
+	mistake, you can take back your move and do something else. If you traverse back and forth very
+	far, subsequent computations will be very slow and the program might even crash. If you just take back a move, computations proceed normally.
+</p>
+<p>
 	The function fu() is the brains behing the game of Score. Each time a number or operator is
 	clicked, m2(fu) is called, the monad m2 is modified, and the change is reflected in the DOM. The
-	state of play in M is an array of eight arrays. Let's call it ar. If an operator op is in ar[2]
+	state of play in M is an array of seven arrays. Let's call it ar. If an operator op is in ar[2]
 	and two numbers a and b are in ar[1], fu calls calc(a,b,op) and the result is added to ar[0] and
 	ar[3]. ar[0] are the numbers in the game interface. ar[3] hold numbers that have been computed. At
 	least one of the numbers in ar[3] has to be used to compute 20 in order to gain a point. If the
@@ -1216,7 +1028,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 
 <p>
 	In the solitaire version of the game of score, x in M(x) is, as mentioned above, the array of
-	arrays [ [], [], [], [], [], [], [], [] ] where x[0] starts out as four integers simulating a
+	arrays [ [], [], [], [], [], [], [], [], [] ] where x[0] starts out as four integers simulating a
 	throw of two six-sided, one twelve-sided, and one twenty-sided dice. x[1] and x[3] contain the
 	number selected by the player, x[2] is the selected operator, and x[4] keeps track of the number
 	of successes until the player wins by reaching 5, x[5] contains all prior states as the player
@@ -1231,8 +1043,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <button on:click = {sfunc}>sfunc</button>
 -->
 
-
-<h2>Why I call them "monads"</h2>
+<h2>Why I Call Them "Monads"</h2>
 
 <p>
 	I call functions returned by M "monads", much to the consternation of some "functional
@@ -1261,8 +1072,6 @@ Here's a contrived example showing one way asynchronous code can be handled:
 Caution:
 <pre>{caution}</pre>
 <br /><br />
-
-
 
 <!-- <style>
 	 (A) CONTAINER
@@ -1295,4 +1104,7 @@ Caution:
 #sw-rst { background-color: #a32208; }
 #sw-go { background-color: #20a308; }
 
+
 </style> -->
+
+<slot></slot>

@@ -79,7 +79,7 @@
   :global(pre) {
     font-size:20px;
     color: #55ffff;
-    margin-left: 2%;
+    margin-left: 3%;
   }
 
   :global(p) {
@@ -99,18 +99,71 @@
     border-radius: 10px;
     color: #00ffdd;
     font-size: 24px;
+    box-shadow: 0px 0px 15px 0px rgb(255, 215, 0);
+    padding: 3px 10px 3px 10px;
+  }
+
+  :global(button:hover) {
+    color: lightgreen;
+    background-color: blue;
+    border-color: #E8F7C1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 0px rgb(255, 255, 0);
+  }
+
+  :global(button:selection) {
+    color: lightgreen;
+    background-color: blue;
+    border-color: #E8F7C1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 0px rgb(255, 255, 0);
+  }
+
+  :global(button:selection) {
+    color: lightgreen;
+    background-color: blue;
+    border-color: #E8F7C1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 0px rgb(255, 255, 0);
+  }
+
+ /*
+  :global(li) {
+    margin-left: 5%;
+    background-color: #331903;
+    border-width: 2px;
+    border-color: #E8F7C1;
+    border-radius: 10px;
+    color: #00ffdd;
+    font-size: 12px;
     -webkit-box-shadow: 0px 0px 15px 0px rgb(255, 215, 0);
     -moz-box-shadow:    0px 0px 15px 0px rgb(255, 215, 0);
     box-shadow:         0px 0px 15px 0px rgb(255, 215, 0);
     padding: 3px 10px 3px 10px;
   }
 
-  :global(button:hover) {
+
+  :global(li:hover) {
     color: blue;
-    background-color: lightblue;
+    background-color: darkblue;
     border-color: #0000AA;
     border-radius: 10px;
   }
+
+  :global(li:active) {
+    color: purple;
+    background-color: lightgreen;
+    border-color: #00AA00;
+    border-radius: 10px;
+  } 
+
+  :global(li:focus) {
+    color: red;
+    background-color: lightgreen;
+    border-color: #00AA00;
+    border-radius: 10px;
+  }
+*/
 
    :global(.roll) {
     margin-left: 8%;
@@ -160,24 +213,92 @@
   font-size: 11px;
   color: #bbccff
 }
-</style>  
+button {font-size: 18px}
+.selected {
+    color: #000000;
+    background-color: #eab676;
+    border-color: #E8F7C1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px 0px rgb(255, 255, 0);
+   } 
+  </style>
+
+
+<script>
+  var current = '';
+</script>
+
 
 
 <div>
     <br><br>
   <nav>
       <ul>
+
+        
       <li>    
-          <a href="/">Home</a>
+          <a href="/">           
+  <button
+    class:selected="{current === ''}"
+    on:click="{() => current = ''}"
+  >Home</button>
+          </a>
       </li>
 
       <span> &nbsp;&nbsp;&nbsp;   </span>
   
       <li>
-          <a href="/Functions">Functions</a>
+          <a href="/Functions">
+  <button
+    class:selected="{current === '/Functions'}"
+    on:click="{() => current = '/Functions'}"
+  >Functions</button>
+          </a>
       </li>
  
       <span> &nbsp;&nbsp;&nbsp;   </span>
+
+        
+      <li>    
+          <a href="/Mahjong">           
+  <button
+    class:selected="{current === '/Mahjong'}"
+    on:click="{() => current = '/Mahjong'}"
+  >Mahjong</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+        
+      <li>    
+          <a href="/Grammar">           
+  <button
+    class:selected="{current === 'Grammar'}"
+    on:click="{() => current = 'Grammar'}"
+  >Grammar</button>
+          </a>
+      </li>
+
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+  
+      <li>
+          <a href="/Law">
+  <button
+    class:selected="{current === 'Law'}"
+    on:click="{() => current = 'Law'}"
+  >Law</button>
+          </a>
+      </li>
+ 
+      <span> &nbsp;&nbsp;&nbsp;   </span>
+
+    </ul>
+    </nav>
+  </div>
+
+
+<!--
 
       <li>
           <a href="/Mahjong">Riichi Mahjong</a>
@@ -205,7 +326,28 @@
     </nav>
   </div>
 
-  <!-- <style>
+  <script>
+    let current = 'foo';
+  </script>
+  
+  <button
+    class:selected="{current === 'foo'}"
+    on:click="{() => current = 'foo'}"
+  >foo</button>
+  
+  <button
+    class:selected="{current === 'bar'}"
+    on:click="{() => current = 'bar'}"
+  >bar</button>
+  
+  <button
+    class:selected="{current === 'baz'}"
+    on:click="{() => current = 'baz'}"
+  >baz</button>
+  
+
+
+ <style>
    /* .container {margin-right: 10px} */
     :global(ul) {
       display:flex;
@@ -236,6 +378,7 @@
   </style> -->
   <div> </div>
   <!--<div class ="container"><slot /></div>-->
-  <slot/>
+  <slot></slot>
+  
 
   
