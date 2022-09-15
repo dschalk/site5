@@ -907,20 +907,40 @@ var monad = `function M (x) {
   }
 }`
 
-var fib = `var ar7 = [0];  // Define an array containing 0.
-mon = M(10);    // M(10) returns a copy of go() named "mon".
+var fib = `var m0 = M();  // x in the M(x)-m0 closure is undefined. 
 
-var g = n => {  // g generates n Fibonacci numbers. 
+var g = n => {
   let a = 0, b = 1;
-  for (let k = 1; k < n; k += 1) {
-    let z = a; a = b; b = a + z;
-    ar7.push(b); 
-  };
-};
+  while(n) {         // 0 is equivalent to false in this context.
+    n -= 1;
+    [a,b] = [b,a+b];
+  }
+  return [a, b]; // When m0(g) runs, x in the M(x)-m0 closure will become [a, b].
+}
 
-mon(g) // [ 0, 1, 2, 3, 5, 8, 13, 21, 34, 55 ] `;
+m0(a => 5)(g) // x in the M(x)-m0 closure changes to "10",
+               // then m0(g) executes, updating x ten more times. 
 
-var score1 = `[ [Math.floor(Math.random() * 6) + 1,
+console.log(m0(ret))  //  x in the closure is now [ 5, 8 ], as expected.`;
+
+var fib2 = `var fib = n => e => {  // When m0(fib(n) executes, fib will operate
+    while (n) {        // on [ 5, 8 ] in the M(x)-m0 closure.
+        n = n - 1;
+        [e[0],e[1]] = [e[1],e[1]+e[0]];
+    }
+    return e;  // This e becomes the modified x in the M(x)-m0 closure.     
+}
+
+m0(fib(3))
+log(m0(ret))    // [ 21, 34 ]
+
+m0(fib(3))
+log(m0(ret))    // [ 89, 144 ]
+
+m0(fib(10))
+log(m0(ret))    // [ 10946, 17711 ]`;
+
+var score1 = `[ [Math.floor(Math.random() * 6) + 1,	
    Math.floor(Math.random() * 6) + 1,
    Math.floor(Math.random() * 12) + 1,
    Math.floor(Math.random() * 20) + 1 ], 
@@ -933,10 +953,10 @@ var score1 = `[ [Math.floor(Math.random() * 6) + 1,
 <!-- ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>-->
 
 <style>
-	pre {margin-left: 3%}
+	pre {margin-left: 3%; color: rgb(250, 241, 157)}
 	.spn {font-style: italic; font-weight:800  }
-	.spy {color: turquoise;}
-	h2 {color: lightgreen; text-indent: 3%; text-align: left;}
+	.spy {color: rgb(253, 253, 210);}
+	h2 {color: rgb(210, 200, 244); text-indent: 3%; text-align: left;}
 </style>
 
 <!--<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>-->
@@ -959,31 +979,43 @@ var score1 = `[ [Math.floor(Math.random() * 6) + 1,
 <pre>{monad}</pre>
 
 
-<p>"x" can be number that specifies how many times recursion occurs, as in this trivial example: <p>
+<p>"x" can be number that specifies how many times recursion occurs, as in this trivial example: </p>
 
 <pre>{fib}</pre>
 
-<p> The Fibonacci sequence generator illustrates the mechanics of using monads returned by M(x), but M shines when it hold the states of more complicated things. For example, the solitaire game of Score begins with M(x) where x is the eight-element array: </p>
+<p> The Fibonacci sequence generator illustrates the mechanics of using monads returned by M(x). This example is unlike the others presented here, in the Recursive Closures section, in that the type of x in M(x) changes twice. It goes from "undefined" to "number" to "object" (instance of Array). </p>
+	
+	
+<p> M can be useful returning anonymous monads to initiate a chain of composed functions (see below), but I find it especially useful when it holds the current state of something that might need to be updated in the future. Right now, the x value of the M(x)-m0 closure is still [ 5, 8 ], as can be verified by calling m0(ret).  Here's a function named "fib" that can update x with larger Fibonacci numbers. </p>
 
+
+<pre>{fib2}</pre>
+	
+	
+	
+<p>There's no limit to the possible complexity of x in M(x). For example, the solitaire game of Score begins with M(x) where x is the eight-element array: </p>
 <pre>{score1}</pre>
 
+<p> You can play the game in this Recursive Closures section at <a href=./A_Simple_Recursive_Closure/score9>Solitaire Game of Score</a> Either now or after trying the game, please consider returning to examine the examples below, and if you see value in getting comfortable with recursive closures, you should try using M(x) and experimenting with recursive closures you devise in JavaScript or other languages.   </p>
+<div>******************************************************************</div>
 
-<p>Before moving on to the game of Score, you might want to take a look at some simpler examples on this page. You can play the game in this section at <a href=./A_Simple_Recursive_Closure/score9>Solitaire Game of Score</a> After doing so, consider coming back here and looking at some of the other pages in this section. I hope you will try using M(x) and experiment with recursive closures you devise in JavaScript and other languages.  </p>
+<h2>A Brief Digression: JavaScript Monads</h2>
 
-
-
-	<p>JavaScript monads are defined in various ways online and in print. These definitions differ from one another but none are right or wrong. In the Category Theory branch of mathematics, "monad" has a precise definition. The Haskell Programming Language defines "monad" in its own precise manner.</p>
+	<p>JavaScript monads are defined in various ways online and in print. These definitions differ from one another but none are right or wrong. In the Category Theory branch of mathematics, "monad" has a precise definition. The Haskell Programming Language defines "monad" in a different precise manner.</p>
 	
 	<p>Here's one of many articles attempting to implement the Haskell paradygm in JavaScript: <a href = "https://curiosity-driven.org/monads-in-javascript">JavaScript Monads the Haskell Way.</a> I recommend it as an enlightening and enjoyable read, but I reject it's rigid, authoritarian dictates -- especially its insistence on strict typing. </p>
-<p> I programmed a server in the Haskell programming language for a multi-player, online game called "Score" a decade or so ago. The only version I can find right now is missing instructions and has a klunky drag-and-drop user interface, but it computes all solutions (if they exist) for any roll and can be modified by users in various ways. Here's a link: <a href=https://schalk2.com/score>Game of Score</a>  </p>
+<p> I programmed a server in the Haskell programming language for a multi-player, online game called "Score" a decade or so ago. The only version I can find right now is missing instructions and has a klunky drag-and-drop user interface, but it computes any and all solutions for any roll and can be modified by users in various ways. It's usable for game play and here's a link: <a href=https://schalk2.com/score>Game of Score</a>  </p>
 
+<div>******************************************************************</div>
+
+<h2>A More Detailed Description, With Examples</h2>
 <p>
 	The function M() (below) returns the function go(), thereby forming a closure. The returned
-	function is named to facilitate recursion.  Here's the definition of M():
+	function is named to facilitate recursion.  Here again is the definition of M():
 </p>
 <pre>{monad}</pre>
 
-<p>What the function "ret()" does or doesn't do, if called, doesn't matter. It serves as a flag signalling that it's time to return the value held by M in the closure. It's a function for the convenience of coders who use Typescript, a try-catch block, or other error-checking methods. Here's the definition of ret() used on this page: <span style="color: #55ffff">{retCode}</span>. </p>
+<p>What the function "ret()" does or doesn't do, if called, doesn't matter. It serves as a flag signalling that it's time to return the value held by M in the closure. It's a function for the convenience of coders who use Typescript. Here's the definition of ret() used on this page: <span style="color: #55ffff">{retCode}</span>. </p>
 
 <p>Internally, the function returned by M is named "go." Externally, it can be named just about anything. When go() is assigned an external variable name, say "monadOne", the value in the monadOne-M closure (named "x" internally) will not be garbage-collected. As shown below, M provides a clear, concise way of chaining functions when it is used anonymously. </p>
 
@@ -1082,6 +1114,8 @@ Here's a contrived example showing one way asynchronous code can be handled:
 	as follows:
 </p>
 <pre>{bigMonad}</pre>
+
+<!--
 <p>
 	Now back to the little monad M and the game of score; a game involving four dice and two or
 	three-stage arithmetic computations with the goal of arriving at the number 20. My son Alex taught
@@ -1107,7 +1141,7 @@ Here's a contrived example showing one way asynchronous code can be handled:
 	far, subsequent computations will be very slow and the program might even crash. If you just take back a move, computations proceed normally.
 </p>
 
-<!-- <h1>{$userName}</h1> -->
+ <h1>{$userName}</h1> 
 <span>Player: </span>
 <input style="color: black; " type="text" bind:value={$userName} />
 <br /><br />
@@ -1115,8 +1149,8 @@ Here's a contrived example showing one way asynchronous code can be handled:
 <input style="color: black;" type="number" bind:value={$top} />
 
 <h2>{d2}</h2>
-<!-- <button on:click={display}>Start</button>
-<button on:click={stoptimer}>Stop</button> -->
+<button on:click={display}>Start</button>
+<button on:click={stoptimer}>Stop</button> 
 <br />
 <button on:click={resettimer}>Reset</button>
 <br /><br />
@@ -1225,11 +1259,11 @@ Here's a contrived example showing one way asynchronous code can be handled:
 	state during a round. using x[6] to travers the history of game play in both directions.
 </p>
 
-<!-- <button on:click = {m2Func}>m2Func</button>
+<button on:click = {m2Func}>m2Func</button>
 <button on:click = {update}>Update</button>
 <button on:click = {() => m2(fu)}>m2(fu)</button>
 <button on:click = {sfunc}>sfunc</button>
--->
+
 
 
 <h2>Why I call them "monads"</h2>
@@ -1264,7 +1298,7 @@ Caution:
 
 
 
-<!-- <style>
+ <style>
 	 (A) CONTAINER
 #stopwatch {
   display: flex;
